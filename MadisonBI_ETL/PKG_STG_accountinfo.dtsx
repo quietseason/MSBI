@@ -11,8 +11,8 @@
   DTS:LocaleID="2052"
   DTS:ObjectName="PKG_STG_accountinfo"
   DTS:PackageType="5"
-  DTS:VersionBuild="23"
-  DTS:VersionGUID="{42C74AC0-7B18-4D9E-9B56-2CAD645D7C86}">
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{5E51D37C-2A21-4830-8C8C-E4C4EBA4805E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -82,7 +82,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="PackageDescription">
       <DTS:VariableValue
-        DTS:DataType="8">Extract data from accountinfo from different servers</DTS:VariableValue>
+        DTS:DataType="8">Extract data from accountinfo from different servers.</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
