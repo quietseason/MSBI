@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="50908b38-b9e6-43b8-b413-e352fc4ca41a" ChangeDateTime="04/23/2016 03:37:09">
+    <Property Name="ElementName" Value="[dbo].[ETL_STATUS].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ETL_STATUS]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ETL_STATUS_ID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="8475f3d5-3b6a-41a6-b4ea-a56c781227d8" ChangeDateTime="04/23/2016 04:10:00">
+    <Property Name="ElementName" Value="[dbo].[ETL_PROCESS_AUDIT].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ETL_PROCESS_AUDIT]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ETL_PROCESS_AUDIT_ID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="510b2a42-cd1d-4fcb-8198-92fcbbe8249e" ChangeDateTime="04/23/2016 04:19:53">
+    <Property Name="ElementName" Value="[dbo].[ETL_PROCESS_AUDIT].[SourceName]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ETL_PROCESS_AUDIT]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SOURCE_NAME" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="ebd3f0f3-8c2f-45d5-8f79-6da12bced323" ChangeDateTime="04/23/2016 04:19:59">
+    <Property Name="ElementName" Value="[dbo].[ETL_PROCESS_AUDIT].[Target]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ETL_PROCESS_AUDIT]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="TARGET_NAME" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="49ce6012-373c-489e-968f-4e780465c7a9" ChangeDateTime="04/23/2016 05:31:13">
+    <Property Name="ElementName" Value="[dbo].[CONNECTION_CONFIG].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[CONNECTION_CONFIG]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CONNECTION_ID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="5f27f99a-6cfe-4556-bfc1-319acac32064" ChangeDateTime="04/23/2016 05:32:34">
+    <Property Name="ElementName" Value="[dbo].[CONNECTION_CONFIG].[DBCatagory]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[CONNECTION_CONFIG]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="DB_CATAGORY" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="28113d8a-63d2-421e-a2de-8ac962275d06" ChangeDateTime="04/23/2016 05:34:16">
+    <Property Name="ElementName" Value="[dbo].[CONNECTION_CONFIG].[ENCRYPED_PASSWORD]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[CONNECTION_CONFIG]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ENCRYPTED_PASSWORD" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="97fd81e4-7017-4233-965a-e258a8994ebc" ChangeDateTime="04/23/2016 10:27:24">
+    <Property Name="ElementName" Value="[dbo].[ETL_PROCESS_AUDIT].[CREATE_TIME]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ETL_PROCESS_AUDIT]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="START_TIME" />
+  </Operation>
+</Operations>

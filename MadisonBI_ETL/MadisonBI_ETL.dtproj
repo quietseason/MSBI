@@ -1,0 +1,525 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DeploymentModel>Project</DeploymentModel>
+  <ProductVersion>12.0.2430.0</ProductVersion>
+  <SchemaVersion>9.0.1.0</SchemaVersion>
+  <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRkbDI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yIiB4bWxuczpkZGwyXzI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yLzIiIHhtbG5zOmRkbDEwMF8xMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDA4L2VuZ2luZS8xMDAvMTAwIiB4bWxuczpkZGwyMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAiIHhtbG5zOmRkbDIwMF8yMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAvMjAwIiB4bWxuczpkZGwzMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAiIHhtbG5zOmRkbDMwMF8zMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAvMzAwIiB4bWxuczpkZGw0MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAiIHhtbG5zOmRkbDQwMF80MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAvNDAwIiB4bWxuczpkd2Q9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vRGF0YVdhcmVob3VzZS9EZXNpZ25lci8xLjAiPg0KICA8RW5hYmxlZD50cnVlPC9FbmFibGVkPg0KICA8UHJvamVjdE5hbWU+U0FLPC9Qcm9qZWN0TmFtZT4NCiAgPEF1eFBhdGg+U0FLPC9BdXhQYXRoPg0KICA8TG9jYWxQYXRoPlNBSzwvTG9jYWxQYXRoPg0KICA8UHJvdmlkZXI+U0FLPC9Qcm92aWRlcj4NCjwvU291cmNlQ29udHJvbEluZm8+</State>
+  <Database>
+    <Name>MadisonBI_ETL.database</Name>
+    <FullPath>MadisonBI_ETL.database</FullPath>
+  </Database>
+  <DataSources />
+  <DataSourceViews />
+  <DeploymentModelSpecificContent>
+    <Manifest>
+      <SSIS:Project SSIS:ProtectionLevel="EncryptSensitiveWithUserKey" xmlns:SSIS="www.microsoft.com/SqlServer/SSIS">
+        <SSIS:Properties>
+          <SSIS:Property SSIS:Name="ID">{2485aaf1-7d5a-4149-9684-499873f09340}</SSIS:Property>
+          <SSIS:Property SSIS:Name="Name">MadisonBI_ETL</SSIS:Property>
+          <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+          <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+          <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
+          <SSIS:Property SSIS:Name="VersionComments">
+          </SSIS:Property>
+          <SSIS:Property SSIS:Name="CreationDate">2016-04-23T10:25:43.7602819+08:00</SSIS:Property>
+          <SSIS:Property SSIS:Name="CreatorName">BISTUDIO\Bill</SSIS:Property>
+          <SSIS:Property SSIS:Name="CreatorComputerName">BISTUDIO</SSIS:Property>
+          <SSIS:Property SSIS:Name="Description">
+          </SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbALeZdBMYESXSf/tUcBsJQAAAAACAAAAAAAQZgAAAAEAACAAAAAD2nNSzKOYofwZrToX4SsgJXrSkIkCOlCUhIwr/lQ6vgAAAAAOgAAAAAIAACAAAACtaUXOO36wpW08plExoc84a7fyj+cO853d0yDR4+jXoZAAAABVipwwvTly8Puo9JCg4nRBzq69fMuGJBd+Si3eCnTb2UKgZwv9honCvVXuObHFQpPu8lVKuxbgdPL13xePSJc3Z9IZC4rPUDqyPqE0l/xGGrMS+CpzEB9TPDOY+vmGQMynMVe7FCpc3BcCZ5MJwBUMBnxqcT7KGg8PpPytKIWp5CjaG05ccJR6hgqbnC8d8fVAAAAAZEw99iG+qDakMKbSKQV77UFMlAPi2cNg70YE84FeJAo4QaiHUh5llPJNyUHlVetz8Hish7UmoU37n9BDqPaBBg==</SSIS:Property>
+          <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
+        </SSIS:Properties>
+        <SSIS:Packages>
+          <SSIS:Package SSIS:Name="PKG_STG_accountinfo.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="PKG_ARCH_accountinfo.dtsx" SSIS:EntryPoint="1" />
+        </SSIS:Packages>
+        <SSIS:ConnectionManagers>
+          <SSIS:ConnectionManager SSIS:Name="MadisonBI_Logging.conmgr" />
+          <SSIS:ConnectionManager SSIS:Name="MadisonBI_Archive.conmgr" />
+          <SSIS:ConnectionManager SSIS:Name="MadisonBI_Staging.conmgr" />
+          <SSIS:ConnectionManager SSIS:Name="MadisonBI_DataWarehouse.conmgr" />
+        </SSIS:ConnectionManagers>
+        <SSIS:DeploymentInfo>
+          <SSIS:ProjectConnectionParameters>
+            <SSIS:Parameter SSIS:Name="CM.MadisonBI_Logging.ConnectionString">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Data Source=.;Initial Catalog=MadisonBI_Logging;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.MadisonBI_Logging.InitialCatalog">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">MadisonBI_Logging</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.MadisonBI_Logging.Password">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.MadisonBI_Logging.RetainSameConnection">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.MadisonBI_Logging.ServerName">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">.</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.MadisonBI_Logging.UserName">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.MadisonBI_Archive.ConnectionString">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Data Source=.;Initial Catalog=MadisonBI_Archive;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.MadisonBI_Archive.InitialCatalog">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">MadisonBI_Archive</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.MadisonBI_Archive.Password">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.MadisonBI_Archive.RetainSameConnection">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.MadisonBI_Archive.ServerName">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">.</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.MadisonBI_Archive.UserName">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.MadisonBI_Staging.ConnectionString">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Data Source=.;Initial Catalog=MadisonBI_Staging;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.MadisonBI_Staging.InitialCatalog">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">MadisonBI_Staging</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.MadisonBI_Staging.Password">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.MadisonBI_Staging.RetainSameConnection">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.MadisonBI_Staging.ServerName">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">.</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.MadisonBI_Staging.UserName">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.MadisonBI_DataWarehouse.ConnectionString">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Data Source=.;Initial Catalog=MadisonBI_DataWarehouse;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.MadisonBI_DataWarehouse.InitialCatalog">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">MadisonBI_DataWarehouse</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.MadisonBI_DataWarehouse.Password">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.MadisonBI_DataWarehouse.RetainSameConnection">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.MadisonBI_DataWarehouse.ServerName">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">.</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.MadisonBI_DataWarehouse.UserName">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+          </SSIS:ProjectConnectionParameters>
+          <SSIS:PackageInfo>
+            <SSIS:PackageMetaData SSIS:Name="PKG_STG_accountinfo.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{C56FF8EF-933E-40E3-815F-182A54D8A983}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">PKG_STG_accountinfo</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">23</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{42C74AC0-7B18-4D9E-9B56-2CAD645D7C86}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters>
+                <SSIS:Parameter SSIS:Name="CM.Source_Database.ConnectionString">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Data Source=120.27.144.251;Initial Catalog=BI_Staging;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.Source_Database.InitialCatalog">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">BI_Staging</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.Source_Database.Password">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">1</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.Source_Database.RetainSameConnection">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.Source_Database.UserName">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+              </SSIS:Parameters>
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="PKG_ARCH_accountinfo.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{AD00F20D-B26F-4026-A915-74A321B2B096}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">PKG_ARCH_accountinfo</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{9F628D71-0539-473D-AD12-C6081BB7122D}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+          </SSIS:PackageInfo>
+        </SSIS:DeploymentInfo>
+      </SSIS:Project>
+    </Manifest>
+  </DeploymentModelSpecificContent>
+  <Miscellaneous />
+  <Configurations>
+    <Configuration>
+      <Name>Development</Name>
+      <Options>
+        <OutputPath>bin</OutputPath>
+        <ConnectionMappings />
+        <ConnectionProviderMappings />
+        <ConnectionSecurityMappings />
+        <DatabaseStorageLocations />
+        <ParameterConfigurationValues />
+      </Options>
+    </Configuration>
+  </Configurations>
+</Project>

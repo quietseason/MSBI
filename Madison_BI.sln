@@ -1,0 +1,104 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MadisonBI_Staging", "MadisonBI_Staging\MadisonBI_Staging.sqlproj", "{EFA883DF-9F2B-45FA-8880-5C7A6BA27DC8}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MadisonBI_Archive", "MadisonBI_Archive\MadisonBI_Archive.sqlproj", "{350B5A89-3F9B-4200-AE77-85C7BC9CC38D}"
+EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "MadisonBI_ETL", "MadisonBI_ETL\MadisonBI_ETL.dtproj", "{796BA5C2-AFF2-4093-8504-68EEE52A4AB4}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MadisonBI_Logging", "MadisonBI_Logging\MadisonBI_Logging.sqlproj", "{EF7A1836-E203-4D3C-A55F-E6D802799DF9}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MadisonBI_DataWarehouse", "MadisonBI_DataWarehouse\MadisonBI_DataWarehouse.sqlproj", "{20139C7C-8EE4-4E0C-A651-EA18F0989F2C}"
+EndProject
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "MadisonBI_Cube", "MadisonBI_Cube\MadisonBI_Cube.dwproj", "{B53CDD60-4FBD-4132-B71A-86E803EA8AF2}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://bistudio:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = MadisonBI_Staging\\MadisonBI_Staging.sqlproj
+		SccProjectName1 = MadisonBI_Staging
+		SccLocalPath1 = MadisonBI_Staging
+		SccProjectUniqueName2 = MadisonBI_Archive\\MadisonBI_Archive.sqlproj
+		SccProjectName2 = MadisonBI_Archive
+		SccLocalPath2 = MadisonBI_Archive
+		SccProjectUniqueName3 = MadisonBI_ETL\\MadisonBI_ETL.dtproj
+		SccProjectName3 = MadisonBI_ETL
+		SccLocalPath3 = MadisonBI_ETL
+		SccProjectUniqueName4 = MadisonBI_Logging\\MadisonBI_Logging.sqlproj
+		SccProjectName4 = MadisonBI_Logging
+		SccLocalPath4 = MadisonBI_Logging
+		SccProjectUniqueName5 = MadisonBI_DataWarehouse\\MadisonBI_DataWarehouse.sqlproj
+		SccProjectName5 = MadisonBI_DataWarehouse
+		SccLocalPath5 = MadisonBI_DataWarehouse
+		SccProjectUniqueName6 = MadisonBI_Cube\\MadisonBI_Cube.dwproj
+		SccProjectName6 = MadisonBI_Cube
+		SccLocalPath6 = MadisonBI_Cube
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Development|Any CPU = Development|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EFA883DF-9F2B-45FA-8880-5C7A6BA27DC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFA883DF-9F2B-45FA-8880-5C7A6BA27DC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFA883DF-9F2B-45FA-8880-5C7A6BA27DC8}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{EFA883DF-9F2B-45FA-8880-5C7A6BA27DC8}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFA883DF-9F2B-45FA-8880-5C7A6BA27DC8}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{EFA883DF-9F2B-45FA-8880-5C7A6BA27DC8}.Development|Any CPU.Deploy.0 = Debug|Any CPU
+		{EFA883DF-9F2B-45FA-8880-5C7A6BA27DC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFA883DF-9F2B-45FA-8880-5C7A6BA27DC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFA883DF-9F2B-45FA-8880-5C7A6BA27DC8}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{350B5A89-3F9B-4200-AE77-85C7BC9CC38D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{350B5A89-3F9B-4200-AE77-85C7BC9CC38D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{350B5A89-3F9B-4200-AE77-85C7BC9CC38D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{350B5A89-3F9B-4200-AE77-85C7BC9CC38D}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{350B5A89-3F9B-4200-AE77-85C7BC9CC38D}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{350B5A89-3F9B-4200-AE77-85C7BC9CC38D}.Development|Any CPU.Deploy.0 = Debug|Any CPU
+		{350B5A89-3F9B-4200-AE77-85C7BC9CC38D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{350B5A89-3F9B-4200-AE77-85C7BC9CC38D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{350B5A89-3F9B-4200-AE77-85C7BC9CC38D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{796BA5C2-AFF2-4093-8504-68EEE52A4AB4}.Debug|Any CPU.ActiveCfg = Development
+		{796BA5C2-AFF2-4093-8504-68EEE52A4AB4}.Debug|Any CPU.Build.0 = Development
+		{796BA5C2-AFF2-4093-8504-68EEE52A4AB4}.Development|Any CPU.ActiveCfg = Development
+		{796BA5C2-AFF2-4093-8504-68EEE52A4AB4}.Development|Any CPU.Build.0 = Development
+		{796BA5C2-AFF2-4093-8504-68EEE52A4AB4}.Release|Any CPU.ActiveCfg = Development
+		{796BA5C2-AFF2-4093-8504-68EEE52A4AB4}.Release|Any CPU.Build.0 = Development
+		{EF7A1836-E203-4D3C-A55F-E6D802799DF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF7A1836-E203-4D3C-A55F-E6D802799DF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF7A1836-E203-4D3C-A55F-E6D802799DF9}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{EF7A1836-E203-4D3C-A55F-E6D802799DF9}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF7A1836-E203-4D3C-A55F-E6D802799DF9}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{EF7A1836-E203-4D3C-A55F-E6D802799DF9}.Development|Any CPU.Deploy.0 = Debug|Any CPU
+		{EF7A1836-E203-4D3C-A55F-E6D802799DF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF7A1836-E203-4D3C-A55F-E6D802799DF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF7A1836-E203-4D3C-A55F-E6D802799DF9}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{20139C7C-8EE4-4E0C-A651-EA18F0989F2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20139C7C-8EE4-4E0C-A651-EA18F0989F2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20139C7C-8EE4-4E0C-A651-EA18F0989F2C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{20139C7C-8EE4-4E0C-A651-EA18F0989F2C}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{20139C7C-8EE4-4E0C-A651-EA18F0989F2C}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{20139C7C-8EE4-4E0C-A651-EA18F0989F2C}.Development|Any CPU.Deploy.0 = Debug|Any CPU
+		{20139C7C-8EE4-4E0C-A651-EA18F0989F2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20139C7C-8EE4-4E0C-A651-EA18F0989F2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20139C7C-8EE4-4E0C-A651-EA18F0989F2C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B53CDD60-4FBD-4132-B71A-86E803EA8AF2}.Debug|Any CPU.ActiveCfg = Development
+		{B53CDD60-4FBD-4132-B71A-86E803EA8AF2}.Debug|Any CPU.Build.0 = Development
+		{B53CDD60-4FBD-4132-B71A-86E803EA8AF2}.Debug|Any CPU.Deploy.0 = Development
+		{B53CDD60-4FBD-4132-B71A-86E803EA8AF2}.Development|Any CPU.ActiveCfg = Development
+		{B53CDD60-4FBD-4132-B71A-86E803EA8AF2}.Development|Any CPU.Build.0 = Development
+		{B53CDD60-4FBD-4132-B71A-86E803EA8AF2}.Development|Any CPU.Deploy.0 = Development
+		{B53CDD60-4FBD-4132-B71A-86E803EA8AF2}.Release|Any CPU.ActiveCfg = Development
+		{B53CDD60-4FBD-4132-B71A-86E803EA8AF2}.Release|Any CPU.Build.0 = Development
+		{B53CDD60-4FBD-4132-B71A-86E803EA8AF2}.Release|Any CPU.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
