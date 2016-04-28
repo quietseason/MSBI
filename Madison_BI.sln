@@ -15,31 +15,9 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MadisonBI_DataWarehouse", "
 EndProject
 Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "MadisonBI_Cube", "MadisonBI_Cube\MadisonBI_Cube.dwproj", "{B53CDD60-4FBD-4132-B71A-86E803EA8AF2}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MadisonBI_DataMart", "MadisonBI_DataMart\MadisonBI_DataMart.sqlproj", "{93523E80-2FF2-4EC9-99B1-981FDBA76AC3}"
+EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 7
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://bistudio:8080/tfs/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = MadisonBI_Staging\\MadisonBI_Staging.sqlproj
-		SccProjectName1 = MadisonBI_Staging
-		SccLocalPath1 = MadisonBI_Staging
-		SccProjectUniqueName2 = MadisonBI_Archive\\MadisonBI_Archive.sqlproj
-		SccProjectName2 = MadisonBI_Archive
-		SccLocalPath2 = MadisonBI_Archive
-		SccProjectUniqueName3 = MadisonBI_ETL\\MadisonBI_ETL.dtproj
-		SccProjectName3 = MadisonBI_ETL
-		SccLocalPath3 = MadisonBI_ETL
-		SccProjectUniqueName4 = MadisonBI_Logging\\MadisonBI_Logging.sqlproj
-		SccProjectName4 = MadisonBI_Logging
-		SccLocalPath4 = MadisonBI_Logging
-		SccProjectUniqueName5 = MadisonBI_DataWarehouse\\MadisonBI_DataWarehouse.sqlproj
-		SccProjectName5 = MadisonBI_DataWarehouse
-		SccLocalPath5 = MadisonBI_DataWarehouse
-		SccProjectUniqueName6 = MadisonBI_Cube\\MadisonBI_Cube.dwproj
-		SccProjectName6 = MadisonBI_Cube
-		SccLocalPath6 = MadisonBI_Cube
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Development|Any CPU = Development|Any CPU
@@ -97,6 +75,15 @@ Global
 		{B53CDD60-4FBD-4132-B71A-86E803EA8AF2}.Release|Any CPU.ActiveCfg = Development
 		{B53CDD60-4FBD-4132-B71A-86E803EA8AF2}.Release|Any CPU.Build.0 = Development
 		{B53CDD60-4FBD-4132-B71A-86E803EA8AF2}.Release|Any CPU.Deploy.0 = Development
+		{93523E80-2FF2-4EC9-99B1-981FDBA76AC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93523E80-2FF2-4EC9-99B1-981FDBA76AC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93523E80-2FF2-4EC9-99B1-981FDBA76AC3}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{93523E80-2FF2-4EC9-99B1-981FDBA76AC3}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{93523E80-2FF2-4EC9-99B1-981FDBA76AC3}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{93523E80-2FF2-4EC9-99B1-981FDBA76AC3}.Development|Any CPU.Deploy.0 = Debug|Any CPU
+		{93523E80-2FF2-4EC9-99B1-981FDBA76AC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93523E80-2FF2-4EC9-99B1-981FDBA76AC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93523E80-2FF2-4EC9-99B1-981FDBA76AC3}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

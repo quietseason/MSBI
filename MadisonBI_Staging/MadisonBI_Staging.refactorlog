@@ -14,4 +14,25 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="StagingID" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="fda53948-21a0-4218-ba44-dd9fa6e09407" ChangeDateTime="04/27/2016 09:45:47">
+    <Property Name="ElementName" Value="[dbo].[STG_accountinfo].[Age]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[STG_accountinfo]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="IDType" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d46ead63-1c04-4106-a1bf-e6a2508a97cf" ChangeDateTime="04/27/2016 09:46:46">
+    <Property Name="ElementName" Value="[dbo].[STG_accountinfo].[Gender]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[STG_accountinfo]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="IDNumber" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="b3aac3ea-fc53-4794-8746-fae856332b9c" ChangeDateTime="04/27/2016 09:49:06">
+    <Property Name="ElementName" Value="[dbo].[STG_accountinfo].[Channel]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[STG_accountinfo]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Status" />
+  </Operation>
 </Operations>

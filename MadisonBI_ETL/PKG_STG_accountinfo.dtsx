@@ -11,8 +11,8 @@
   DTS:LocaleID="2052"
   DTS:ObjectName="PKG_STG_accountinfo"
   DTS:PackageType="5"
-  DTS:VersionBuild="24"
-  DTS:VersionGUID="{5E51D37C-2A21-4830-8C8C-E4C4EBA4805E}">
+  DTS:VersionBuild="37"
+  DTS:VersionGUID="{F65BB8D4-3E08-4318-9F07-55803FB5B74B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -95,6 +95,15 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:DTSID="{0AC3BB3A-EDEB-4CFB-887A-753EEFA9E35F}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PackageProcessID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
       DTS:DTSID="{5B2BF487-6C79-4AAE-858E-D11E62E2532B}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
@@ -167,7 +176,15 @@ WHERE Modified &gt;= ''2001-01-01 00:00:00'' AND Modified &lt; CAST(NOW() AS DAT
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{1D8829DA-9517-4AC2-A907-98A462BBB1EB}" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{1D8829DA-9517-4AC2-A907-98A462BBB1EB}"
+          SQLTask:SqlStatementSource="EXEC [dbo].[usp_UpdateLogEnd]&#xA;&#x9;@ETL_PROCESS_LOG_ID = ?,&#xA;&#x9;@ETL_STATUS_ID = 2" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -385,6 +402,350 @@ WHERE Modified &gt;= ''2001-01-01 00:00:00'' AND Modified &lt; CAST(NOW() AS DAT
             <pipeline
               version="1">
               <components>
+                <component
+                  refId="Package\Load from Different Sources\Source to Staging\Derived Column"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Load from Different Sources\Source to Staging\Derived Column.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load from Different Sources\Source to Staging\Derived Column.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Load from Different Sources\Source to Staging\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load from Different Sources\Source to Staging\Derived Column.Outputs[Derived Column Output].Columns[Source]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="17"
+                          lineageId="Package\Load from Different Sources\Source to Staging\Derived Column.Outputs[Derived Column Output].Columns[Source]"
+                          name="Source"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">@[User::SourceDatabase]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[User::SourceDatabase]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load from Different Sources\Source to Staging\Derived Column.Outputs[Derived Column Output].Columns[StagingInsertTime]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Load from Different Sources\Source to Staging\Derived Column.Outputs[Derived Column Output].Columns[StagingInsertTime]"
+                          name="StagingInsertTime"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[GETDATE]()</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">GETDATE()</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Load from Different Sources\Source to Staging\Derived Column.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Load from Different Sources\Source to Staging\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load from Different Sources\Source to Staging\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load from Different Sources\Source to Staging\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load from Different Sources\Source to Staging\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load from Different Sources\Source to Staging\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load from Different Sources\Source to Staging\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[STG_accountinfo]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">936</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">true</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">true</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{1EC4F465-990B-4A18-890F-7CD91DDDA7B8}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[MadisonBI_Staging]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AccountID]"
+                          cachedDataType="numeric"
+                          cachedName="AccountID"
+                          cachedPrecision="20"
+                          externalMetadataColumnId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AccountID]"
+                          lineageId="Package\Load from Different Sources\Source to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountID]" />
+                        <inputColumn
+                          refId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Name]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="Name"
+                          externalMetadataColumnId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                          lineageId="Package\Load from Different Sources\Source to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Name]" />
+                        <inputColumn
+                          refId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IDType]"
+                          cachedDataType="numeric"
+                          cachedName="IDType"
+                          cachedPrecision="3"
+                          externalMetadataColumnId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDType]"
+                          lineageId="Package\Load from Different Sources\Source to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDType]" />
+                        <inputColumn
+                          refId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IDNumber]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="IDNumber"
+                          externalMetadataColumnId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDNumber]"
+                          lineageId="Package\Load from Different Sources\Source to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDNumber]" />
+                        <inputColumn
+                          refId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[InvitedBy]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="InvitedBy"
+                          externalMetadataColumnId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[InvitedBy]"
+                          lineageId="Package\Load from Different Sources\Source to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[InvitedBy]" />
+                        <inputColumn
+                          refId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ReferralCode]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="ReferralCode"
+                          externalMetadataColumnId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ReferralCode]"
+                          lineageId="Package\Load from Different Sources\Source to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[ReferralCode]" />
+                        <inputColumn
+                          refId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Status]"
+                          cachedDataType="ui1"
+                          cachedName="Status"
+                          externalMetadataColumnId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                          lineageId="Package\Load from Different Sources\Source to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Status]" />
+                        <inputColumn
+                          refId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CustomStatus]"
+                          cachedDataType="ui1"
+                          cachedName="CustomStatus"
+                          externalMetadataColumnId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomStatus]"
+                          lineageId="Package\Load from Different Sources\Source to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomStatus]" />
+                        <inputColumn
+                          refId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Created]"
+                          cachedDataType="dbTimeStamp2"
+                          cachedName="Created"
+                          cachedScale="7"
+                          externalMetadataColumnId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Created]"
+                          lineageId="Package\Load from Different Sources\Source to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Created]" />
+                        <inputColumn
+                          refId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Modified]"
+                          cachedDataType="dbTimeStamp2"
+                          cachedName="Modified"
+                          cachedScale="7"
+                          externalMetadataColumnId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Modified]"
+                          lineageId="Package\Load from Different Sources\Source to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Modified]" />
+                        <inputColumn
+                          refId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Mobile]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Mobile"
+                          externalMetadataColumnId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Mobile]"
+                          lineageId="Package\Load from Different Sources\Source to Staging\OLE DB Source.Outputs[OLE DB Source Output].Columns[Mobile]" />
+                        <inputColumn
+                          refId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Source]"
+                          cachedDataType="wstr"
+                          cachedLength="17"
+                          cachedName="Source"
+                          externalMetadataColumnId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Source]"
+                          lineageId="Package\Load from Different Sources\Source to Staging\Derived Column.Outputs[Derived Column Output].Columns[Source]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StagingID]"
+                          dataType="i8"
+                          name="StagingID" />
+                        <externalMetadataColumn
+                          refId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AccountID]"
+                          dataType="i8"
+                          name="AccountID" />
+                        <externalMetadataColumn
+                          refId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                          dataType="wstr"
+                          length="200"
+                          name="Name" />
+                        <externalMetadataColumn
+                          refId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Mobile]"
+                          dataType="wstr"
+                          length="50"
+                          name="Mobile" />
+                        <externalMetadataColumn
+                          refId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ReferralCode]"
+                          dataType="wstr"
+                          length="20"
+                          name="ReferralCode" />
+                        <externalMetadataColumn
+                          refId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[InvitedBy]"
+                          dataType="wstr"
+                          length="20"
+                          name="InvitedBy" />
+                        <externalMetadataColumn
+                          refId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Created]"
+                          dataType="dbTimeStamp"
+                          name="Created" />
+                        <externalMetadataColumn
+                          refId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Modified]"
+                          dataType="dbTimeStamp"
+                          name="Modified" />
+                        <externalMetadataColumn
+                          refId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Source]"
+                          dataType="wstr"
+                          length="100"
+                          name="Source" />
+                        <externalMetadataColumn
+                          refId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StagingInsertTime]"
+                          dataType="dbTimeStamp"
+                          name="StagingInsertTime" />
+                        <externalMetadataColumn
+                          refId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDType]"
+                          dataType="ui1"
+                          name="IDType" />
+                        <externalMetadataColumn
+                          refId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDNumber]"
+                          dataType="wstr"
+                          length="100"
+                          name="IDNumber" />
+                        <externalMetadataColumn
+                          refId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                          dataType="wstr"
+                          length="100"
+                          name="Status" />
+                        <externalMetadataColumn
+                          refId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomStatus]"
+                          dataType="ui1"
+                          name="CustomStatus" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
                 <component
                   refId="Package\Load from Different Sources\Source to Staging\OLE DB Source"
                   componentClassID="Microsoft.OLEDBSource"
@@ -1015,6 +1376,18 @@ WHERE Modified &gt;= ''2001-01-01 00:00:00'' AND Modified &lt; CAST(NOW() AS DAT
                   </outputs>
                 </component>
               </components>
+              <paths>
+                <path
+                  refId="Package\Load from Different Sources\Source to Staging.Paths[Derived Column Output]"
+                  endId="Package\Load from Different Sources\Source to Staging\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\Load from Different Sources\Source to Staging\Derived Column.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Load from Different Sources\Source to Staging.Paths[OLE DB Source Output]"
+                  endId="Package\Load from Different Sources\Source to Staging\Derived Column.Inputs[Derived Column Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Load from Different Sources\Source to Staging\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
             </pipeline>
           </DTS:ObjectData>
         </DTS:Executable>
@@ -1049,13 +1422,13 @@ WHERE Modified &gt;= ''2001-01-01 00:00:00'' AND Modified &lt; CAST(NOW() AS DAT
             SQLTask:ParameterName="0"
             SQLTask:DtsVariableName="System::PackageName"
             SQLTask:ParameterDirection="Input"
-            SQLTask:DataType="129"
+            SQLTask:DataType="130"
             SQLTask:ParameterSize="-1" />
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="1"
             SQLTask:DtsVariableName="User::PackageDescription"
             SQLTask:ParameterDirection="Input"
-            SQLTask:DataType="129"
+            SQLTask:DataType="130"
             SQLTask:ParameterSize="-1" />
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="2"
@@ -1086,7 +1459,32 @@ WHERE Modified &gt;= ''2001-01-01 00:00:00'' AND Modified &lt; CAST(NOW() AS DAT
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{1D8829DA-9517-4AC2-A907-98A462BBB1EB}"
-          SQLTask:SqlStatementSource="EXEC [dbo].[usp_InsertLogStart]&#xA;&#x9;@ETL_PACKAGE_ID = ?,&#xA;&#x9;@MACHINE_NAME = ?,&#xA;&#x9;@EXECUTE_USER= ?,&#xA;&#x9;@START_TIME = GETDATE(),&#xA;&#x9;@ETL_PROCESS_LOG_ID = ? OUTPUT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="EXEC [dbo].[usp_InsertLogStart]&#xA;&#x9;@ETL_PACKAGE_ID = ?,&#xA;&#x9;@MACHINE_NAME = ?,&#xA;&#x9;@EXECUTE_USER= ?,&#xA;&#x9;@START_TIME = GETDATE(),&#xA;&#x9;@ETL_PROCESS_LOG_ID = ? OUTPUT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::PackageID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="System::MachineName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="System::UserName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::PackageProcessID"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -1156,7 +1554,16 @@ WHERE Modified &gt;= ''2001-01-01 00:00:00'' AND Modified &lt; CAST(NOW() AS DAT
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
-            <SQLTask:SqlTaskData xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{1D8829DA-9517-4AC2-A907-98A462BBB1EB}"
+              SQLTask:SqlStatementSource="EXEC [dbo].[usp_UpdateLogEnd]&#xA;&#x9;@ETL_PROCESS_LOG_ID = ?,&#xA;&#x9;@ETL_STATUS_ID = 3" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -1170,7 +1577,28 @@ WHERE Modified &gt;= ''2001-01-01 00:00:00'' AND Modified &lt; CAST(NOW() AS DAT
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
-            <SQLTask:SqlTaskData xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{1D8829DA-9517-4AC2-A907-98A462BBB1EB}"
+              SQLTask:SqlStatementSource="EXEC [dbo].[usp_InsertErrorLog]&#xA;&#x9;@ETL_PROCESS_LOG_ID = ?,&#xA;&#x9;@ETL_ERROR_MSG = ?,&#xA;&#x9;@ETL_COMPONENT_NAME = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -1352,11 +1780,75 @@ WHERE Modified &gt;= ''2001-01-01 00:00:00'' AND Modified &lt; CAST(NOW() AS DAT
     design-time-name="Package\Load from Different Sources\Source to Staging">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="150,42"
           Id="Package\Load from Different Sources\Source to Staging\OLE DB Source"
           TopLeft="424,83" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Load from Different Sources\Source to Staging\OLE DB Destination"
+          TopLeft="424,283" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Load from Different Sources\Source to Staging\Derived Column"
+          TopLeft="415,181" />
+        <EdgeLayout
+          Id="Package\Load from Different Sources\Source to Staging.Paths[OLE DB Source Output]"
+          TopLeft="495.5,125">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56"
+              Start="0,0"
+              End="0,48.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load from Different Sources\Source to Staging.Paths[Derived Column Output]"
+          TopLeft="492,223">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="17.5,60"
+              Start="0,0"
+              End="17.5,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26"
+                    Point2="0,30"
+                    Point3="4,30" />
+                  <mssgle:LineSegment
+                    End="13.5,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="13.5,30"
+                    Point2="17.5,30"
+                    Point3="17.5,34" />
+                  <mssgle:LineSegment
+                    End="17.5,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -1401,6 +1893,19 @@ WHERE Modified &gt;= ''2001-01-01 00:00:00'' AND Modified &lt; CAST(NOW() AS DAT
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load from Different Sources\Source to Staging\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

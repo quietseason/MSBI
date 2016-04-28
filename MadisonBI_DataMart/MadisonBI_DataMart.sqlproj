@@ -4,29 +4,25 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>MadisonBI_Staging</Name>
+    <Name>MadisonBI_DataMart</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{efa883df-9f2b-45fa-8880-5c7a6ba27dc8}</ProjectGuid>
+    <ProjectGuid>{93523e80-2ff2-4ec9-99b1-981fdba76ac3}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>MadisonBI_Staging</RootNamespace>
-    <AssemblyName>MadisonBI_Staging</AssemblyName>
+    <RootNamespace>MadisonBI_DataMart</RootNamespace>
+    <AssemblyName>MadisonBI_DataMart</AssemblyName>
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetLanguage>CS</TargetLanguage>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <SqlServerVerification>True</SqlServerVerification>
+    <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
-    <SccProjectName>SAK</SccProjectName>
-    <SccProvider>SAK</SccProvider>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccLocalPath>SAK</SccLocalPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -62,12 +58,5 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Tables" />
-  </ItemGroup>
-  <ItemGroup>
-    <Build Include="Tables\STG_accountinfo.sql" />
-    <Build Include="Tables\STG_productbid.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <RefactorLog Include="MadisonBI_Staging.refactorlog" />
   </ItemGroup>
 </Project>
