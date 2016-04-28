@@ -83,6 +83,7 @@
     <Build Include="Programmability\Stored Procedures\usp_RegisterPackage.sql" />
     <Build Include="Programmability\Functions\fn_EncryptString.sql" />
     <Build Include="Programmability\Functions\fn_DecryptString.sql" />
+    <Build Include="Programmability\Stored Procedures\usp_UpdateProcessAudit.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="MadisonBI_Logging.refactorlog" />
