@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[STG_accountinfo]
 (
 	[StagingID] BIGINT NOT NULL IDENTITY(1,1),
-	[AccountID] BIGINT NOT NULL, --账户ID
+	[AccountID] BIGINT NOT NULL, --账户ID, Source Key
     [Name] NVARCHAR(200) NULL, --用户名
     [Mobile] NVARCHAR(50) NULL, 
     [IDType] TINYINT NULL, --证件类型 0：身份证
