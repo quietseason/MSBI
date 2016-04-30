@@ -14,10 +14,10 @@
     [Created] DATETIME NOT NULL, 
     [Modified] DATETIME NULL, 
     [Source] NVARCHAR(100) NOT NULL, 
-    [StagingInsertTime] DATETIME NOT NULL, 
-	[ArchiveInsertTime] DATETIME NOT NULL, 
+    [StagingInsertTime] DATETIME NULL, 
+	[ArchiveInsertTime] DATETIME NULL, 
     CONSTRAINT [PK_ARCH_accountinfo] PRIMARY KEY(ArchiveID)
-)
+) ON [sch_Partition]([Modified])
 /*
 Create a partition for every 2 months data(Pre-defined partition for next 2 months)
 Truncate the partition for 6 months ago and remove the partition before that

@@ -62,8 +62,13 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Tables" />
+    <Folder Include="Programmability" />
+    <Folder Include="Programmability\Stored Procedures" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\ARCH_accountinfo.sql" />
+    <Build Include="Tables\fn_Partition.sql" />
+    <Build Include="Tables\sch_Partition.sql" />
+    <Build Include="Programmability\Stored Procedures\usp_RollPartition.sql" />
   </ItemGroup>
 </Project>
