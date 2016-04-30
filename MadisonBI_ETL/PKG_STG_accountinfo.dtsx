@@ -11,8 +11,8 @@
   DTS:LocaleID="2052"
   DTS:ObjectName="PKG_STG_accountinfo"
   DTS:PackageType="5"
-  DTS:VersionBuild="77"
-  DTS:VersionGUID="{24FFE787-A4A6-491B-B75D-0E3D05E7A400}">
+  DTS:VersionBuild="82"
+  DTS:VersionGUID="{B9801A48-C2F9-467F-942E-684B83AB712D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -234,7 +234,7 @@ WHERE Modified &gt;= ''2001-01-01 00:00:00'' AND Modified &lt; CAST(NOW() AS DAT
           SQLTask:SqlStatementSource="EXEC [dbo].[usp_UpdateLogEnd]&#xA;&#x9;@ETL_PROCESS_LOG_ID = ?,&#xA;&#x9;@ETL_STATUS_ID = 2" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
-            SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+            SQLTask:DtsVariableName="User::PackageProcessID"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="3"
             SQLTask:ParameterSize="-1" />
@@ -2498,6 +2498,25 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
         </SQLTask:SqlTaskData>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Staging Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{87CC275A-411E-4B4C-A306-D82A0200CEA6}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Staging Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="SqlStatementSource">"TRUNCATE TABLE DBO."+ @[User::TargetTable]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{1EC4F465-990B-4A18-890F-7CD91DDDA7B8}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE DBO.STG_accountinfo" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
@@ -2511,11 +2530,11 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{1F537C8D-3854-4130-912F-36FBE599A791}"
+      DTS:DTSID="{9D2F34BA-F414-432B-ABA0-18A211B1316F}"
       DTS:From="Package\Start Logging"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
-      DTS:To="Package\Get Max Sequence" />
+      DTS:To="Package\Truncate Staging Table" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
@@ -2532,6 +2551,14 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
       DTS:To="Package\End Logging with Success" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{AEA4D322-47C0-44EC-AC82-B145AD9C5635}"
+      DTS:From="Package\Truncate Staging Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Get Max Sequence" />
   </DTS:PrecedenceConstraints>
   <DTS:EventHandlers>
     <DTS:EventHandler
@@ -2630,23 +2657,35 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
         <NodeLayout
           Size="201,42"
           Id="Package\End Logging with Success"
-          TopLeft="5.50000000000013,1027.5" />
+          TopLeft="5.50000000000013,1129.5" />
         <NodeLayout
           Size="167,42"
           Id="Package\Get Max Sequence"
-          TopLeft="22.5,209.5" />
+          TopLeft="22.5,311.5" />
+        <NodeLayout
+          Size="169,42"
+          Id="Package\Load from Different Sources\Create Temp Table"
+          TopLeft="14,209.5" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Load from Different Sources\Drop Temp Table"
+          TopLeft="18.0000000000001,515.5" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\Load from Different Sources\Get Incremental Start"
+          TopLeft="8.00000000000001,107.5" />
         <NodeLayout
           Size="186,42"
           Id="Package\Load from Different Sources\Get Source Connection"
           TopLeft="5.5,5.5" />
         <NodeLayout
+          Size="183,42"
+          Id="Package\Load from Different Sources\Source to Temp Table"
+          TopLeft="7.00000000000004,311.5" />
+        <NodeLayout
           Size="186,42"
           Id="Package\Load from Different Sources\Temp Table to Staging"
           TopLeft="5.50000000000006,413.5" />
-        <NodeLayout
-          Size="181,42"
-          Id="Package\Load from Different Sources\Get Incremental Start"
-          TopLeft="8.00000000000001,107.5" />
         <EdgeLayout
           Id="Package\Load from Different Sources.PrecedenceConstraints[Constraint]"
           TopLeft="98.5,47.5">
@@ -2669,10 +2708,6 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="169,42"
-          Id="Package\Load from Different Sources\Create Temp Table"
-          TopLeft="14,209.5" />
         <EdgeLayout
           Id="Package\Load from Different Sources.PrecedenceConstraints[Constraint 1]"
           TopLeft="98.5,149.5">
@@ -2695,13 +2730,9 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="161,42"
-          Id="Package\Load from Different Sources\Drop Temp Table"
-          TopLeft="18.0000000000001,515.5" />
         <EdgeLayout
-          Id="Package\Load from Different Sources.PrecedenceConstraints[Constraint 3]"
-          TopLeft="98.5000000000001,455.5">
+          Id="Package\Load from Different Sources.PrecedenceConstraints[Constraint 2]"
+          TopLeft="98.5,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2721,13 +2752,9 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="183,42"
-          Id="Package\Load from Different Sources\Source to Temp Table"
-          TopLeft="7.00000000000004,311.5" />
         <EdgeLayout
-          Id="Package\Load from Different Sources.PrecedenceConstraints[Constraint 2]"
-          TopLeft="98.5,251.5">
+          Id="Package\Load from Different Sources.PrecedenceConstraints[Constraint 3]"
+          TopLeft="98.5000000000001,455.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2775,7 +2802,7 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
           PanelSize="197,612"
           Size="197,656"
           Id="Package\Load from Different Sources"
-          TopLeft="7.50000000000009,311.5" />
+          TopLeft="7.50000000000009,413.5" />
         <NodeLayout
           Size="182,42"
           Id="Package\Register This Package"
@@ -2807,6 +2834,54 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="106,353.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="106,1069.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Truncate Staging Table"
+          TopLeft="12,209.5" />
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="106,149.5">
           <EdgeLayout.Curve>
@@ -2829,30 +2904,8 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2]"
+          Id="Package.PrecedenceConstraints[Constraint 4]"
           TopLeft="106,251.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="106,967.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2892,6 +2945,109 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
     </LayoutInfo>
   </DtsEventHandler>
   <TaskHost
+    design-time-name="Package\Load from Different Sources\Source to Temp Table">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Load from Different Sources\Source to Temp Table\OLE DB Source"
+          TopLeft="16,5.5" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Load from Different Sources\Source to Temp Table\Row Count"
+          TopLeft="26,209.5" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Load from Different Sources\Source to Temp Table\Derived Column"
+          TopLeft="14,107.5" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Load from Different Sources\Source to Temp Table\OLE DB Destination"
+          TopLeft="5.50000000000003,311.5" />
+        <EdgeLayout
+          Id="Package\Load from Different Sources\Source to Temp Table.Paths[Row Count Output 1]"
+          TopLeft="91,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load from Different Sources\Source to Temp Table.Paths[OLE DB Source Output]"
+          TopLeft="91,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load from Different Sources\Source to Temp Table.Paths[Derived Column Output]"
+          TopLeft="91,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load from Different Sources\Source to Temp Table\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\Load from Different Sources\Temp Table to Staging">
     <LayoutInfo>
       <GraphLayout
@@ -2929,48 +3085,34 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load from Different Sources\Temp Table to Staging\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load from Different Sources\Temp Table to Staging\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Load from Different Sources\Source to Temp Table">
+  <DtsEventHandler
+    design-time-name="Package\Load from Different Sources\Temp Table to Staging.EventHandlers[OnPreExecute]">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="150,42"
-          Id="Package\Load from Different Sources\Source to Temp Table\OLE DB Source"
-          TopLeft="16,5.5" />
+          Size="192,42"
+          Id="Package\Load from Different Sources\Temp Table to Staging.EventHandlers[OnPreExecute]\Start Logging Audit Info"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\Load from Different Sources\Temp Table to Staging.EventHandlers[OnPostExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="154,42"
-          Id="Package\Load from Different Sources\Source to Temp Table\Derived Column"
-          TopLeft="14,107.5" />
+          Size="251,42"
+          Id="Package\Load from Different Sources\Temp Table to Staging.EventHandlers[OnPostExecute]\End Logging Audit Info with Success"
+          TopLeft="60,162" />
+        <NodeLayout
+          Size="202,42"
+          Id="Package\Load from Different Sources\Temp Table to Staging.EventHandlers[OnPostExecute]\Get New Incremental Flag"
+          TopLeft="84.5,60" />
         <EdgeLayout
-          Id="Package\Load from Different Sources\Source to Temp Table.Paths[OLE DB Source Output]"
-          TopLeft="91,47.5">
+          Id="Package\Load from Different Sources\Temp Table to Staging.EventHandlers[OnPostExecute].PrecedenceConstraints[Constraint]"
+          TopLeft="185.5,102">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2987,77 +3129,14 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Load from Different Sources\Source to Temp Table\OLE DB Destination"
-          TopLeft="5.50000000000003,311.5" />
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Load from Different Sources\Source to Temp Table\Row Count"
-          TopLeft="26,209.5" />
-        <EdgeLayout
-          Id="Package\Load from Different Sources\Source to Temp Table.Paths[Derived Column Output]"
-          TopLeft="91,149.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load from Different Sources\Source to Temp Table.Paths[Row Count Output 1]"
-          TopLeft="91,251.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load from Different Sources\Source to Temp Table\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
+  </DtsEventHandler>
   <DtsEventHandler
     design-time-name="Package\Load from Different Sources\Temp Table to Staging.EventHandlers[OnError]">
     <LayoutInfo>
@@ -3096,55 +3175,31 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
       </GraphLayout>
     </LayoutInfo>
   </DtsEventHandler>
-  <DtsEventHandler
-    design-time-name="Package\Load from Different Sources\Temp Table to Staging.EventHandlers[OnPreExecute]">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="192,42"
-          Id="Package\Load from Different Sources\Temp Table to Staging.EventHandlers[OnPreExecute]\Start Logging Audit Info"
-          TopLeft="60,60" />
-      </GraphLayout>
-    </LayoutInfo>
-  </DtsEventHandler>
-  <DtsEventHandler
-    design-time-name="Package\Load from Different Sources\Temp Table to Staging.EventHandlers[OnPostExecute]">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="251,42"
-          Id="Package\Load from Different Sources\Temp Table to Staging.EventHandlers[OnPostExecute]\End Logging Audit Info with Success"
-          TopLeft="60,162" />
-        <NodeLayout
-          Size="202,42"
-          Id="Package\Load from Different Sources\Temp Table to Staging.EventHandlers[OnPostExecute]\Get New Incremental Flag"
-          TopLeft="84.5,60" />
-        <EdgeLayout
-          Id="Package\Load from Different Sources\Temp Table to Staging.EventHandlers[OnPostExecute].PrecedenceConstraints[Constraint]"
-          TopLeft="185.5,102">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </DtsEventHandler>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load from Different Sources\Temp Table to Staging\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load from Different Sources\Temp Table to Staging\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
