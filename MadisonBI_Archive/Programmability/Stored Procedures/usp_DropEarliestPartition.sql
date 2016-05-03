@@ -13,13 +13,13 @@ BEGIN
 	EXEC [dbo].[usp_GetPartitionScheme] @TableName, @Scheme = @PartitionScheme OUTPUT
 	--Get the function and range
 	DECLARE @PartitionFunction NVARCHAR(100), @RangeValue NVARCHAR(100)
-	SELECT @PartitionFunction = PF.name, @RangeValue = MIN(PRV.Value)
+	SELECT @PartitionFunction = CONVERT(NVARCHAR(100),PF.name), @RangeValue = CONVERT(NVARCHAR(100),MIN(PRV.Value),121)
 	FROM SYS.PARTITION_SCHEMES PS
 	INNER JOIN SYS.PARTITION_FUNCTIONS PF ON PS.function_id = PF.function_id
 	INNER JOIN SYS.PARTITION_RANGE_VALUES PRV ON PRV.function_id = PF.function_id
 	WHERE PS.name = @PartitionScheme
 	GROUP BY PF.name
 	--Drop the partition
-	DECLARE @DropPartition NVARCHAR(300) = N'ALTER PARTITION FUNCTION ' + @PartitionFunction + N'() MERGE RANGE(' + @RangeValue + N')'
+	DECLARE @DropPartition NVARCHAR(300) = N'ALTER PARTITION FUNCTION ' + @PartitionFunction + N'() MERGE RANGE(''' + @RangeValue + N''')'
 	EXEC(@DropPartition)
 END

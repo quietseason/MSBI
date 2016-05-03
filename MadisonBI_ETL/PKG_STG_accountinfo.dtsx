@@ -11,8 +11,8 @@
   DTS:LocaleID="2052"
   DTS:ObjectName="PKG_STG_accountinfo"
   DTS:PackageType="5"
-  DTS:VersionBuild="88"
-  DTS:VersionGUID="{F4772D31-6064-4071-BED7-0EFAB50C27DC}">
+  DTS:VersionBuild="89"
+  DTS:VersionGUID="{ADE5331D-FF48-4705-B771-147BC48F2FB5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -417,6 +417,7 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
         <DTS:Executable
           DTS:refId="Package\Load from Different Sources\Source to Temp Table"
           DTS:CreationName="Microsoft.Pipeline"
+          DTS:DelayValidation="True"
           DTS:Description="Data Flow Task"
           DTS:DTSID="{8D01BDB1-2117-43F6-92AE-A253B6D19D77}"
           DTS:ExecutableType="Microsoft.Pipeline"
@@ -2681,17 +2682,39 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
           Id="Package\Load from Different Sources\Source to Temp Table\OLE DB Source"
           TopLeft="16,5.5" />
         <NodeLayout
-          Size="130,42"
-          Id="Package\Load from Different Sources\Source to Temp Table\Row Count"
-          TopLeft="26,209.5" />
-        <NodeLayout
           Size="154,42"
           Id="Package\Load from Different Sources\Source to Temp Table\Derived Column"
           TopLeft="14,107.5" />
         <NodeLayout
+          Size="130,42"
+          Id="Package\Load from Different Sources\Source to Temp Table\Row Count"
+          TopLeft="26,209.5" />
+        <NodeLayout
           Size="171,42"
           Id="Package\Load from Different Sources\Source to Temp Table\OLE DB Destination"
           TopLeft="5.50000000000003,311.5" />
+        <EdgeLayout
+          Id="Package\Load from Different Sources\Source to Temp Table.Paths[Derived Column Output]"
+          TopLeft="91,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Load from Different Sources\Source to Temp Table.Paths[Row Count Output 1]"
           TopLeft="91,251.5">
@@ -2717,28 +2740,6 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
         <EdgeLayout
           Id="Package\Load from Different Sources\Source to Temp Table.Paths[OLE DB Source Output]"
           TopLeft="91,47.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load from Different Sources\Source to Temp Table.Paths[Derived Column Output]"
-          TopLeft="91,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2838,7 +2839,7 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
     design-time-name="Package\Load from Different Sources\Temp Table to Staging.EventHandlers[OnPostExecute]">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="251,42"
           Id="Package\Load from Different Sources\Temp Table to Staging.EventHandlers[OnPostExecute]\End Logging Audit Info with Success"
@@ -2866,7 +2867,9 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
