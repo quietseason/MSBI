@@ -11,12 +11,1343 @@
   DTS:LocaleID="2052"
   DTS:ObjectName="PKG_ARCH_accountinfo"
   DTS:PackageType="5"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{9F628D71-0539-473D-AD12-C6081BB7122D}">
+  DTS:VersionBuild="23"
+  DTS:VersionGUID="{5E8BB4D2-7089-438B-93D3-2A6D80339F53}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
-  <DTS:Variables />
-  <DTS:Executables />
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E2ACCF20-7304-49EA-B64F-FDD4469B4C96}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="InsertedRows">
+      <DTS:VariableValue
+        DTS:DataType="20">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CFAA1545-FF7E-4C39-8A01-C4D7D1F2939D}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="MaxPartitionValue">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C1128434-C4AA-45E9-AB73-80E328794444}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PackageDescription">
+      <DTS:VariableValue
+        DTS:DataType="8">Archive the staging data in STG_accountinfo</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{95690F1F-0460-49CB-9A3D-71582AC8585A}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PackageID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8C5CA410-5E93-4155-A20E-CE7AEBCC0231}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PackageProcessAuditID">
+      <DTS:VariableValue
+        DTS:DataType="20">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F5265023-A6A3-4881-AD24-65DE4240A209}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PackageProcessID">
+      <DTS:VariableValue
+        DTS:DataType="20">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E1FFF9B7-EECB-4F7B-9250-ADF7427101ED}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PackageTypeID">
+      <DTS:VariableValue
+        DTS:DataType="3">5</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9C8C5F51-BA9C-4B22-A975-382A58AB0421}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PartitionCol">
+      <DTS:VariableValue
+        DTS:DataType="8">Modified</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3169D6F5-0F8F-4528-827F-CA635C92048B}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SourceDatabase">
+      <DTS:VariableValue
+        DTS:DataType="8">MadisonBI_Staging</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8FB1F403-B816-49D1-912E-2CB02F7F28A2}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SourceTable">
+      <DTS:VariableValue
+        DTS:DataType="8">STG_accountinfo</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5084B02E-8D7C-499A-88C1-D89605FE8DAA}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TargetDatabase">
+      <DTS:VariableValue
+        DTS:DataType="8">MadisonBI_Archive</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C2A115C4-965B-44EE-A2FE-51122257542E}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TargetTable">
+      <DTS:VariableValue
+        DTS:DataType="8">ARCH_accountinfo</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\End Logging with Success"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{39a2ea59-173b-4cf4-a519-fee0833c62fa}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="End Logging with Success"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{1D8829DA-9517-4AC2-A907-98A462BBB1EB}"
+          SQLTask:SqlStatementSource="EXEC [dbo].[usp_UpdateLogEnd]&#xA; @ETL_PROCESS_LOG_ID = ?,&#xA; @ETL_STATUS_ID = 2" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::PackageProcessID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Get Max Partition Value in Staging"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{7321B3D7-0BFF-4082-8AFA-701A9231564F}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Get Max Partition Value in Staging"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="SqlStatementSource">"SELECT CONVERT(NVARCHAR(100),MAX("+ @[User::PartitionCol] +"),112) AS [0] FROM "+ @[User::SourceTable]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{1EC4F465-990B-4A18-890F-7CD91DDDA7B8}"
+          SQLTask:SqlStatementSource="SELECT CONVERT(NVARCHAR(100),MAX(Modified),112) AS [0] FROM STG_accountinfo"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::MaxPartitionValue" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Register This Package"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{beada6c3-d6a7-4be5-a8af-5ad8308903c2}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Register This Package"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{1D8829DA-9517-4AC2-A907-98A462BBB1EB}"
+          SQLTask:SqlStatementSource="EXEC [dbo].[usp_RegisterPackage]&#xA; @ETL_PACKAGE_NAME = ?,&#xA; @ETL_PACKAGE_DESCRIPTION = ?,&#xA; @ETL_TYPE_ID = ?,&#xA; @ETL_PACKAGE_ID = ? OUTPUT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="System::PackageName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::PackageDescription"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::PackageTypeID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::PackageID"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Roll Partition"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{E66C8A9B-695E-40C4-BBC8-880F16E15D3F}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Roll Partition"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D39FCA88-0AD2-4C0A-BD08-A9FF4EFB585A}" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Staging to Archive"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{1E268FF9-454E-453A-A46E-4D7388755CD5}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Staging to Archive"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Staging to Archive.EventHandlers[OnError]"
+          DTS:CreationName="OnError"
+          DTS:DTSID="{96647753-75C8-41F2-96F4-CBEB60408E83}"
+          DTS:EventID="0"
+          DTS:EventName="OnError"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{B3A83D7E-D3F3-4E01-8995-27BED61EA7EB}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Staging to Archive.EventHandlers[OnError]\End Logging Audit Info with Error"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{eb3b88e4-111e-4229-bdf3-46636d2dda86}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="End Logging Audit Info with Error"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{1D8829DA-9517-4AC2-A907-98A462BBB1EB}"
+                  SQLTask:SqlStatementSource="EXEC [dbo].[usp_UpdateProcessAudit]&#xA; @ETL_PROCESS_AUDIT_ID = ?,&#xA; @ETL_STATUS_ID = 3" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::PackageProcessAuditID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+        <DTS:EventHandler
+          DTS:refId="Package\Staging to Archive.EventHandlers[OnPostExecute]"
+          DTS:CreationName="OnPostExecute"
+          DTS:DTSID="{FE395965-1F7B-44D1-A9D9-8A1D4691CF47}"
+          DTS:EventID="1124493024"
+          DTS:EventName="OnPostExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{B8828D50-5C59-4D68-8141-BD966D1965AA}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Staging to Archive.EventHandlers[OnPostExecute]\End Logging Audit Info with Success"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{12059b45-04f4-4acf-b9b4-5b99ad26b6a7}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="End Logging Audit Info with Success"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{1D8829DA-9517-4AC2-A907-98A462BBB1EB}"
+                  SQLTask:SqlStatementSource="EXEC [dbo].[usp_UpdateProcessAudit]&#xA; @ETL_PROCESS_AUDIT_ID = ?,&#xA; @ETL_STATUS_ID = 2,&#xA; @INSERTED_ROWS = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::PackageProcessAuditID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="User::InsertedRows"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+        <DTS:EventHandler
+          DTS:refId="Package\Staging to Archive.EventHandlers[OnPreExecute]"
+          DTS:CreationName="OnPreExecute"
+          DTS:DTSID="{1D135EFB-0E68-41F5-9508-A9E5D3344E12}"
+          DTS:EventID="565413704"
+          DTS:EventName="OnPreExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{56BCE115-BD23-43F1-9D20-4FBE608435E5}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Staging to Archive.EventHandlers[OnPreExecute]\Start Logging Audit Info"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{d4fcd3ab-6644-45a4-a9b5-2daa165439f3}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Start Logging Audit Info"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{1D8829DA-9517-4AC2-A907-98A462BBB1EB}"
+                  SQLTask:SqlStatementSource="EXEC [dbo].[usp_InsertProcessAudit]&#xA; @ETL_PROCESS_LOG_ID = ?,&#xA; @ETL_COMPONENT_NAME = ?,&#xA; @SOURCE_NAME = ?,&#xA; @TARGET_NAME = ?,&#xA; @INCREMENTAL_FLAG = NULL,&#xA; @SOURCE_DB = ?,&#xA; @TARGET_DB = ?,&#xA; @ETL_PROCESS_AUDIT_ID = ? OUTPUT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::PackageProcessID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="System::SourceName"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="User::SourceTable"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="3"
+                    SQLTask:DtsVariableName="User::TargetTable"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="4"
+                    SQLTask:DtsVariableName="User::SourceDatabase"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="5"
+                    SQLTask:DtsVariableName="User::TargetDatabase"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="6"
+                    SQLTask:DtsVariableName="User::PackageProcessAuditID"
+                    SQLTask:ParameterDirection="Output"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Staging to Archive\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Staging to Archive\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Staging to Archive\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Staging to Archive\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Staging to Archive\Derived Column.Outputs[Derived Column Output].Columns[ArchiveInsertTime]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Staging to Archive\Derived Column.Outputs[Derived Column Output].Columns[ArchiveInsertTime]"
+                      name="ArchiveInsertTime"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Staging to Archive\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Staging to Archive\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Staging to Archive\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Staging to Archive\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Staging to Archive\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Staging to Archive\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Staging to Archive\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[ARCH_accountinfo]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">936</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Staging to Archive\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{D39FCA88-0AD2-4C0A-BD08-A9FF4EFB585A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[MadisonBI_Archive]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StagingID]"
+                      cachedDataType="i8"
+                      cachedName="StagingID"
+                      externalMetadataColumnId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StagingID]"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[StagingID]" />
+                    <inputColumn
+                      refId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AccountID]"
+                      cachedDataType="i8"
+                      cachedName="AccountID"
+                      externalMetadataColumnId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AccountID]"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountID]" />
+                    <inputColumn
+                      refId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="Name"
+                      externalMetadataColumnId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[Name]" />
+                    <inputColumn
+                      refId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Mobile]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Mobile"
+                      externalMetadataColumnId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Mobile]"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[Mobile]" />
+                    <inputColumn
+                      refId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IDType]"
+                      cachedDataType="ui1"
+                      cachedName="IDType"
+                      externalMetadataColumnId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDType]"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDType]" />
+                    <inputColumn
+                      refId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IDNumber]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="IDNumber"
+                      externalMetadataColumnId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDNumber]"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDNumber]" />
+                    <inputColumn
+                      refId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ReferralCode]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="ReferralCode"
+                      externalMetadataColumnId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ReferralCode]"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[ReferralCode]" />
+                    <inputColumn
+                      refId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[InvitedBy]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="InvitedBy"
+                      externalMetadataColumnId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[InvitedBy]"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[InvitedBy]" />
+                    <inputColumn
+                      refId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Status]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Status"
+                      externalMetadataColumnId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[Status]" />
+                    <inputColumn
+                      refId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CustomStatus]"
+                      cachedDataType="ui1"
+                      cachedName="CustomStatus"
+                      externalMetadataColumnId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomStatus]"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomStatus]" />
+                    <inputColumn
+                      refId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Created]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Created"
+                      externalMetadataColumnId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Created]"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[Created]" />
+                    <inputColumn
+                      refId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Modified]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Modified"
+                      externalMetadataColumnId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Modified]"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[Modified]" />
+                    <inputColumn
+                      refId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Source]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Source"
+                      externalMetadataColumnId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Source]"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[Source]" />
+                    <inputColumn
+                      refId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StagingInsertTime]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="StagingInsertTime"
+                      externalMetadataColumnId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StagingInsertTime]"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[StagingInsertTime]" />
+                    <inputColumn
+                      refId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ArchiveInsertTime]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ArchiveInsertTime"
+                      externalMetadataColumnId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ArchiveInsertTime]"
+                      lineageId="Package\Staging to Archive\Derived Column.Outputs[Derived Column Output].Columns[ArchiveInsertTime]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ArchiveID]"
+                      dataType="i8"
+                      name="ArchiveID" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StagingID]"
+                      dataType="i8"
+                      name="StagingID" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AccountID]"
+                      dataType="i8"
+                      name="AccountID" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="200"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Mobile]"
+                      dataType="wstr"
+                      length="50"
+                      name="Mobile" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDType]"
+                      dataType="ui1"
+                      name="IDType" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDNumber]"
+                      dataType="wstr"
+                      length="100"
+                      name="IDNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ReferralCode]"
+                      dataType="wstr"
+                      length="20"
+                      name="ReferralCode" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[InvitedBy]"
+                      dataType="wstr"
+                      length="20"
+                      name="InvitedBy" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                      dataType="wstr"
+                      length="100"
+                      name="Status" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomStatus]"
+                      dataType="ui1"
+                      name="CustomStatus" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Created]"
+                      dataType="dbTimeStamp"
+                      name="Created" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Modified]"
+                      dataType="dbTimeStamp"
+                      name="Modified" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Source]"
+                      dataType="wstr"
+                      length="100"
+                      name="Source" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StagingInsertTime]"
+                      dataType="dbTimeStamp"
+                      name="StagingInsertTime" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ArchiveInsertTime]"
+                      dataType="dbTimeStamp"
+                      name="ArchiveInsertTime" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Staging to Archive\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Staging to Archive\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Staging to Archive\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Staging to Archive\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Staging to Archive\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Staging to Archive\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[STG_accountinfo]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">936</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Staging to Archive\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{1EC4F465-990B-4A18-890F-7CD91DDDA7B8}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[MadisonBI_Staging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[StagingID]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StagingID]"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[StagingID]"
+                      name="StagingID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountID]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AccountID]"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountID]"
+                      name="AccountID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                      length="200"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[Name]"
+                      name="Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[Mobile]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Mobile]"
+                      length="50"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[Mobile]"
+                      name="Mobile"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDType]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDType]"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDType]"
+                      name="IDType"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDNumber]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDNumber]"
+                      length="100"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDNumber]"
+                      name="IDNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[ReferralCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ReferralCode]"
+                      length="20"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[ReferralCode]"
+                      name="ReferralCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[InvitedBy]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[InvitedBy]"
+                      length="20"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[InvitedBy]"
+                      name="InvitedBy"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[Status]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Status]"
+                      length="100"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[Status]"
+                      name="Status"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomStatus]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CustomStatus]"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomStatus]"
+                      name="CustomStatus"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[Created]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Created]"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[Created]"
+                      name="Created"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[Modified]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Modified]"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[Modified]"
+                      name="Modified"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[Source]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Source]"
+                      length="100"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[Source]"
+                      name="Source"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[StagingInsertTime]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StagingInsertTime]"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].Columns[StagingInsertTime]"
+                      name="StagingInsertTime"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StagingID]"
+                      dataType="i8"
+                      name="StagingID" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AccountID]"
+                      dataType="i8"
+                      name="AccountID" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="200"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Mobile]"
+                      dataType="wstr"
+                      length="50"
+                      name="Mobile" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDType]"
+                      dataType="ui1"
+                      name="IDType" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDNumber]"
+                      dataType="wstr"
+                      length="100"
+                      name="IDNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ReferralCode]"
+                      dataType="wstr"
+                      length="20"
+                      name="ReferralCode" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[InvitedBy]"
+                      dataType="wstr"
+                      length="20"
+                      name="InvitedBy" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Status]"
+                      dataType="wstr"
+                      length="100"
+                      name="Status" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CustomStatus]"
+                      dataType="ui1"
+                      name="CustomStatus" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Created]"
+                      dataType="dbTimeStamp"
+                      name="Created" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Modified]"
+                      dataType="dbTimeStamp"
+                      name="Modified" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Source]"
+                      dataType="wstr"
+                      length="100"
+                      name="Source" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StagingInsertTime]"
+                      dataType="dbTimeStamp"
+                      name="StagingInsertTime" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StagingID]"
+                      dataType="i8"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StagingID]"
+                      name="StagingID" />
+                    <outputColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AccountID]"
+                      dataType="i8"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AccountID]"
+                      name="AccountID" />
+                    <outputColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Name]"
+                      dataType="wstr"
+                      length="200"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Name]"
+                      name="Name" />
+                    <outputColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Mobile]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Mobile]"
+                      name="Mobile" />
+                    <outputColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDType]"
+                      dataType="ui1"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDType]"
+                      name="IDType" />
+                    <outputColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDNumber]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDNumber]"
+                      name="IDNumber" />
+                    <outputColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ReferralCode]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ReferralCode]"
+                      name="ReferralCode" />
+                    <outputColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[InvitedBy]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[InvitedBy]"
+                      name="InvitedBy" />
+                    <outputColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Status]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Status]"
+                      name="Status" />
+                    <outputColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CustomStatus]"
+                      dataType="ui1"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CustomStatus]"
+                      name="CustomStatus" />
+                    <outputColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Created]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Created]"
+                      name="Created" />
+                    <outputColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Modified]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Modified]"
+                      name="Modified" />
+                    <outputColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Source]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Source]"
+                      name="Source" />
+                    <outputColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StagingInsertTime]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StagingInsertTime]"
+                      name="StagingInsertTime" />
+                    <outputColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Staging to Archive\Row Count"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Row Count">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::InsertedRows</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Staging to Archive\Row Count.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Staging to Archive\Row Count.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Staging to Archive\Row Count.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Staging to Archive.Paths[Derived Column Output]"
+              endId="Package\Staging to Archive\Row Count.Inputs[Row Count Input 1]"
+              name="Derived Column Output"
+              startId="Package\Staging to Archive\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Staging to Archive.Paths[OLE DB Source Output]"
+              endId="Package\Staging to Archive\Derived Column.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\Staging to Archive\OLE DB Source.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Staging to Archive.Paths[Row Count Output 1]"
+              endId="Package\Staging to Archive\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Row Count Output 1"
+              startId="Package\Staging to Archive\Row Count.Outputs[Row Count Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Start Logging"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{4f1f4b63-a7a9-43d1-9030-0ede91ed2fcf}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Start Logging"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{1D8829DA-9517-4AC2-A907-98A462BBB1EB}"
+          SQLTask:SqlStatementSource="EXEC [dbo].[usp_InsertLogStart]&#xA; @ETL_PACKAGE_ID = ?,&#xA; @MACHINE_NAME = ?,&#xA; @EXECUTE_USER= ?,&#xA; @ETL_PROCESS_LOG_ID = ? OUTPUT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::PackageID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="System::MachineName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="System::UserName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::PackageProcessID"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{99339cc6-d7e0-4f2a-893a-7c1974e7c54b}"
+      DTS:From="Package\Register This Package"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Start Logging" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{08BCAA98-5AE7-4E02-B1E9-AE2B47E10E9D}"
+      DTS:From="Package\Start Logging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Get Max Partition Value in Staging" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{04A57919-151A-4A42-B09B-A48B80179820}"
+      DTS:From="Package\Get Max Partition Value in Staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Roll Partition" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{4570E9A5-186D-4A87-9EF5-C8D059D8350B}"
+      DTS:From="Package\Roll Partition"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Staging to Archive" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{18714D0B-EDA9-47B1-96BC-01511D418BCD}"
+      DTS:From="Package\Staging to Archive"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\End Logging with Success" />
+  </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{80F1560C-711B-4FC5-B446-65E0945907DE}"
+      DTS:EventID="565402784"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{9A45C85D-E1AE-4DC3-8050-8CA7780694EB}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\End Logging with Error"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{a3c7df90-d444-4cbf-82e2-f7998bdb9f51}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="End Logging with Error"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{1D8829DA-9517-4AC2-A907-98A462BBB1EB}"
+              SQLTask:SqlStatementSource="EXEC [dbo].[usp_UpdateLogEnd]&#xA; @ETL_PROCESS_LOG_ID = ?,&#xA; @ETL_STATUS_ID = 3" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::PackageProcessID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Logging Error"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{ff0ab846-f6e5-4b52-89c3-a8463f5a0d8d}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Logging Error"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{1D8829DA-9517-4AC2-A907-98A462BBB1EB}"
+              SQLTask:SqlStatementSource="EXEC [dbo].[usp_InsertErrorLog]&#xA; @ETL_PROCESS_LOG_ID = ?,&#xA; @ETL_ERROR_MSG = ?,&#xA; @ETL_COMPONENT_NAME = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::PackageProcessID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -24,5 +1355,315 @@
 <Objects
   Version="sql12">
   <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Register This Package"
+          TopLeft="34.5,5.5" />
+        <NodeLayout
+          Size="142,42"
+          Id="Package\Start Logging"
+          TopLeft="54.5,107.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="125.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="201,42"
+          Id="Package\End Logging with Success"
+          TopLeft="25.0000000000001,515.5" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Staging to Archive"
+          TopLeft="43.0000000000001,413.5" />
+        <NodeLayout
+          Size="240,42"
+          Id="Package\Get Max Partition Value in Staging"
+          TopLeft="5.50000000000003,209.5" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Roll Partition"
+          TopLeft="56,311.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="125.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="125.5,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="125.5,353.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="125.5,455.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Staging to Archive">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Staging to Archive\OLE DB Source"
+          TopLeft="16,5.5" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Staging to Archive\OLE DB Destination"
+          TopLeft="5.50000000000003,311.5" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Staging to Archive\Row Count"
+          TopLeft="26,209.5" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Staging to Archive\Derived Column"
+          TopLeft="14,107.5" />
+        <EdgeLayout
+          Id="Package\Staging to Archive.Paths[OLE DB Source Output]"
+          TopLeft="91,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Staging to Archive.Paths[Derived Column Output]"
+          TopLeft="91,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Staging to Archive.Paths[Row Count Output 1]"
+          TopLeft="91,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Staging to Archive\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Staging to Archive\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="187,42"
+          Id="Package.EventHandlers[OnError]\End Logging with Error"
+          TopLeft="60,60" />
+        <NodeLayout
+          Size="143,42"
+          Id="Package.EventHandlers[OnError]\Logging Error"
+          TopLeft="308,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\Staging to Archive.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="237,42"
+          Id="Package\Staging to Archive.EventHandlers[OnError]\End Logging Audit Info with Error"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\Staging to Archive.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Staging to Archive.EventHandlers[OnPreExecute]\Start Logging Audit Info"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\Staging to Archive.EventHandlers[OnPostExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="251,42"
+          Id="Package\Staging to Archive.EventHandlers[OnPostExecute]\End Logging Audit Info with Success"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

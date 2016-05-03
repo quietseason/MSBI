@@ -11,8 +11,8 @@
   DTS:LocaleID="2052"
   DTS:ObjectName="PKG_STG_accountinfo"
   DTS:PackageType="5"
-  DTS:VersionBuild="82"
-  DTS:VersionGUID="{B9801A48-C2F9-467F-942E-684B83AB712D}">
+  DTS:VersionBuild="88"
+  DTS:VersionGUID="{F4772D31-6064-4071-BED7-0EFAB50C27DC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -911,136 +911,6 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
                           name="ReferralCode"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Email]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Email]"
-                          length="200"
-                          lineageId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Email]"
-                          name="Email"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[WeChat]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[WeChat]"
-                          length="200"
-                          lineageId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[WeChat]"
-                          name="WeChat"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[MicroBlog]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MicroBlog]"
-                          length="200"
-                          lineageId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[MicroBlog]"
-                          name="MicroBlog"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[QQ]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[QQ]"
-                          length="200"
-                          lineageId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[QQ]"
-                          name="QQ"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Twitter]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Twitter]"
-                          length="200"
-                          lineageId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Twitter]"
-                          name="Twitter"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Facebook]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Facebook]"
-                          length="200"
-                          lineageId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Facebook]"
-                          name="Facebook"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Google]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Google]"
-                          length="200"
-                          lineageId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Google]"
-                          name="Google"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Office365]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Office365]"
-                          length="200"
-                          lineageId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Office365]"
-                          name="Office365"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Ext1]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Ext1]"
-                          length="1000"
-                          lineageId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Ext1]"
-                          name="Ext1"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Ext2]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Ext2]"
-                          length="1000"
-                          lineageId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Ext2]"
-                          name="Ext2"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Ext3]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Ext3]"
-                          length="1000"
-                          lineageId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Ext3]"
-                          name="Ext3"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Ext4]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Ext4]"
-                          length="1000"
-                          lineageId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Ext4]"
-                          name="Ext4"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Ext5]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Ext5]"
-                          length="1000"
-                          lineageId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Ext5]"
-                          name="Ext5"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
                           refId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Status]"
                           dataType="ui1"
                           errorOrTruncationOperation="Conversion"
@@ -1069,16 +939,6 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
                           scale="7"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[CreatedBy]"
-                          dataType="numeric"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CreatedBy]"
-                          lineageId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[CreatedBy]"
-                          name="CreatedBy"
-                          precision="20"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
                           refId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Modified]"
                           dataType="dbTimeStamp2"
                           errorOrTruncationOperation="Conversion"
@@ -1087,16 +947,6 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
                           lineageId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Modified]"
                           name="Modified"
                           scale="7"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[ModifiedBy]"
-                          dataType="numeric"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ModifiedBy]"
-                          lineageId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[ModifiedBy]"
-                          name="ModifiedBy"
-                          precision="20"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
@@ -1279,84 +1129,6 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
                           lineageId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ReferralCode]"
                           name="ReferralCode" />
                         <outputColumn
-                          refId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Email]"
-                          dataType="wstr"
-                          length="200"
-                          lineageId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Email]"
-                          name="Email" />
-                        <outputColumn
-                          refId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[WeChat]"
-                          dataType="wstr"
-                          length="200"
-                          lineageId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[WeChat]"
-                          name="WeChat" />
-                        <outputColumn
-                          refId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MicroBlog]"
-                          dataType="wstr"
-                          length="200"
-                          lineageId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MicroBlog]"
-                          name="MicroBlog" />
-                        <outputColumn
-                          refId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[QQ]"
-                          dataType="wstr"
-                          length="200"
-                          lineageId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[QQ]"
-                          name="QQ" />
-                        <outputColumn
-                          refId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Twitter]"
-                          dataType="wstr"
-                          length="200"
-                          lineageId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Twitter]"
-                          name="Twitter" />
-                        <outputColumn
-                          refId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Facebook]"
-                          dataType="wstr"
-                          length="200"
-                          lineageId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Facebook]"
-                          name="Facebook" />
-                        <outputColumn
-                          refId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Google]"
-                          dataType="wstr"
-                          length="200"
-                          lineageId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Google]"
-                          name="Google" />
-                        <outputColumn
-                          refId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Office365]"
-                          dataType="wstr"
-                          length="200"
-                          lineageId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Office365]"
-                          name="Office365" />
-                        <outputColumn
-                          refId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Ext1]"
-                          dataType="wstr"
-                          length="1000"
-                          lineageId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Ext1]"
-                          name="Ext1" />
-                        <outputColumn
-                          refId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Ext2]"
-                          dataType="wstr"
-                          length="1000"
-                          lineageId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Ext2]"
-                          name="Ext2" />
-                        <outputColumn
-                          refId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Ext3]"
-                          dataType="wstr"
-                          length="1000"
-                          lineageId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Ext3]"
-                          name="Ext3" />
-                        <outputColumn
-                          refId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Ext4]"
-                          dataType="wstr"
-                          length="1000"
-                          lineageId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Ext4]"
-                          name="Ext4" />
-                        <outputColumn
-                          refId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Ext5]"
-                          dataType="wstr"
-                          length="1000"
-                          lineageId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Ext5]"
-                          name="Ext5" />
-                        <outputColumn
                           refId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Status]"
                           dataType="ui1"
                           lineageId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Status]"
@@ -1373,23 +1145,11 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
                           name="Created"
                           scale="7" />
                         <outputColumn
-                          refId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CreatedBy]"
-                          dataType="numeric"
-                          lineageId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CreatedBy]"
-                          name="CreatedBy"
-                          precision="20" />
-                        <outputColumn
                           refId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Modified]"
                           dataType="dbTimeStamp2"
                           lineageId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Modified]"
                           name="Modified"
                           scale="7" />
-                        <outputColumn
-                          refId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ModifiedBy]"
-                          dataType="numeric"
-                          lineageId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ModifiedBy]"
-                          name="ModifiedBy"
-                          precision="20" />
                         <outputColumn
                           refId="Package\Load from Different Sources\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -1511,40 +1271,7 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
                     </SQLTask:SqlTaskData>
                   </DTS:ObjectData>
                 </DTS:Executable>
-                <DTS:Executable
-                  DTS:refId="Package\Load from Different Sources\Temp Table to Staging.EventHandlers[OnError]\Get New Incremental Flag"
-                  DTS:CreationName="Microsoft.ExecuteSQLTask"
-                  DTS:Description="Execute SQL Task"
-                  DTS:DTSID="{e6ccf492-a968-4fb4-bb24-d3f4f7bc3a96}"
-                  DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-                  DTS:LocaleID="-1"
-                  DTS:ObjectName="Get New Incremental Flag"
-                  DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-                  <DTS:Variables />
-                  <DTS:PropertyExpression
-                    DTS:Name="SqlStatementSource">"SELECT ISNULL(MAX("+ @[User::Incremental_Col] +"),'"+ @[User::IncrementalStart] +"') AS [0] FROM DBO."+ @[User::TargetTable]</DTS:PropertyExpression>
-                  <DTS:ObjectData>
-                    <SQLTask:SqlTaskData
-                      SQLTask:Connection="{1EC4F465-990B-4A18-890F-7CD91DDDA7B8}"
-                      SQLTask:SqlStatementSource="SELECT ISNULL(MAX(Modified),'2001-01-01 00:00:00') AS [0] FROM DBO.STG_accountinfo"
-                      SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-                      <SQLTask:ResultBinding
-                        SQLTask:ResultName="0"
-                        SQLTask:DtsVariableName="User::IncrementalStart" />
-                    </SQLTask:SqlTaskData>
-                  </DTS:ObjectData>
-                </DTS:Executable>
               </DTS:Executables>
-              <DTS:PrecedenceConstraints>
-                <DTS:PrecedenceConstraint
-                  DTS:refId="Package\Load from Different Sources\Temp Table to Staging.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
-                  DTS:CreationName=""
-                  DTS:DTSID="{63940eb7-a820-4f12-9083-addba2a55881}"
-                  DTS:From="Package\Load from Different Sources\Temp Table to Staging.EventHandlers[OnError]\Get New Incremental Flag"
-                  DTS:LogicalAnd="True"
-                  DTS:ObjectName="Constraint"
-                  DTS:To="Package\Load from Different Sources\Temp Table to Staging.EventHandlers[OnError]\End Logging Audit Info with Error" />
-              </DTS:PrecedenceConstraints>
             </DTS:EventHandler>
             <DTS:EventHandler
               DTS:refId="Package\Load from Different Sources\Temp Table to Staging.EventHandlers[OnPostExecute]"
@@ -2799,7 +2526,7 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="197,612"
+          PanelSize="197,613"
           Size="197,656"
           Id="Package\Load from Different Sources"
           TopLeft="7.50000000000009,413.5" />
@@ -2811,9 +2538,35 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
           Size="142,42"
           Id="Package\Start Logging"
           TopLeft="35,107.5" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Truncate Staging Table"
+          TopLeft="12,209.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="106,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="106,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2877,32 +2630,6 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="188,42"
-          Id="Package\Truncate Staging Table"
-          TopLeft="12,209.5" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="106,149.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
           TopLeft="106,251.5">
@@ -2936,11 +2663,11 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
         <NodeLayout
           Size="187,42"
           Id="Package.EventHandlers[OnError]\End Logging with Error"
-          TopLeft="379,104" />
+          TopLeft="5.5,5.5" />
         <NodeLayout
           Size="143,42"
           Id="Package.EventHandlers[OnError]\Logging Error"
-          TopLeft="631,102" />
+          TopLeft="253.5,5.5" />
       </GraphLayout>
     </LayoutInfo>
   </DtsEventHandler>
@@ -3035,6 +2762,14 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\Load from Different Sources\Source to Temp Table\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Load from Different Sources\Source to Temp Table\OLE DB Destination">
     <Properties>
       <Property>
@@ -3051,7 +2786,7 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
     design-time-name="Package\Load from Different Sources\Temp Table to Staging">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="150,42"
           Id="Package\Load from Different Sources\Temp Table to Staging\OLE DB Source"
@@ -3079,7 +2814,9 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3093,7 +2830,7 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
         <NodeLayout
           Size="192,42"
           Id="Package\Load from Different Sources\Temp Table to Staging.EventHandlers[OnPreExecute]\Start Logging Audit Info"
-          TopLeft="60,60" />
+          TopLeft="5.5,5.5" />
       </GraphLayout>
     </LayoutInfo>
   </DtsEventHandler>
@@ -3101,7 +2838,7 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
     design-time-name="Package\Load from Different Sources\Temp Table to Staging.EventHandlers[OnPostExecute]">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="251,42"
           Id="Package\Load from Different Sources\Temp Table to Staging.EventHandlers[OnPostExecute]\End Logging Audit Info with Success"
@@ -3129,9 +2866,7 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3141,37 +2876,11 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
     design-time-name="Package\Load from Different Sources\Temp Table to Staging.EventHandlers[OnError]">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
           Size="237,42"
           Id="Package\Load from Different Sources\Temp Table to Staging.EventHandlers[OnError]\End Logging Audit Info with Error"
-          TopLeft="60,162" />
-        <NodeLayout
-          Size="202,42"
-          Id="Package\Load from Different Sources\Temp Table to Staging.EventHandlers[OnError]\Get New Incremental Flag"
-          TopLeft="77.5,60" />
-        <EdgeLayout
-          Id="Package\Load from Different Sources\Temp Table to Staging.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
-          TopLeft="178.5,102">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="5.5,5.5" />
       </GraphLayout>
     </LayoutInfo>
   </DtsEventHandler>

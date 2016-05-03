@@ -64,11 +64,15 @@
     <Folder Include="Tables" />
     <Folder Include="Programmability" />
     <Folder Include="Programmability\Stored Procedures" />
+    <Folder Include="Tables\Partitions" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\ARCH_accountinfo.sql" />
-    <Build Include="Tables\fn_Partition.sql" />
-    <Build Include="Tables\sch_Partition.sql" />
     <Build Include="Programmability\Stored Procedures\usp_RollPartition.sql" />
+    <Build Include="Tables\Partitions\fn_Partition.sql" />
+    <Build Include="Tables\Partitions\sch_Partition.sql" />
+    <Build Include="Programmability\Stored Procedures\usp_DropEarliestPartition.sql" />
+    <Build Include="Programmability\Stored Procedures\usp_GetPartitionScheme.sql" />
+    <Build Include="Programmability\Stored Procedures\usp_TruncatePartition.sql" />
   </ItemGroup>
 </Project>

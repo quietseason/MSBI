@@ -26,12 +26,13 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">BISTUDIO</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbALeZdBMYESXSf/tUcBsJQAAAAACAAAAAAAQZgAAAAEAACAAAAA8w5iBfao8SESBcAp/O/w/Xww5EL4I4bhXI0PZvEyffQAAAAAOgAAAAAIAACAAAAA1R1qgMip3nrsXgBbCmWsthC62Fq119SLK7/0jm5mBtZAAAAATxabJVkg9vyC90S6Zlw+d3ynUA8Q5eJ/06CATeIyruqGo7q9G610DYliP9ml92X3F6a1HLDPRVlwGSUJbWNUhs78Fxrq/iD3itw7BOSHBo2ohomEJr+KJ3kgFdrKnd0bi+W5BIYqYF5oIZgZE2YbrEh+s9uawDyzDiVxLmoQasCNpCJOarXr4wLxXNdSUnd1AAAAA4gAsEdpqE1kvPaenLEjf70nzMRXncZOfUTO7DssIEplKE6f7db2kVdoBEnP8hdcOdE0wcSdBcW13kW/JRB3wfg==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA3aJOMvAO90mHWfRhAUEUBwAAAAACAAAAAAAQZgAAAAEAACAAAABMl6RPkwwPtovLPRR8JnBnrjDLOY1ql4xGl3M63a/xygAAAAAOgAAAAAIAACAAAAAZxFhQHyCC9m6C4JTIjI/I4pPr+gWnCdWLeu/iYxsDmpAAAABGbKOs2oTyCuGAwYmq+PuEalsIPFmoezLXQydfi394dn3tajcusqEyIBw0anQxLR7wGL1aJpBhVx/wb46/0PVpebE+rmrstVJU2ykMFp7dCMTUWOpyhgOEXWUgQFrxrEF6r6ssSaDZ8JHPuvkDgE+DA51WgQmO0yCLrXHCjXnZM8AHvtkx6KLZ2xGDzcCB9y5AAAAAJKXg63J91aAeeLoqNG9X8cm7FU+LL8QlxX0ozphlokduW/7viH0YmCT0+aDXGtmWqM2WgkPk+gPT8oDQCpL45w==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
           <SSIS:Package SSIS:Name="PKG_STG_accountinfo.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="PKG_ARCH_accountinfo.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="PKG_AUDIT_Staging.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="MadisonBI_Logging.conmgr" />
@@ -496,6 +497,23 @@
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionGUID">{9F628D71-0539-473D-AD12-C6081BB7122D}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="PKG_AUDIT_Staging.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{F27DCC9D-5712-4051-A968-BF65E57FE06C}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">PKG_AUDIT_Staging</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{AC2EC48D-DD50-41E4-B262-6DD9371CAF44}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
