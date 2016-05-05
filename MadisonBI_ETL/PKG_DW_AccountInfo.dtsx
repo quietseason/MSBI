@@ -1,0 +1,2620 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/4/2016 4:13:53 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-KJKB7O1"
+  DTS:CreatorName="DESKTOP-KJKB7O1\bill"
+  DTS:DTSID="{41F76304-604F-4DE0-B8C1-B1F46A399BEE}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="12.0.4100.1"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="PKG_DW_AccountInfo"
+  DTS:PackageType="5"
+  DTS:VersionBuild="63"
+  DTS:VersionGUID="{898F48C3-6E3D-4C56-8012-F7E818825CA9}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F43D729B-BD29-4939-9C93-71B841DC3A1B}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="InsertedRows">
+      <DTS:VariableValue
+        DTS:DataType="20">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2091EC64-2B7B-43E7-90FA-E65FBBCE79E8}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PackageDescription">
+      <DTS:VariableValue
+        DTS:DataType="8">Extract and process data from STG_accountinfo</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{79D632FE-F9A7-47F9-A91C-363A5D4F5665}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PackageID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4531FF81-A12E-452D-A24F-20AE1862AC37}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PackageProcessAuditID">
+      <DTS:VariableValue
+        DTS:DataType="20">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B5313799-251C-41B4-B1BB-05F2AC45342E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PackageProcessID">
+      <DTS:VariableValue
+        DTS:DataType="20">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BC63EA5B-A08F-4EA1-9DBD-351CC528D783}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PackageTypeID">
+      <DTS:VariableValue
+        DTS:DataType="3">2</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BACF9D10-964B-49F7-8F16-4016641E2D16}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SourceDatabase">
+      <DTS:VariableValue
+        DTS:DataType="8">MadisonBI_Staging</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{27776CA4-106B-40B0-ABC5-6947FCAB15F2}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SourceTable">
+      <DTS:VariableValue
+        DTS:DataType="8">STG_accountinfo</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F1C0138E-B218-4807-881E-1CDF8D28881C}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TargetDatabase">
+      <DTS:VariableValue
+        DTS:DataType="8">MadisonBI_DataWarehouse</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0EA85243-BE59-4880-B12F-6A0D1659CE48}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TargetTable">
+      <DTS:VariableValue
+        DTS:DataType="8">AccountInfo</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B63C139D-A292-47A6-B771-DA7132462EC1}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="UpdatedRows">
+      <DTS:VariableValue
+        DTS:DataType="20">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Create Temp Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{72F0A327-99D1-4854-AFAC-C05441DB6BAF}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Create Temp Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="SqlStatementSource">"IF OBJECT_ID('DBO.CLEAN_"+ @[User::TargetTable] +"','U') IS NOT NULL
+DROP TABLE DBO.CLEAN_"+ @[User::TargetTable]+"
+SELECT TOP 0 * INTO DBO.CLEAN_"+ @[User::TargetTable]+"
+FROM DBO."+ @[User::TargetTable]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{45984EDA-ABBE-47AE-9B7E-D5D79304C9C9}"
+          SQLTask:SqlStatementSource="IF OBJECT_ID('DBO.CLEAN_AccountInfo','U') IS NOT NULL&#xA;DROP TABLE DBO.CLEAN_AccountInfo&#xA;SELECT TOP 0 * INTO DBO.CLEAN_AccountInfo&#xA;FROM DBO.AccountInfo" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Drop Temp Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{6b1db0ba-61af-4f8e-9b81-d4e4d073676c}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Drop Temp Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="SqlStatementSource">"IF OBJECT_ID('DBO.CLEAN_"+ @[User::TargetTable] +"','U') IS NOT NULL
+DROP TABLE DBO.CLEAN_"+ @[User::TargetTable]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{45984EDA-ABBE-47AE-9B7E-D5D79304C9C9}"
+          SQLTask:SqlStatementSource="IF OBJECT_ID('DBO.CLEAN_AccountInfo','U') IS NOT NULL&#xA;DROP TABLE DBO.CLEAN_AccountInfo" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\End Logging with Success"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{93e54822-e89c-41e7-b710-98319b7cee7c}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="End Logging with Success"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{1D8829DA-9517-4AC2-A907-98A462BBB1EB}"
+          SQLTask:SqlStatementSource="EXEC [dbo].[usp_UpdateLogEnd]&#xA; @ETL_PROCESS_LOG_ID = ?,&#xA; @ETL_STATUS_ID = 2" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::PackageProcessID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Register This Package"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{3b6fd4c8-1c08-42ee-8648-8651ff0d90f7}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Register This Package"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{1D8829DA-9517-4AC2-A907-98A462BBB1EB}"
+          SQLTask:SqlStatementSource="EXEC [dbo].[usp_RegisterPackage]&#xA; @ETL_PACKAGE_NAME = ?,&#xA; @ETL_PACKAGE_DESCRIPTION = ?,&#xA; @ETL_TYPE_ID = ?,&#xA; @ETL_PACKAGE_ID = ? OUTPUT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="System::PackageName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::PackageDescription"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::PackageTypeID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::PackageID"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Remove Duplicates"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{B7C1BB03-DD6E-411C-8A03-1234744B47A3}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Remove Duplicates"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="SqlStatementSource">"EXEC dbo.usp_RemoveDuplicate_"+ @[User::TargetTable]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{45984EDA-ABBE-47AE-9B7E-D5D79304C9C9}"
+          SQLTask:SqlStatementSource="EXEC dbo.usp_RemoveDuplicate_AccountInfo" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Staging to Temp"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{02973A5E-5013-4192-BF1B-EA8ADBC8233A}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Staging to Temp"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Staging to Temp\Bad Records"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Bad Records"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[BAD_accountinfo]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Staging to Temp\Bad Records.Connections[OleDbConnection]"
+                  connectionManagerID="{D39FCA88-0AD2-4C0A-BD08-A9FF4EFB585A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[MadisonBI_Archive]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].Columns[StagingID]"
+                      cachedDataType="i8"
+                      cachedName="StagingID"
+                      externalMetadataColumnId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[StagingID]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[StagingID]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].Columns[AccountID]"
+                      cachedDataType="i8"
+                      cachedName="AccountID"
+                      externalMetadataColumnId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[AccountID]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountID]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="Name"
+                      externalMetadataColumnId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[Name]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].Columns[Mobile]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Mobile"
+                      externalMetadataColumnId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[Mobile]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[Mobile]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].Columns[IDType]"
+                      cachedDataType="ui1"
+                      cachedName="IDType"
+                      externalMetadataColumnId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[IDType]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDType]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].Columns[IDNumber]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="IDNumber"
+                      externalMetadataColumnId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[IDNumber]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDNumber]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].Columns[ReferralCode]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="ReferralCode"
+                      externalMetadataColumnId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[ReferralCode]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[ReferralCode]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].Columns[InvitedBy]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="InvitedBy"
+                      externalMetadataColumnId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[InvitedBy]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[InvitedBy]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].Columns[Status]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Status"
+                      externalMetadataColumnId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[Status]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].Columns[CustomStatus]"
+                      cachedDataType="ui1"
+                      cachedName="CustomStatus"
+                      externalMetadataColumnId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[CustomStatus]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomStatus]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].Columns[Created]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Created"
+                      externalMetadataColumnId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[Created]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[Created]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].Columns[Modified]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Modified"
+                      externalMetadataColumnId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[Modified]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[Modified]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].Columns[Source]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Source"
+                      externalMetadataColumnId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[Source]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[Source]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].Columns[StagingInsertTime]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="StagingInsertTime"
+                      externalMetadataColumnId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[StagingInsertTime]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[StagingInsertTime]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].Columns[RecordInsertTime]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="RecordInsertTime"
+                      externalMetadataColumnId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[RecordInsertTime]"
+                      lineageId="Package\Staging to Temp\Derived Column for Bad Records.Outputs[Derived Column Output].Columns[RecordInsertTime]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[BadRecordID]"
+                      dataType="i8"
+                      name="BadRecordID" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[StagingID]"
+                      dataType="i8"
+                      name="StagingID" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[AccountID]"
+                      dataType="i8"
+                      name="AccountID" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="200"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[Mobile]"
+                      dataType="wstr"
+                      length="50"
+                      name="Mobile" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[IDType]"
+                      dataType="ui1"
+                      name="IDType" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[IDNumber]"
+                      dataType="wstr"
+                      length="100"
+                      name="IDNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[ReferralCode]"
+                      dataType="wstr"
+                      length="20"
+                      name="ReferralCode" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[InvitedBy]"
+                      dataType="wstr"
+                      length="20"
+                      name="InvitedBy" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                      dataType="wstr"
+                      length="100"
+                      name="Status" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[CustomStatus]"
+                      dataType="ui1"
+                      name="CustomStatus" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[Created]"
+                      dataType="dbTimeStamp"
+                      name="Created" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[Modified]"
+                      dataType="dbTimeStamp"
+                      name="Modified" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[Source]"
+                      dataType="wstr"
+                      length="100"
+                      name="Source" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[StagingInsertTime]"
+                      dataType="dbTimeStamp"
+                      name="StagingInsertTime" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[RecordInsertTime]"
+                      dataType="dbTimeStamp"
+                      name="RecordInsertTime" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Staging to Temp\Bad Records.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Staging to Temp\Bad Records.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Staging to Temp\Bad Records.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\Bad Records.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Staging to Temp\Bad Records.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Staging to Temp\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Staging to Temp\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Staging to Temp\Conditional Split.Inputs[Conditional Split Input].Columns[RealNameRegistration]"
+                      cachedDataType="i4"
+                      cachedName="RealNameRegistration"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[RealNameRegistration]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\Conditional Split.Inputs[Conditional Split Input].Columns[IDNumber_Formal]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="IDNumber_Formal"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDNumber_Formal]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\Conditional Split.Inputs[Conditional Split Input].Columns[Name_Formal]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="Name_Formal"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[Name_Formal]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\Conditional Split.Inputs[Conditional Split Input].Columns[Mobile_Formal]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Mobile_Formal"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[Mobile_Formal]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Staging to Temp\Conditional Split.Outputs[Bad Records]"
+                  description="Output 2 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Bad Records"
+                  synchronousInputId="Package\Staging to Temp\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">(#{Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[Name_Formal]} == "UNKNOWN" &amp;&amp; #{Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[Mobile_Formal]} == "UNKNOWN") || (#{Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[RealNameRegistration]} == 1 &amp;&amp; #{Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDNumber_Formal]} == "UNKNOWN")</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">(Name_Formal == "UNKNOWN" &amp;&amp; Mobile_Formal == "UNKNOWN") || (RealNameRegistration == 1 &amp;&amp; IDNumber_Formal == "UNKNOWN")</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Staging to Temp\Conditional Split.Outputs[Normal Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Normal Output"
+                  synchronousInputId="Package\Staging to Temp\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Staging to Temp\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Staging to Temp\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Staging to Temp\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Staging to Temp\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Staging to Temp\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Staging to Temp\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Staging to Temp\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Staging to Temp\Derived Column.Inputs[Derived Column Input].Columns[RealNameRegistration]"
+                      cachedDataType="i4"
+                      cachedName="RealNameRegistration"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[RealNameRegistration]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\Derived Column.Inputs[Derived Column Input].Columns[IDNumber_Formal]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="IDNumber_Formal"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDNumber_Formal]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\Derived Column.Inputs[Derived Column Input].Columns[IDType]"
+                      cachedDataType="ui1"
+                      cachedName="IDType"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDType]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Staging to Temp\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Output].Columns[IsCurrent]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Output].Columns[IsCurrent]"
+                      name="IsCurrent"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression"> TRUE </property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression"> TRUE </property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Output].Columns[EffectiveDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Output].Columns[EffectiveDate]"
+                      name="EffectiveDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBTIMESTAMP)"1900-01-01"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBTIMESTAMP)"1900-01-01"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Output].Columns[ExpiredDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Output].Columns[ExpiredDate]"
+                      name="ExpiredDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBTIMESTAMP)"9999-12-31"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBTIMESTAMP)"9999-12-31"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Output].Columns[Gender]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Output].Columns[Gender]"
+                      name="Gender"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(#{Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDType]} == 0 &amp;&amp; #{Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[RealNameRegistration]} == 1) ? (DT_I4)([LEN](#{Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDNumber_Formal]}) == 18 ? [SUBSTRING](#{Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDNumber_Formal]},17,1) : [SUBSTRING](#{Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDNumber_Formal]},15,1)) % 2 : -1</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(IDType == 0 &amp;&amp; RealNameRegistration == 1) ? (DT_I4)(LEN(IDNumber_Formal) == 18 ? SUBSTRING(IDNumber_Formal,17,1) : SUBSTRING(IDNumber_Formal,15,1)) % 2 : -1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Output].Columns[BirthDate]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Output].Columns[BirthDate]"
+                      name="BirthDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(#{Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDType]} == 0 &amp;&amp; #{Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[RealNameRegistration]} == 1) ? (DT_DBDATE)([LEN](#{Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDNumber_Formal]}) == 18 ? [SUBSTRING](#{Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDNumber_Formal]},7,4) + "-" + [SUBSTRING](#{Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDNumber_Formal]},11,2) + "-" + [SUBSTRING](#{Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDNumber_Formal]},13,2) : "19" + [SUBSTRING](#{Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDNumber_Formal]},7,2) + "-" + [SUBSTRING](#{Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDNumber_Formal]},9,2) + "-" + [SUBSTRING](#{Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDNumber_Formal]},11,2)) : (DT_DBDATE)"9999-12-31"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(IDType == 0 &amp;&amp; RealNameRegistration == 1) ? (DT_DBDATE)(LEN(IDNumber_Formal) == 18 ? SUBSTRING(IDNumber_Formal,7,4) + "-" + SUBSTRING(IDNumber_Formal,11,2) + "-" + SUBSTRING(IDNumber_Formal,13,2) : "19" + SUBSTRING(IDNumber_Formal,7,2) + "-" + SUBSTRING(IDNumber_Formal,9,2) + "-" + SUBSTRING(IDNumber_Formal,11,2)) : (DT_DBDATE)"9999-12-31"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Output].Columns[ProvinceID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Output].Columns[ProvinceID]"
+                      name="ProvinceID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(#{Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDType]} == 0 &amp;&amp; #{Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[RealNameRegistration]} == 1) ? (DT_I4)([SUBSTRING](#{Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDNumber_Formal]},1,2)) : -1</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(IDType == 0 &amp;&amp; RealNameRegistration == 1) ? (DT_I4)(SUBSTRING(IDNumber_Formal,1,2)) : -1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Output].Columns[CityID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Output].Columns[CityID]"
+                      name="CityID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(#{Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDType]} == 0 &amp;&amp; #{Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[RealNameRegistration]} == 1) ? (DT_I4)([SUBSTRING](#{Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDNumber_Formal]},3,2)) : -1</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(IDType == 0 &amp;&amp; RealNameRegistration == 1) ? (DT_I4)(SUBSTRING(IDNumber_Formal,3,2)) : -1</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Staging to Temp\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Staging to Temp\Derived Column for Bad Records"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column for Bad Records"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Staging to Temp\Derived Column for Bad Records.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Staging to Temp\Derived Column for Bad Records.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Staging to Temp\Derived Column for Bad Records.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Staging to Temp\Derived Column for Bad Records.Outputs[Derived Column Output].Columns[RecordInsertTime]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Staging to Temp\Derived Column for Bad Records.Outputs[Derived Column Output].Columns[RecordInsertTime]"
+                      name="RecordInsertTime"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Staging to Temp\Derived Column for Bad Records.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Staging to Temp\Derived Column for Bad Records.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Staging to Temp\Derived Column for Bad Records.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Staging to Temp\Derived Column for Bad Records.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\Derived Column for Bad Records.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Staging to Temp\Derived Column for Bad Records.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Staging to Temp\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[CLEAN_AccountInfo]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Staging to Temp\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{45984EDA-ABBE-47AE-9B7E-D5D79304C9C9}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[MadisonBI_DataWarehouse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AccountID]"
+                      cachedDataType="i8"
+                      cachedName="AccountID"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AccountID]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountID]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PasswordSet]"
+                      cachedDataType="i4"
+                      cachedName="PasswordSet"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PasswordSet]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[PasswordSet]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RealNameRegistration]"
+                      cachedDataType="i4"
+                      cachedName="RealNameRegistration"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RealNameRegistration]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[RealNameRegistration]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CardBinding]"
+                      cachedDataType="i4"
+                      cachedName="CardBinding"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CardBinding]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[CardBinding]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EffectiveDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="EffectiveDate"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EffectiveDate]"
+                      lineageId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Output].Columns[EffectiveDate]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IsCurrent]"
+                      cachedDataType="bool"
+                      cachedName="IsCurrent"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IsCurrent]"
+                      lineageId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Output].Columns[IsCurrent]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ExpiredDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ExpiredDate"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ExpiredDate]"
+                      lineageId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Output].Columns[ExpiredDate]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ReferralCode_Formal]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="ReferralCode_Formal"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ReferralCode]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[ReferralCode_Formal]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Name_Formal]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="Name_Formal"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[Name_Formal]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Mobile_Formal]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Mobile_Formal"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Mobile]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[Mobile_Formal]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[InvitedBy_Formal]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="InvitedBy_Formal"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[InvitedBy]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[InvitedBy_Formal]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BirthDate]"
+                      cachedDataType="dbDate"
+                      cachedName="BirthDate"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BirthDate]"
+                      lineageId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Output].Columns[BirthDate]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ProvinceID]"
+                      cachedDataType="i4"
+                      cachedName="ProvinceID"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProvinceID]"
+                      lineageId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Output].Columns[ProvinceID]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CityID]"
+                      cachedDataType="i4"
+                      cachedName="CityID"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CityID]"
+                      lineageId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Output].Columns[CityID]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Gender]"
+                      cachedDataType="i4"
+                      cachedName="Gender"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                      lineageId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Output].Columns[Gender]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AccountDerivedID]"
+                      dataType="i8"
+                      name="AccountDerivedID" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AccountID]"
+                      dataType="i8"
+                      name="AccountID" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="200"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Mobile]"
+                      dataType="wstr"
+                      length="50"
+                      name="Mobile" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                      dataType="i2"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ReferralCode]"
+                      dataType="wstr"
+                      length="20"
+                      name="ReferralCode" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PasswordSet]"
+                      dataType="bool"
+                      name="PasswordSet" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RealNameRegistration]"
+                      dataType="bool"
+                      name="RealNameRegistration" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CardBinding]"
+                      dataType="bool"
+                      name="CardBinding" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IsCurrent]"
+                      dataType="bool"
+                      name="IsCurrent" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EffectiveDate]"
+                      dataType="dbTimeStamp"
+                      name="EffectiveDate" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ExpiredDate]"
+                      dataType="dbTimeStamp"
+                      name="ExpiredDate" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[InvitedBy]"
+                      dataType="wstr"
+                      length="20"
+                      name="InvitedBy" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BirthDate]"
+                      dataType="dbDate"
+                      name="BirthDate" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProvinceID]"
+                      dataType="i4"
+                      name="ProvinceID" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CityID]"
+                      dataType="i4"
+                      name="CityID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Staging to Temp\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Staging to Temp\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Staging to Temp\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Staging to Temp\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[STG_accountinfo]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+  *,
+  CASE WHEN Name IS NULL OR LEN(LTRIM(RTRIM(Name))) = 0 THEN N'UNKNOWN' ELSE LTRIM(RTRIM(Name)) END AS Name_Formal,
+  CASE WHEN Mobile IS NULL OR LEN(LTRIM(RTRIM(Mobile))) = 0 THEN N'UNKNOWN' ELSE LTRIM(RTRIM(Mobile)) END AS Mobile_Formal,
+  LTRIM(RTRIM(ReferralCode)) AS ReferralCode_Formal,
+  CASE WHEN InvitedBy IS NULL OR LEN(LTRIM(RTRIM(InvitedBy))) = 0 THEN N'UNKNOWN' ELSE LTRIM(RTRIM(InvitedBy)) END AS InvitedBy_Formal,
+  CASE WHEN IDNumber IS NULL OR LEN(LTRIM(RTRIM(IDNumber))) = 0 THEN N'UNKNOWN' ELSE LTRIM(RTRIM(IDNumber)) END AS IDNumber_Formal,
+  CASE WHEN CustomStatus IN(1,2,3) THEN 1 ELSE 0 END AS PasswordSet,
+  CASE WHEN CustomStatus IN(2,3) THEN 1 ELSE 0 END AS RealNameRegistration,
+  CASE WHEN CustomStatus IN(3) THEN 1 ELSE 0 END AS CardBinding
+FROM DBO.STG_accountinfo WITH(NOLOCK)</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Staging to Temp\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{1EC4F465-990B-4A18-890F-7CD91DDDA7B8}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[MadisonBI_Staging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[StagingID]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StagingID]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[StagingID]"
+                      name="StagingID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountID]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AccountID]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountID]"
+                      name="AccountID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                      length="200"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[Name]"
+                      name="Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[Mobile]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Mobile]"
+                      length="50"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[Mobile]"
+                      name="Mobile"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDType]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDType]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDType]"
+                      name="IDType"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDNumber]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDNumber]"
+                      length="100"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDNumber]"
+                      name="IDNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[ReferralCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ReferralCode]"
+                      length="20"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[ReferralCode]"
+                      name="ReferralCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[InvitedBy]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[InvitedBy]"
+                      length="20"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[InvitedBy]"
+                      name="InvitedBy"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[Status]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Status]"
+                      length="100"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[Status]"
+                      name="Status"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomStatus]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CustomStatus]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomStatus]"
+                      name="CustomStatus"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[Created]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Created]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[Created]"
+                      name="Created"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[Modified]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Modified]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[Modified]"
+                      name="Modified"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[Source]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Source]"
+                      length="100"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[Source]"
+                      name="Source"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[StagingInsertTime]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StagingInsertTime]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[StagingInsertTime]"
+                      name="StagingInsertTime"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[Name_Formal]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Name_Formal]"
+                      length="200"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[Name_Formal]"
+                      name="Name_Formal"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[Mobile_Formal]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Mobile_Formal]"
+                      length="50"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[Mobile_Formal]"
+                      name="Mobile_Formal"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[ReferralCode_Formal]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ReferralCode_Formal]"
+                      length="20"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[ReferralCode_Formal]"
+                      name="ReferralCode_Formal"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[InvitedBy_Formal]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[InvitedBy_Formal]"
+                      length="20"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[InvitedBy_Formal]"
+                      name="InvitedBy_Formal"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[PasswordSet]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PasswordSet]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[PasswordSet]"
+                      name="PasswordSet"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[RealNameRegistration]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RealNameRegistration]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[RealNameRegistration]"
+                      name="RealNameRegistration"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[CardBinding]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CardBinding]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[CardBinding]"
+                      name="CardBinding"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDNumber_Formal]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDNumber_Formal]"
+                      length="100"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[IDNumber_Formal]"
+                      name="IDNumber_Formal"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StagingID]"
+                      dataType="i8"
+                      name="StagingID" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AccountID]"
+                      dataType="i8"
+                      name="AccountID" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="200"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Mobile]"
+                      dataType="wstr"
+                      length="50"
+                      name="Mobile" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDType]"
+                      dataType="ui1"
+                      name="IDType" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDNumber]"
+                      dataType="wstr"
+                      length="100"
+                      name="IDNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ReferralCode]"
+                      dataType="wstr"
+                      length="20"
+                      name="ReferralCode" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[InvitedBy]"
+                      dataType="wstr"
+                      length="20"
+                      name="InvitedBy" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Status]"
+                      dataType="wstr"
+                      length="100"
+                      name="Status" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CustomStatus]"
+                      dataType="ui1"
+                      name="CustomStatus" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Created]"
+                      dataType="dbTimeStamp"
+                      name="Created" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Modified]"
+                      dataType="dbTimeStamp"
+                      name="Modified" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Source]"
+                      dataType="wstr"
+                      length="100"
+                      name="Source" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StagingInsertTime]"
+                      dataType="dbTimeStamp"
+                      name="StagingInsertTime" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Name_Formal]"
+                      dataType="wstr"
+                      length="200"
+                      name="Name_Formal" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Mobile_Formal]"
+                      dataType="wstr"
+                      length="50"
+                      name="Mobile_Formal" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ReferralCode_Formal]"
+                      dataType="wstr"
+                      length="20"
+                      name="ReferralCode_Formal" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[InvitedBy_Formal]"
+                      dataType="wstr"
+                      length="20"
+                      name="InvitedBy_Formal" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PasswordSet]"
+                      dataType="i4"
+                      name="PasswordSet" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RealNameRegistration]"
+                      dataType="i4"
+                      name="RealNameRegistration" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CardBinding]"
+                      dataType="i4"
+                      name="CardBinding" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDNumber_Formal]"
+                      dataType="wstr"
+                      length="100"
+                      name="IDNumber_Formal" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StagingID]"
+                      dataType="i8"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StagingID]"
+                      name="StagingID" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AccountID]"
+                      dataType="i8"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AccountID]"
+                      name="AccountID" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Name]"
+                      dataType="wstr"
+                      length="200"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Name]"
+                      name="Name" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Mobile]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Mobile]"
+                      name="Mobile" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDType]"
+                      dataType="ui1"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDType]"
+                      name="IDType" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDNumber]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDNumber]"
+                      name="IDNumber" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ReferralCode]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ReferralCode]"
+                      name="ReferralCode" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[InvitedBy]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[InvitedBy]"
+                      name="InvitedBy" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Status]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Status]"
+                      name="Status" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CustomStatus]"
+                      dataType="ui1"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CustomStatus]"
+                      name="CustomStatus" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Created]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Created]"
+                      name="Created" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Modified]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Modified]"
+                      name="Modified" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Source]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Source]"
+                      name="Source" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StagingInsertTime]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StagingInsertTime]"
+                      name="StagingInsertTime" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Name_Formal]"
+                      dataType="wstr"
+                      length="200"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Name_Formal]"
+                      name="Name_Formal" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Mobile_Formal]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Mobile_Formal]"
+                      name="Mobile_Formal" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ReferralCode_Formal]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ReferralCode_Formal]"
+                      name="ReferralCode_Formal" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[InvitedBy_Formal]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[InvitedBy_Formal]"
+                      name="InvitedBy_Formal" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDNumber_Formal]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IDNumber_Formal]"
+                      name="IDNumber_Formal" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PasswordSet]"
+                      dataType="i4"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PasswordSet]"
+                      name="PasswordSet" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RealNameRegistration]"
+                      dataType="i4"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RealNameRegistration]"
+                      name="RealNameRegistration" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CardBinding]"
+                      dataType="i4"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CardBinding]"
+                      name="CardBinding" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Staging to Temp.Paths[Bad Records]"
+              endId="Package\Staging to Temp\Derived Column for Bad Records.Inputs[Derived Column Input]"
+              name="Bad Records"
+              startId="Package\Staging to Temp\Conditional Split.Outputs[Bad Records]" />
+            <path
+              refId="Package\Staging to Temp.Paths[Derived Column Output]"
+              endId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Staging to Temp.Paths[Derived Column Output1]"
+              endId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Staging to Temp\Derived Column for Bad Records.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Staging to Temp.Paths[Normal Output]"
+              endId="Package\Staging to Temp\Derived Column.Inputs[Derived Column Input]"
+              name="Normal Output"
+              startId="Package\Staging to Temp\Conditional Split.Outputs[Normal Output]" />
+            <path
+              refId="Package\Staging to Temp.Paths[OLE DB Source Output]"
+              endId="Package\Staging to Temp\Conditional Split.Inputs[Conditional Split Input]"
+              name="OLE DB Source Output"
+              startId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Start Logging"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{67564512-5615-44ed-a965-b5ffd9812c68}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Start Logging"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{1D8829DA-9517-4AC2-A907-98A462BBB1EB}"
+          SQLTask:SqlStatementSource="EXEC [dbo].[usp_InsertLogStart]&#xA; @ETL_PACKAGE_ID = ?,&#xA; @MACHINE_NAME = ?,&#xA; @EXECUTE_USER= ?,&#xA; @ETL_PROCESS_LOG_ID = ? OUTPUT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::PackageID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="System::MachineName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="System::UserName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::PackageProcessID"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Temp to Data Warehouse"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{12AB4C81-9BE7-47C0-990E-911F227BB771}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Temp to Data Warehouse"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="SqlStatementSource">"EXEC dbo.usp_Merge_"+ @[User::TargetTable]+"
+  @InsertedRows = ? OUTPUT,
+  @UpdatedRows = ? OUTPUT"</DTS:PropertyExpression>
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Temp to Data Warehouse.EventHandlers[OnError]"
+          DTS:CreationName="OnError"
+          DTS:DTSID="{4724A0E3-8120-4BDF-A903-18A3184FFBBD}"
+          DTS:EventID="948117228"
+          DTS:EventName="OnError"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{9FB3E239-53C3-463D-A463-F1B8BB32C4AF}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Temp to Data Warehouse.EventHandlers[OnError]\End Logging Audit Info with Error"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{529ae571-914a-4bd8-8305-b82bffbca641}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="End Logging Audit Info with Error"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{1D8829DA-9517-4AC2-A907-98A462BBB1EB}"
+                  SQLTask:SqlStatementSource="EXEC [dbo].[usp_UpdateProcessAudit]&#xA; @ETL_PROCESS_AUDIT_ID = ?,&#xA; @ETL_STATUS_ID = 3" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::PackageProcessAuditID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+        <DTS:EventHandler
+          DTS:refId="Package\Temp to Data Warehouse.EventHandlers[OnPostExecute]"
+          DTS:CreationName="OnPostExecute"
+          DTS:DTSID="{9933FF2D-7F3C-486E-807A-27CCBFD8A1E0}"
+          DTS:EventID="948121180"
+          DTS:EventName="OnPostExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{B83D43D5-E403-49D8-9D45-5D69A3FEB25B}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Temp to Data Warehouse.EventHandlers[OnPostExecute]\End Logging Audit Info with Success"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{321189ce-5607-4635-8a3f-4081b96d3675}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="End Logging Audit Info with Success"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{1D8829DA-9517-4AC2-A907-98A462BBB1EB}"
+                  SQLTask:SqlStatementSource="EXEC [dbo].[usp_UpdateProcessAudit]&#xA; @ETL_PROCESS_AUDIT_ID = ?,&#xA; @ETL_STATUS_ID = 2,&#xA; @INSERTED_ROWS = ?,&#xA; @UPDATED_ROWS = ?,&#xA; @DELETED_ROWS = -1,&#xA; @INCREMENTAL_FLAG = NULL" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::PackageProcessAuditID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="User::InsertedRows"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="User::UpdatedRows"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+        <DTS:EventHandler
+          DTS:refId="Package\Temp to Data Warehouse.EventHandlers[OnPreExecute]"
+          DTS:CreationName="OnPreExecute"
+          DTS:DTSID="{867394A4-169D-4196-A99D-BD90D58A7079}"
+          DTS:EventID="948119308"
+          DTS:EventName="OnPreExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{CE48D979-8A9E-46DC-A55B-6DC9FCAAFB33}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Temp to Data Warehouse.EventHandlers[OnPreExecute]\Start Logging Audit Info"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{12e4cba3-3ec4-4e41-8807-0595aea90020}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Start Logging Audit Info"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{1D8829DA-9517-4AC2-A907-98A462BBB1EB}"
+                  SQLTask:SqlStatementSource="EXEC [dbo].[usp_InsertProcessAudit]&#xA; @ETL_PROCESS_LOG_ID = ?,&#xA; @ETL_COMPONENT_NAME = ?,&#xA; @SOURCE_NAME = ?,&#xA; @TARGET_NAME = ?,&#xA; @INCREMENTAL_FLAG = NULL,&#xA; @SOURCE_DB = ?,&#xA; @TARGET_DB = ?,&#xA; @ETL_PROCESS_AUDIT_ID = ? OUTPUT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::PackageProcessID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="System::SourceName"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="User::SourceTable"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="3"
+                    SQLTask:DtsVariableName="User::TargetTable"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="4"
+                    SQLTask:DtsVariableName="User::SourceDatabase"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="5"
+                    SQLTask:DtsVariableName="User::TargetDatabase"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="6"
+                    SQLTask:DtsVariableName="User::PackageProcessAuditID"
+                    SQLTask:ParameterDirection="Output"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{45984EDA-ABBE-47AE-9B7E-D5D79304C9C9}"
+          SQLTask:SqlStatementSource="EXEC dbo.usp_Merge_AccountInfo&#xA;  @InsertedRows = ? OUTPUT,&#xA;  @UpdatedRows = ? OUTPUT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::InsertedRows"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::UpdatedRows"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{cc250f43-4f60-45d8-b50b-b479ae7598f9}"
+      DTS:From="Package\Register This Package"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Start Logging" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{A7AD0312-62CA-445F-A4D8-CA3A9B430486}"
+      DTS:From="Package\Start Logging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Create Temp Table" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{83A7D1CE-C952-4ED8-A111-02CEE39D710D}"
+      DTS:From="Package\Staging to Temp"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Remove Duplicates" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{DEFFB4A7-BDB2-4D38-8062-A2915E8BEA69}"
+      DTS:From="Package\Remove Duplicates"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Temp to Data Warehouse" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{D7E98E88-3015-490F-8D01-8F0110B6A8CA}"
+      DTS:From="Package\Temp to Data Warehouse"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Drop Temp Table" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{45ABDBD2-EB60-4E4D-9DF1-69A7C1845686}"
+      DTS:From="Package\Create Temp Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Staging to Temp" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{75CDB743-66DE-45BE-BAB7-FDD4FA0FD4DC}"
+      DTS:From="Package\Drop Temp Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\End Logging with Success" />
+  </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{9D6D43FF-D2D4-4127-B370-1664FD61BA50}"
+      DTS:EventID="1124417724"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{40CC38FC-9BD4-4E10-B4A7-F1221833D533}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\End Logging with Error"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{6a45aab8-7797-4a13-b08e-903bc95f5d7d}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="End Logging with Error"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{1D8829DA-9517-4AC2-A907-98A462BBB1EB}"
+              SQLTask:SqlStatementSource="EXEC [dbo].[usp_UpdateLogEnd]&#xA; @ETL_PROCESS_LOG_ID = ?,&#xA; @ETL_STATUS_ID = 3" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::PackageProcessID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Logging Error"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{bc5d41f5-6830-4df5-8c20-aae7b8ea1b77}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Logging Error"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{1D8829DA-9517-4AC2-A907-98A462BBB1EB}"
+              SQLTask:SqlStatementSource="EXEC [dbo].[usp_InsertErrorLog]&#xA; @ETL_PROCESS_LOG_ID = ?,&#xA; @ETL_ERROR_MSG = ?,&#xA; @ETL_COMPONENT_NAME = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::PackageProcessID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="169,42"
+          Id="Package\Create Temp Table"
+          TopLeft="21.5,209.5" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Drop Temp Table"
+          TopLeft="25.5000000000001,617.5" />
+        <NodeLayout
+          Size="201,42"
+          Id="Package\End Logging with Success"
+          TopLeft="5.50000000000009,719.5" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Register This Package"
+          TopLeft="15,5.5" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Staging to Temp"
+          TopLeft="27.5,311.5" />
+        <NodeLayout
+          Size="142,42"
+          Id="Package\Start Logging"
+          TopLeft="35,107.5" />
+        <NodeLayout
+          Size="200,42"
+          Id="Package\Temp to Data Warehouse"
+          TopLeft="6.00000000000007,515.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="106,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="106,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="106,557.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="106,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="106,659.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="169,42"
+          Id="Package\Remove Duplicates"
+          TopLeft="21.5000000000001,413.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="106,353.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="106,455.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="187,42"
+          Id="Package.EventHandlers[OnError]\End Logging with Error"
+          TopLeft="60,60" />
+        <NodeLayout
+          Size="143,42"
+          Id="Package.EventHandlers[OnError]\Logging Error"
+          TopLeft="308,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\Staging to Temp">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Staging to Temp\OLE DB Source"
+          TopLeft="206.5,5.5" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Staging to Temp\Derived Column"
+          TopLeft="204.5,209.5" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Staging to Temp\OLE DB Destination"
+          TopLeft="196,311.5" />
+        <EdgeLayout
+          Id="Package\Staging to Temp.Paths[Derived Column Output]"
+          TopLeft="281.5,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Staging to Temp\Conditional Split"
+          TopLeft="204,107.5" />
+        <EdgeLayout
+          Id="Package\Staging to Temp.Paths[OLE DB Source Output]"
+          TopLeft="281.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="138,42"
+          Id="Package\Staging to Temp\Bad Records"
+          TopLeft="5.50000000000003,209.5" />
+        <NodeLayout
+          Size="232,42"
+          Id="Package\Staging to Temp\Derived Column for Bad Records"
+          TopLeft="11,143" />
+        <EdgeLayout
+          Id="Package\Staging to Temp.Paths[Bad Records]"
+          TopLeft="204,120.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-77,22.5"
+              Start="0,0"
+              End="-77,15">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-73,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-73,0"
+                    Point2="-77,0"
+                    Point3="-77,4" />
+                  <mssgle:LineSegment
+                    End="-77,15" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-104.987578125,-15.7490234375,55.97515625,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Staging to Temp.Paths[Derived Column Output1]"
+          TopLeft="127,185">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-52.5,24.5"
+              Start="0,0"
+              End="-52.5,17">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.25"
+                    Point2="0,12.25"
+                    Point3="-4,12.25" />
+                  <mssgle:LineSegment
+                    End="-48.5,12.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-48.5,12.25"
+                    Point2="-52.5,12.25"
+                    Point3="-52.5,16.25" />
+                  <mssgle:LineSegment
+                    End="-52.5,17" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Staging to Temp.Paths[Normal Output]"
+          TopLeft="281.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-33.23638671875,20.4453125,66.4727734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Staging to Temp\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Staging to Temp\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Staging to Temp\Bad Records">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <DtsEventHandler
+    design-time-name="Package\Temp to Data Warehouse.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Temp to Data Warehouse.EventHandlers[OnPreExecute]\Start Logging Audit Info"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\Temp to Data Warehouse.EventHandlers[OnPostExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="251,42"
+          Id="Package\Temp to Data Warehouse.EventHandlers[OnPostExecute]\End Logging Audit Info with Success"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\Temp to Data Warehouse.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="237,42"
+          Id="Package\Temp to Data Warehouse.EventHandlers[OnError]\End Logging Audit Info with Error"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
