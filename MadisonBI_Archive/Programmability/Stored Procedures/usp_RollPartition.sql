@@ -1,7 +1,8 @@
 ﻿CREATE PROCEDURE [dbo].[usp_RollPartition]
 	@TableName NVARCHAR(100),
 	@MaxPartitionValue NVARCHAR(100),
-	@IncrementStep INT = 2
+	@IncrementStep INT = 2,
+	@RemovePartition BIT = 0
 AS
 BEGIN
 	DECLARE @PartitionStart DATETIME, @MaxPartitionDate DATETIME, @PartitionScheme NVARCHAR(100), @ParitionFunction NVARCHAR(100)
@@ -27,6 +28,7 @@ BEGIN
 			EXEC(@AlterScheme)
 			EXEC(@AlterFunction)
 			--Truncate and remove the earliest partition
+			IF @RemovePartition = 1
 			EXEC [dbo].[usp_DropEarliestPartition] @TableName = @TableName
 		END
 	END

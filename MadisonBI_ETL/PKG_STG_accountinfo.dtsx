@@ -11,8 +11,8 @@
   DTS:LocaleID="2052"
   DTS:ObjectName="PKG_STG_accountinfo"
   DTS:PackageType="5"
-  DTS:VersionBuild="89"
-  DTS:VersionGUID="{ADE5331D-FF48-4705-B771-147BC48F2FB5}">
+  DTS:VersionBuild="90"
+  DTS:VersionGUID="{28A98BA3-BE54-426A-986C-A221F25F3FC9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -297,13 +297,12 @@ WHERE Modified &gt;= ''2001-01-01 00:00:00'' AND Modified &lt; CAST(NOW() AS DAT
           <DTS:PropertyExpression
             DTS:Name="SqlStatementSource">"IF OBJECT_ID('DBO.DELTA_"+ @[User::TargetTable] +"','U') IS NOT NULL
 DROP TABLE DBO.DELTA_"+ @[User::TargetTable] +"
-SELECT * INTO DBO.DELTA_"+ @[User::TargetTable] +"
-FROM DBO."+ @[User::TargetTable] +"
-WHERE 1 = 0"</DTS:PropertyExpression>
+SELECT TOP 0 * INTO DBO.DELTA_"+ @[User::TargetTable] +"
+FROM DBO."+ @[User::TargetTable]</DTS:PropertyExpression>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{1EC4F465-990B-4A18-890F-7CD91DDDA7B8}"
-              SQLTask:SqlStatementSource="IF OBJECT_ID('DBO.DELTA_STG_accountinfo','U') IS NOT NULL&#xA;DROP TABLE DBO.DELTA_STG_accountinfo&#xA;SELECT * INTO DBO.DELTA_STG_accountinfo&#xA;FROM DBO.STG_accountinfo&#xA;WHERE 1 = 0" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="IF OBJECT_ID('DBO.DELTA_STG_accountinfo','U') IS NOT NULL&#xA;DROP TABLE DBO.DELTA_STG_accountinfo&#xA;SELECT TOP 0 * INTO DBO.DELTA_STG_accountinfo&#xA;FROM DBO.STG_accountinfo" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -2676,7 +2675,7 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
     design-time-name="Package\Load from Different Sources\Source to Temp Table">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="150,42"
           Id="Package\Load from Different Sources\Source to Temp Table\OLE DB Source"
@@ -2712,7 +2711,9 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2734,7 +2735,9 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2756,7 +2759,9 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

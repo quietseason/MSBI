@@ -74,5 +74,6 @@
     <Build Include="Programmability\Stored Procedures\usp_DropEarliestPartition.sql" />
     <Build Include="Programmability\Stored Procedures\usp_GetPartitionScheme.sql" />
     <Build Include="Programmability\Stored Procedures\usp_TruncatePartition.sql" />
+    <Build Include="Tables\BAD_accountinfo.sql" />
   </ItemGroup>
 </Project>

@@ -6,16 +6,34 @@
   DTS:CreatorComputerName="BISTUDIO"
   DTS:CreatorName="BISTUDIO\Bill"
   DTS:DTSID="{AD00F20D-B26F-4026-A915-74A321B2B096}"
+  DTS:EnableConfig="True"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="12.0.4100.1"
   DTS:LocaleID="2052"
   DTS:ObjectName="PKG_ARCH_accountinfo"
   DTS:PackageType="5"
-  DTS:VersionBuild="26"
-  DTS:VersionGUID="{268AFA81-C098-4D88-830B-91BE4C6F88E6}">
+  DTS:VersionBuild="30"
+  DTS:VersionGUID="{F2EB9814-D82E-47EA-9E1F-435A38C429C9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;MadisonBI_Logging&quot;;&quot;[dbo].[SSIS Configurations]&quot;;&quot;MadisonBI_Archive&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{6C7317B0-D740-4B22-A980-FF7750FF8E22}"
+      DTS:ObjectName="MadisonBI_Archive" />
+  </DTS:Configurations>
   <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9ECAFE59-B477-4C8F-A6E5-A2AD2DFD0F58}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ConfigRemovePartition">
+      <DTS:VariableValue
+        DTS:DataType="11">0</DTS:VariableValue>
+    </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
       DTS:DTSID="{E2ACCF20-7304-49EA-B64F-FDD4469B4C96}"
@@ -231,7 +249,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{D39FCA88-0AD2-4C0A-BD08-A9FF4EFB585A}"
-          SQLTask:SqlStatementSource="EXEC [dbo].[usp_RollPartition]&#xA;&#x9;@TableName = ?,&#xA;&#x9;@MaxPartitionValue = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:SqlStatementSource="EXEC [dbo].[usp_RollPartition]&#xA;&#x9;@TableName = ?,&#xA;&#x9;@MaxPartitionValue = ?,&#xA;&#x9;@RemovePartition = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
             SQLTask:DtsVariableName="User::TargetTable"
@@ -243,6 +261,12 @@
             SQLTask:DtsVariableName="User::MaxPartitionValue"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::ConfigRemovePartition"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
             SQLTask:ParameterSize="-1" />
         </SQLTask:SqlTaskData>
       </DTS:ObjectData>
@@ -1531,7 +1555,7 @@
     design-time-name="Package\Staging to Archive">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171,42"
           Id="Package\Staging to Archive\OLE DB Destination"
@@ -1567,7 +1591,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1589,7 +1615,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1611,7 +1639,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
