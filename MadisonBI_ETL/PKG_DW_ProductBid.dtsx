@@ -5,20 +5,20 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-KJKB7O1"
   DTS:CreatorName="DESKTOP-KJKB7O1\bill"
-  DTS:DTSID="{41F76304-604F-4DE0-B8C1-B1F46A399BEE}"
+  DTS:DTSID="{3B7F63C1-412F-48B3-88AA-FE602AB0F464}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="12.0.4100.1"
   DTS:LocaleID="1033"
-  DTS:ObjectName="PKG_DW_AccountInfo"
+  DTS:ObjectName="PKG_DW_ProductBid"
   DTS:PackageType="5"
-  DTS:VersionBuild="74"
-  DTS:VersionGUID="{53C25368-7A98-4756-8862-44FAC560AC0B}">
+  DTS:VersionBuild="76"
+  DTS:VersionGUID="{B10EEBEE-DB85-43DA-BC07-4A586900E35A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{F43D729B-BD29-4939-9C93-71B841DC3A1B}"
+      DTS:DTSID="{10151D71-8A4B-4476-8357-40FAC85925F7}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="InsertedRows">
@@ -27,16 +27,16 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{2091EC64-2B7B-43E7-90FA-E65FBBCE79E8}"
+      DTS:DTSID="{D32275FB-7A29-49EF-B58E-F68116E171C6}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="PackageDescription">
       <DTS:VariableValue
-        DTS:DataType="8">Extract and process data from STG_accountinfo</DTS:VariableValue>
+        DTS:DataType="8">Extract and process data from STG_productbid</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{79D632FE-F9A7-47F9-A91C-363A5D4F5665}"
+      DTS:DTSID="{EBED68C1-A12B-40F4-A1F5-A846FCC94030}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="PackageID">
@@ -45,7 +45,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{4531FF81-A12E-452D-A24F-20AE1862AC37}"
+      DTS:DTSID="{E3A3DE78-888D-464E-81A6-0E31F965C74D}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="PackageProcessAuditID">
@@ -54,7 +54,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B5313799-251C-41B4-B1BB-05F2AC45342E}"
+      DTS:DTSID="{B7F7EF53-E721-43E5-8424-1364251D6A8D}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="PackageProcessID">
@@ -63,7 +63,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{BC63EA5B-A08F-4EA1-9DBD-351CC528D783}"
+      DTS:DTSID="{BB2A03D5-5C62-4551-94F0-E4CBE735448C}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="PackageTypeID">
@@ -72,7 +72,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{BACF9D10-964B-49F7-8F16-4016641E2D16}"
+      DTS:DTSID="{CCC5A46A-45C6-4714-AFCC-55FC867AFA15}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SourceDatabase">
@@ -81,7 +81,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{27776CA4-106B-40B0-ABC5-6947FCAB15F2}"
+      DTS:DTSID="{3AB1BB84-D397-468F-B568-F38C7DDC9696}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SourceTable">
@@ -90,7 +90,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{F1C0138E-B218-4807-881E-1CDF8D28881C}"
+      DTS:DTSID="{44D1AB06-BA7A-4F93-8FAC-65CBB329042F}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="TargetDatabase">
@@ -99,7 +99,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{0EA85243-BE59-4880-B12F-6A0D1659CE48}"
+      DTS:DTSID="{CA6A8E2B-C340-4BA6-AC08-500B3EF7D88B}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="TargetTable">
@@ -108,7 +108,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B63C139D-A292-47A6-B771-DA7132462EC1}"
+      DTS:DTSID="{32AF450B-E7D6-408D-9299-33D109668A77}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="UpdatedRows">
@@ -121,7 +121,7 @@
       DTS:refId="Package\Create Temp Table"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{29FA48D9-1EE0-43D4-85A5-7E3FC99D0737}"
+      DTS:DTSID="{3544BB25-46CC-455D-8ED7-9BCF5F0262DA}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Create Temp Table">
@@ -131,7 +131,7 @@
           DTS:refId="Package\Create Temp Table\Create Temp Table in Archive"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{C159A5CF-3C73-42A6-9004-CB19178FA0EF}"
+          DTS:DTSID="{7ED0E9A8-7896-4931-9F89-5779F5759B33}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Create Temp Table in Archive"
@@ -152,7 +152,7 @@ SELECT TOP 0 * INTO DBO.DELTA_BAD_"+ REPLACE( @[User::SourceTable],"STG_","" ) +
           DTS:refId="Package\Create Temp Table\Create Temp Table in Data Warehouse"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{72F0A327-99D1-4854-AFAC-C05441DB6BAF}"
+          DTS:DTSID="{349818EF-683F-41E8-AAC7-36F4A56C3A98}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Create Temp Table in Data Warehouse"
@@ -176,7 +176,7 @@ FROM DBO."+ @[User::TargetTable]</DTS:PropertyExpression>
       DTS:refId="Package\Drop Temp Table"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{111914D8-EA65-44A7-A133-38D8C4D07E6C}"
+      DTS:DTSID="{873D2E20-C855-424A-8677-15D529FD3651}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Drop Temp Table">
@@ -186,12 +186,12 @@ FROM DBO."+ @[User::TargetTable]</DTS:PropertyExpression>
           DTS:refId="Package\Drop Temp Table\Drop Temp Table in Archive"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{9025dc49-098b-41fb-8bae-120001c86675}"
+          DTS:DTSID="{AD6489CA-BA6F-414C-8D23-6A40284C3371}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Drop Temp Table in Archive"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:PropertyExpression
             DTS:Name="SqlStatementSource">"IF OBJECT_ID('DBO.DELTA_BAD_"+ REPLACE( @[User::SourceTable],"STG_","" ) +"','U') IS NOT NULL
@@ -206,12 +206,12 @@ DROP TABLE DBO.DELTA_BAD_"+ REPLACE( @[User::SourceTable],"STG_","" )</DTS:Prope
           DTS:refId="Package\Drop Temp Table\Drop Temp Table in Data Warehouse"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{6b1db0ba-61af-4f8e-9b81-d4e4d073676c}"
+          DTS:DTSID="{84023686-9AAF-463F-94D4-7F05719915E6}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Drop Temp Table in Data Warehouse"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:PropertyExpression
             DTS:Name="SqlStatementSource">"IF OBJECT_ID('DBO.CLEAN_"+ @[User::TargetTable] +"','U') IS NOT NULL
@@ -228,7 +228,7 @@ DROP TABLE DBO.CLEAN_"+ @[User::TargetTable]</DTS:PropertyExpression>
       DTS:refId="Package\End Logging with Success"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{93e54822-e89c-41e7-b710-98319b7cee7c}"
+      DTS:DTSID="{B217D780-8CB0-488C-9BDA-66556E4D769D}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="End Logging with Success"
@@ -252,7 +252,7 @@ DROP TABLE DBO.CLEAN_"+ @[User::TargetTable]</DTS:PropertyExpression>
       DTS:refId="Package\Load from Temp"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{A1BA4B6A-98EB-4F8F-86E1-B1592474CB6A}"
+      DTS:DTSID="{B3127695-93E1-4E76-8642-8B3398210138}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Load from Temp">
@@ -262,12 +262,12 @@ DROP TABLE DBO.CLEAN_"+ @[User::TargetTable]</DTS:PropertyExpression>
           DTS:refId="Package\Load from Temp\Remove Duplicates"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{B7C1BB03-DD6E-411C-8A03-1234744B47A3}"
+          DTS:DTSID="{A3E705D6-8B72-4981-B484-0E390F102739}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Remove Duplicates"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:PropertyExpression
             DTS:Name="SqlStatementSource">"EXEC dbo.usp_RemoveDuplicate_"+ @[User::TargetTable]</DTS:PropertyExpression>
@@ -281,12 +281,12 @@ DROP TABLE DBO.CLEAN_"+ @[User::TargetTable]</DTS:PropertyExpression>
           DTS:refId="Package\Load from Temp\Temp to Bad Table"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{B54B426F-D379-4672-8853-72F3E4E7AA53}"
+          DTS:DTSID="{06038FDE-44B7-467D-B6F9-C41B6EA69A5A}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Temp to Bad Table"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:PropertyExpression
             DTS:Name="SqlStatementSource">"EXEC DBO.usp_Insert_BAD_"+REPLACE( @[User::SourceTable],"STG_","" )</DTS:PropertyExpression>
@@ -300,12 +300,12 @@ DROP TABLE DBO.CLEAN_"+ @[User::TargetTable]</DTS:PropertyExpression>
           DTS:refId="Package\Load from Temp\Temp to Data Warehouse"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{12AB4C81-9BE7-47C0-990E-911F227BB771}"
+          DTS:DTSID="{69EA8F4C-EDE5-47AE-9F00-6AB6FD2F6E9B}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Temp to Data Warehouse"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:PropertyExpression
             DTS:Name="SqlStatementSource">"EXEC dbo.usp_Merge_"+ @[User::TargetTable]+"
@@ -315,7 +315,7 @@ DROP TABLE DBO.CLEAN_"+ @[User::TargetTable]</DTS:PropertyExpression>
             <DTS:EventHandler
               DTS:refId="Package\Load from Temp\Temp to Data Warehouse.EventHandlers[OnError]"
               DTS:CreationName="OnError"
-              DTS:DTSID="{4724A0E3-8120-4BDF-A903-18A3184FFBBD}"
+              DTS:DTSID="{C69888EA-AEB7-4B46-BC69-BEB5230DF969}"
               DTS:EventID="948117228"
               DTS:EventName="OnError"
               DTS:LocaleID="-1">
@@ -323,7 +323,7 @@ DROP TABLE DBO.CLEAN_"+ @[User::TargetTable]</DTS:PropertyExpression>
                 <DTS:Variable
                   DTS:CreationName=""
                   DTS:Description="The propagate property of the event"
-                  DTS:DTSID="{9FB3E239-53C3-463D-A463-F1B8BB32C4AF}"
+                  DTS:DTSID="{D0784128-8882-4FC8-8522-28842F6AFB40}"
                   DTS:IncludeInDebugDump="6789"
                   DTS:Namespace="System"
                   DTS:ObjectName="Propagate">
@@ -336,7 +336,7 @@ DROP TABLE DBO.CLEAN_"+ @[User::TargetTable]</DTS:PropertyExpression>
                   DTS:refId="Package\Load from Temp\Temp to Data Warehouse.EventHandlers[OnError]\End Logging Audit Info with Error"
                   DTS:CreationName="Microsoft.ExecuteSQLTask"
                   DTS:Description="Execute SQL Task"
-                  DTS:DTSID="{529ae571-914a-4bd8-8305-b82bffbca641}"
+                  DTS:DTSID="{40F01BCC-9316-4549-9E47-B54EDB37FAAF}"
                   DTS:ExecutableType="Microsoft.ExecuteSQLTask"
                   DTS:LocaleID="-1"
                   DTS:ObjectName="End Logging Audit Info with Error"
@@ -360,7 +360,7 @@ DROP TABLE DBO.CLEAN_"+ @[User::TargetTable]</DTS:PropertyExpression>
             <DTS:EventHandler
               DTS:refId="Package\Load from Temp\Temp to Data Warehouse.EventHandlers[OnPostExecute]"
               DTS:CreationName="OnPostExecute"
-              DTS:DTSID="{9933FF2D-7F3C-486E-807A-27CCBFD8A1E0}"
+              DTS:DTSID="{09366458-6EC0-46C1-882B-1CFF11CFB84C}"
               DTS:EventID="948121180"
               DTS:EventName="OnPostExecute"
               DTS:LocaleID="-1">
@@ -368,7 +368,7 @@ DROP TABLE DBO.CLEAN_"+ @[User::TargetTable]</DTS:PropertyExpression>
                 <DTS:Variable
                   DTS:CreationName=""
                   DTS:Description="The propagate property of the event"
-                  DTS:DTSID="{B83D43D5-E403-49D8-9D45-5D69A3FEB25B}"
+                  DTS:DTSID="{A1F53CE5-CDE6-484E-94F8-22C1BC84E25F}"
                   DTS:IncludeInDebugDump="6789"
                   DTS:Namespace="System"
                   DTS:ObjectName="Propagate">
@@ -381,7 +381,7 @@ DROP TABLE DBO.CLEAN_"+ @[User::TargetTable]</DTS:PropertyExpression>
                   DTS:refId="Package\Load from Temp\Temp to Data Warehouse.EventHandlers[OnPostExecute]\End Logging Audit Info with Success"
                   DTS:CreationName="Microsoft.ExecuteSQLTask"
                   DTS:Description="Execute SQL Task"
-                  DTS:DTSID="{321189ce-5607-4635-8a3f-4081b96d3675}"
+                  DTS:DTSID="{C82341F4-ED91-44E3-8FCC-BB2AA1A968F2}"
                   DTS:ExecutableType="Microsoft.ExecuteSQLTask"
                   DTS:LocaleID="-1"
                   DTS:ObjectName="End Logging Audit Info with Success"
@@ -417,7 +417,7 @@ DROP TABLE DBO.CLEAN_"+ @[User::TargetTable]</DTS:PropertyExpression>
             <DTS:EventHandler
               DTS:refId="Package\Load from Temp\Temp to Data Warehouse.EventHandlers[OnPreExecute]"
               DTS:CreationName="OnPreExecute"
-              DTS:DTSID="{867394A4-169D-4196-A99D-BD90D58A7079}"
+              DTS:DTSID="{FAA830CF-4720-4792-97BF-3E45E501BCCE}"
               DTS:EventID="948119308"
               DTS:EventName="OnPreExecute"
               DTS:LocaleID="-1">
@@ -425,7 +425,7 @@ DROP TABLE DBO.CLEAN_"+ @[User::TargetTable]</DTS:PropertyExpression>
                 <DTS:Variable
                   DTS:CreationName=""
                   DTS:Description="The propagate property of the event"
-                  DTS:DTSID="{CE48D979-8A9E-46DC-A55B-6DC9FCAAFB33}"
+                  DTS:DTSID="{99C0A4D1-6A1D-4001-84D3-E7CD8331521D}"
                   DTS:IncludeInDebugDump="6789"
                   DTS:Namespace="System"
                   DTS:ObjectName="Propagate">
@@ -438,7 +438,7 @@ DROP TABLE DBO.CLEAN_"+ @[User::TargetTable]</DTS:PropertyExpression>
                   DTS:refId="Package\Load from Temp\Temp to Data Warehouse.EventHandlers[OnPreExecute]\Start Logging Audit Info"
                   DTS:CreationName="Microsoft.ExecuteSQLTask"
                   DTS:Description="Execute SQL Task"
-                  DTS:DTSID="{12e4cba3-3ec4-4e41-8807-0595aea90020}"
+                  DTS:DTSID="{8D06805C-444A-4F73-B5FD-B4277473112B}"
                   DTS:ExecutableType="Microsoft.ExecuteSQLTask"
                   DTS:LocaleID="-1"
                   DTS:ObjectName="Start Logging Audit Info"
@@ -520,7 +520,7 @@ DROP TABLE DBO.CLEAN_"+ @[User::TargetTable]</DTS:PropertyExpression>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load from Temp.PrecedenceConstraints[Constraint 3]"
           DTS:CreationName=""
-          DTS:DTSID="{DEFFB4A7-BDB2-4D38-8062-A2915E8BEA69}"
+          DTS:DTSID="{09441AA4-2B2F-43E5-A572-E0D2C90A0569}"
           DTS:From="Package\Load from Temp\Remove Duplicates"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3"
@@ -531,7 +531,7 @@ DROP TABLE DBO.CLEAN_"+ @[User::TargetTable]</DTS:PropertyExpression>
       DTS:refId="Package\Register This Package"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{3b6fd4c8-1c08-42ee-8648-8651ff0d90f7}"
+      DTS:DTSID="{3461187C-AA7D-4245-9CDA-B39CDE780B49}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Register This Package"
@@ -574,7 +574,7 @@ DROP TABLE DBO.CLEAN_"+ @[User::TargetTable]</DTS:PropertyExpression>
       DTS:CreationName="Microsoft.Pipeline"
       DTS:DelayValidation="True"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{02973A5E-5013-4192-BF1B-EA8ADBC8233A}"
+      DTS:DTSID="{7C8B4ACE-D77A-4500-BCC3-230D6EC5BACC}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Staging to Temp"
@@ -2088,7 +2088,7 @@ FROM DBO.STG_accountinfo WITH(NOLOCK)</property>
       DTS:refId="Package\Start Logging"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{67564512-5615-44ed-a965-b5ffd9812c68}"
+      DTS:DTSID="{268715EF-76C6-4828-A230-E5A8787C6769}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Start Logging"
@@ -2131,7 +2131,7 @@ FROM DBO.STG_accountinfo WITH(NOLOCK)</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{cc250f43-4f60-45d8-b50b-b479ae7598f9}"
+      DTS:DTSID="{C334945E-B439-48C4-B48A-79CD0BA7C1AD}"
       DTS:From="Package\Register This Package"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -2139,7 +2139,7 @@ FROM DBO.STG_accountinfo WITH(NOLOCK)</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{7733541B-E83A-4213-8617-F65530B74ABB}"
+      DTS:DTSID="{FD5F4F35-4C5A-4D13-904D-197DAC4F5E48}"
       DTS:From="Package\Start Logging"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -2147,7 +2147,7 @@ FROM DBO.STG_accountinfo WITH(NOLOCK)</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{09256131-1A16-43A2-8D82-82E308B85205}"
+      DTS:DTSID="{7415BC9E-C636-4BF6-812E-42CDCF3670D0}"
       DTS:From="Package\Staging to Temp"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -2155,7 +2155,7 @@ FROM DBO.STG_accountinfo WITH(NOLOCK)</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{E2F0BF9B-9F00-4131-AAF4-2D7447927386}"
+      DTS:DTSID="{F8193333-A255-4923-8B4B-58D6ABADF228}"
       DTS:From="Package\Load from Temp"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
@@ -2163,7 +2163,7 @@ FROM DBO.STG_accountinfo WITH(NOLOCK)</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{59876D79-C077-4C36-8CBE-01C05ED89A58}"
+      DTS:DTSID="{EC6CE2EF-1B3E-4B4E-95BD-C6A11E3BC8BA}"
       DTS:From="Package\Drop Temp Table"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
@@ -2171,7 +2171,7 @@ FROM DBO.STG_accountinfo WITH(NOLOCK)</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
       DTS:CreationName=""
-      DTS:DTSID="{F993FB3E-A0B4-4CA2-A987-DB74B66E1738}"
+      DTS:DTSID="{5971D14E-D99E-435D-A479-EDD7CB9DCD74}"
       DTS:From="Package\Create Temp Table"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 5"
@@ -2181,7 +2181,7 @@ FROM DBO.STG_accountinfo WITH(NOLOCK)</property>
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnError]"
       DTS:CreationName="OnError"
-      DTS:DTSID="{9D6D43FF-D2D4-4127-B370-1664FD61BA50}"
+      DTS:DTSID="{970A67E8-EE37-434B-A4DE-BECBB08EED6D}"
       DTS:EventID="1124417724"
       DTS:EventName="OnError"
       DTS:LocaleID="-1">
@@ -2189,7 +2189,7 @@ FROM DBO.STG_accountinfo WITH(NOLOCK)</property>
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{40CC38FC-9BD4-4E10-B4A7-F1221833D533}"
+          DTS:DTSID="{C78059DB-C04E-4E67-B8DE-470C7EF66EEE}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -2202,7 +2202,7 @@ FROM DBO.STG_accountinfo WITH(NOLOCK)</property>
           DTS:refId="Package.EventHandlers[OnError]\End Logging with Error"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{6a45aab8-7797-4a13-b08e-903bc95f5d7d}"
+          DTS:DTSID="{8041FDE3-DD56-4C50-96ED-9AC908E0F96A}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="End Logging with Error"
@@ -2225,7 +2225,7 @@ FROM DBO.STG_accountinfo WITH(NOLOCK)</property>
           DTS:refId="Package.EventHandlers[OnError]\Logging Error"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{bc5d41f5-6830-4df5-8c20-aae7b8ea1b77}"
+          DTS:DTSID="{C12B87F5-2CBE-44F5-9098-C584A79E763B}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Logging Error"
@@ -2272,9 +2272,80 @@ FROM DBO.STG_accountinfo WITH(NOLOCK)</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="218,42"
+          Id="Package\Create Temp Table\Create Temp Table in Archive"
+          TopLeft="328.5,5.5" />
+        <NodeLayout
+          Size="262,42"
+          Id="Package\Create Temp Table\Create Temp Table in Data Warehouse"
+          TopLeft="5.5,5.5" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="552,103"
+          Size="552,146"
+          Id="Package\Create Temp Table"
+          TopLeft="5.5,209.5" />
+        <NodeLayout
+          Size="210,42"
+          Id="Package\Drop Temp Table\Drop Temp Table in Archive"
+          TopLeft="320.5,5.5" />
+        <NodeLayout
+          Size="254,42"
+          Id="Package\Drop Temp Table\Drop Temp Table in Data Warehouse"
+          TopLeft="5.5,5.5" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="536,103"
+          Size="536,146"
+          Id="Package\Drop Temp Table"
+          TopLeft="13.5000000000001,825.5" />
+        <NodeLayout
           Size="201,42"
           Id="Package\End Logging with Success"
           TopLeft="181,1031.5" />
+        <NodeLayout
+          Size="169,42"
+          Id="Package\Load from Temp\Remove Duplicates"
+          TopLeft="21,5.5" />
+        <NodeLayout
+          Size="169,42"
+          Id="Package\Load from Temp\Temp to Bad Table"
+          TopLeft="266,107.5" />
+        <NodeLayout
+          Size="200,42"
+          Id="Package\Load from Temp\Temp to Data Warehouse"
+          TopLeft="5.5,107.5" />
+        <EdgeLayout
+          Id="Package\Load from Temp.PrecedenceConstraints[Constraint 3]"
+          TopLeft="105.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="440,205"
+          Size="440,248"
+          Id="Package\Load from Temp"
+          TopLeft="61.5000000000001,517.5" />
         <NodeLayout
           Size="182,42"
           Id="Package\Register This Package"
@@ -2309,21 +2380,6 @@ FROM DBO.STG_accountinfo WITH(NOLOCK)</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="262,42"
-          Id="Package\Create Temp Table\Create Temp Table in Data Warehouse"
-          TopLeft="5.5,5.5" />
-        <NodeLayout
-          Size="218,42"
-          Id="Package\Create Temp Table\Create Temp Table in Archive"
-          TopLeft="328.5,5.5" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="552,102"
-          Size="552,146"
-          Id="Package\Create Temp Table"
-          TopLeft="5.5,209.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="281.5,149.5">
@@ -2346,84 +2402,6 @@ FROM DBO.STG_accountinfo WITH(NOLOCK)</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="281.5,355.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="254,42"
-          Id="Package\Drop Temp Table\Drop Temp Table in Data Warehouse"
-          TopLeft="5.5,5.5" />
-        <NodeLayout
-          Size="210,42"
-          Id="Package\Drop Temp Table\Drop Temp Table in Archive"
-          TopLeft="320.5,5.5" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="536,102"
-          Size="536,146"
-          Id="Package\Drop Temp Table"
-          TopLeft="13.5000000000001,825.5" />
-        <NodeLayout
-          Size="200,42"
-          Id="Package\Load from Temp\Temp to Data Warehouse"
-          TopLeft="5.5,107.5" />
-        <EdgeLayout
-          Id="Package\Load from Temp.PrecedenceConstraints[Constraint 3]"
-          TopLeft="105.5,47.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="169,42"
-          Id="Package\Load from Temp\Remove Duplicates"
-          TopLeft="21,5.5" />
-        <NodeLayout
-          Size="169,42"
-          Id="Package\Load from Temp\Temp to Bad Table"
-          TopLeft="266,107.5" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="440,204"
-          Size="440,248"
-          Id="Package\Load from Temp"
-          TopLeft="61.5000000000001,517.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="281.5,457.5">
@@ -2490,6 +2468,28 @@ FROM DBO.STG_accountinfo WITH(NOLOCK)</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="281.5,355.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -2509,209 +2509,6 @@ FROM DBO.STG_accountinfo WITH(NOLOCK)</property>
       </GraphLayout>
     </LayoutInfo>
   </DtsEventHandler>
-  <TaskHost
-    design-time-name="Package\Staging to Temp">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Staging to Temp\OLE DB Source"
-          TopLeft="206.5,5.5" />
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Staging to Temp\Derived Column"
-          TopLeft="204.5,209.5" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Staging to Temp\OLE DB Destination"
-          TopLeft="196,311.5" />
-        <EdgeLayout
-          Id="Package\Staging to Temp.Paths[Derived Column Output]"
-          TopLeft="281.5,251.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="155,42"
-          Id="Package\Staging to Temp\Conditional Split"
-          TopLeft="204,107.5" />
-        <EdgeLayout
-          Id="Package\Staging to Temp.Paths[OLE DB Source Output]"
-          TopLeft="281.5,47.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="138,42"
-          Id="Package\Staging to Temp\Bad Records"
-          TopLeft="5.50000000000003,209.5" />
-        <NodeLayout
-          Size="232,42"
-          Id="Package\Staging to Temp\Derived Column for Bad Records"
-          TopLeft="11,143" />
-        <EdgeLayout
-          Id="Package\Staging to Temp.Paths[Bad Records]"
-          TopLeft="204,120.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-77,22.5"
-              Start="0,0"
-              End="-77,15">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-73,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-73,0"
-                    Point2="-77,0"
-                    Point3="-77,4" />
-                  <mssgle:LineSegment
-                    End="-77,15" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-104.987578125,-15.7490234375,55.97515625,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Staging to Temp.Paths[Derived Column Output1]"
-          TopLeft="127,185">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-52.5,24.5"
-              Start="0,0"
-              End="-52.5,17">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,8.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,8.25"
-                    Point2="0,12.25"
-                    Point3="-4,12.25" />
-                  <mssgle:LineSegment
-                    End="-48.5,12.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-48.5,12.25"
-                    Point2="-52.5,12.25"
-                    Point3="-52.5,16.25" />
-                  <mssgle:LineSegment
-                    End="-52.5,17" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Staging to Temp.Paths[Normal Output]"
-          TopLeft="281.5,149.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-33.23638671875,20.4453125,66.4727734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Staging to Temp\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Staging to Temp\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Staging to Temp\Bad Records">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <DtsEventHandler
     design-time-name="Package\Load from Temp\Temp to Data Warehouse.EventHandlers[OnPreExecute]">
     <LayoutInfo>
@@ -2748,5 +2545,214 @@ FROM DBO.STG_accountinfo WITH(NOLOCK)</property>
       </GraphLayout>
     </LayoutInfo>
   </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\Staging to Temp">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Staging to Temp\Conditional Split"
+          TopLeft="204,107.5" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Staging to Temp\Derived Column"
+          TopLeft="204.5,209.5" />
+        <NodeLayout
+          Size="138,42"
+          Id="Package\Staging to Temp\Bad Records"
+          TopLeft="5.50000000000003,209.5" />
+        <NodeLayout
+          Size="232,42"
+          Id="Package\Staging to Temp\Derived Column for Bad Records"
+          TopLeft="11,143" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Staging to Temp\OLE DB Source"
+          TopLeft="206.5,5.5" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Staging to Temp\OLE DB Destination"
+          TopLeft="196,311.5" />
+        <EdgeLayout
+          Id="Package\Staging to Temp.Paths[OLE DB Source Output]"
+          TopLeft="281.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Staging to Temp.Paths[Normal Output]"
+          TopLeft="281.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-33.23638671875,20.4453125,66.4727734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Staging to Temp.Paths[Derived Column Output1]"
+          TopLeft="127,185">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-52.5,24.5"
+              Start="0,0"
+              End="-52.5,17">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.25"
+                    Point2="0,12.25"
+                    Point3="-4,12.25" />
+                  <mssgle:LineSegment
+                    End="-48.5,12.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-48.5,12.25"
+                    Point2="-52.5,12.25"
+                    Point3="-52.5,16.25" />
+                  <mssgle:LineSegment
+                    End="-52.5,17" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Staging to Temp.Paths[Derived Column Output]"
+          TopLeft="281.5,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Staging to Temp.Paths[Bad Records]"
+          TopLeft="204,120.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-77,22.5"
+              Start="0,0"
+              End="-77,15">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-73,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-73,0"
+                    Point2="-77,0"
+                    Point3="-77,4" />
+                  <mssgle:LineSegment
+                    End="-77,15" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-104.987578125,-15.7490234375,55.97515625,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Staging to Temp\Bad Records">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Staging to Temp\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Staging to Temp\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

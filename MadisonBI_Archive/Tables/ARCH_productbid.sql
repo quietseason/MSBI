@@ -1,6 +1,7 @@
-﻿CREATE TABLE [dbo].[STG_productbid]
+﻿CREATE TABLE [dbo].[ARCH_productbid]
 (
-	[StagingID] BIGINT NOT NULL IDENTITY(1,1),
+	[ArchiveID] BIGINT NOT NULL IDENTITY(1,1),
+	[StagingID] BIGINT NOT NULL,
 	[ProductBidID] BIGINT NOT NULL, --产品购买ID
 	[ProductID] BIGINT NULL,--购买产品ID
 	[ProductType] TINYINT NOT NULL, --产品类型 1：活期，2：定期先息后本，3：定期本息一次性偿还，4：定期等额本息，5：弹升月产品，6：弹升季产品，7：弹升半年产品，8：弹升长产品，99：特殊定期本息一次偿还（新手专享）
@@ -20,8 +21,10 @@
 	[StartDate] DATE NULL,--起息日
 	[EndDate] DATE NULL,--计息结束日期
     [Created] DATETIME NOT NULL, 
-    [Modified] DATETIME NULL, 
+    [Modified] DATETIME NOT NULL, 
     [Source] NVARCHAR(100) NOT NULL, 
     [StagingInsertTime] DATETIME NOT NULL, 
-    CONSTRAINT [PK_STG_productbid] PRIMARY KEY(StagingID)
-)
+	[ArchiveInsertTime] DATETIME NULL, 
+    CONSTRAINT [PK_ARCH_productbid] PRIMARY KEY(ArchiveID,[Modified])
+) ON [sch_Partition]([Modified])
+
