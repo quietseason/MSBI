@@ -24,7 +24,7 @@
     [Modified] DATETIME NOT NULL, 
     [Source] NVARCHAR(100) NOT NULL, 
     [StagingInsertTime] DATETIME NOT NULL, 
-	[ArchiveInsertTime] DATETIME NULL, 
+	[ArchiveInsertTime] DATETIME NOT NULL, 
     CONSTRAINT [PK_ARCH_productbid] PRIMARY KEY(ArchiveID,[Modified])
 ) ON [sch_Partition]([Modified])
 

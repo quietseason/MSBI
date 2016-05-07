@@ -11,8 +11,8 @@
   DTS:LocaleID="2052"
   DTS:ObjectName="PKG_STG_accountdetail"
   DTS:PackageType="5"
-  DTS:VersionBuild="95"
-  DTS:VersionGUID="{B4A28A4E-E5A2-473B-9F72-05A4B40723D0}">
+  DTS:VersionBuild="97"
+  DTS:VersionGUID="{7E229794-2BA5-4BC5-94D2-5FFEA08D61EE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -606,7 +606,7 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
                         <property
                           dataType="System.String"
                           description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                          name="FastLoadOptions">TABLOCK</property>
+                          name="FastLoadOptions">TABLOCK,ROWS_PER_BATCH = 20000</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -1164,40 +1164,11 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
                         </output>
                       </outputs>
                     </component>
-                    <component
-                      refId="Package\Load from Different Sources\Loop Different AccountType\Source to Temp Table\Row Count"
-                      componentClassID="Microsoft.RowCount"
-                      contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-                      description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
-                      name="Row Count">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the variable to hold the row count."
-                          name="VariableName">User::InsertedRows</property>
-                      </properties>
-                      <inputs>
-                        <input
-                          refId="Package\Load from Different Sources\Loop Different AccountType\Source to Temp Table\Row Count.Inputs[Row Count Input 1]"
-                          hasSideEffects="true"
-                          name="Row Count Input 1">
-                          <externalMetadataColumns />
-                        </input>
-                      </inputs>
-                      <outputs>
-                        <output
-                          refId="Package\Load from Different Sources\Loop Different AccountType\Source to Temp Table\Row Count.Outputs[Row Count Output 1]"
-                          name="Row Count Output 1"
-                          synchronousInputId="Package\Load from Different Sources\Loop Different AccountType\Source to Temp Table\Row Count.Inputs[Row Count Input 1]">
-                          <externalMetadataColumns />
-                        </output>
-                      </outputs>
-                    </component>
                   </components>
                   <paths>
                     <path
                       refId="Package\Load from Different Sources\Loop Different AccountType\Source to Temp Table.Paths[Derived Column Output]"
-                      endId="Package\Load from Different Sources\Loop Different AccountType\Source to Temp Table\Row Count.Inputs[Row Count Input 1]"
+                      endId="Package\Load from Different Sources\Loop Different AccountType\Source to Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input]"
                       name="Derived Column Output"
                       startId="Package\Load from Different Sources\Loop Different AccountType\Source to Temp Table\Derived Column.Outputs[Derived Column Output]" />
                     <path
@@ -1205,11 +1176,6 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
                       endId="Package\Load from Different Sources\Loop Different AccountType\Source to Temp Table\Derived Column.Inputs[Derived Column Input]"
                       name="OLE DB Source Output"
                       startId="Package\Load from Different Sources\Loop Different AccountType\Source to Temp Table\OLE DB Source.Outputs[OLE DB Source Output]" />
-                    <path
-                      refId="Package\Load from Different Sources\Loop Different AccountType\Source to Temp Table.Paths[Row Count Output 1]"
-                      endId="Package\Load from Different Sources\Loop Different AccountType\Source to Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input]"
-                      name="Row Count Output 1"
-                      startId="Package\Load from Different Sources\Loop Different AccountType\Source to Temp Table\Row Count.Outputs[Row Count Output 1]" />
                   </paths>
                 </pipeline>
               </DTS:ObjectData>
@@ -2106,13 +2072,47 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
                     </output>
                   </outputs>
                 </component>
+                <component
+                  refId="Package\Load from Different Sources\Temp Table to Staging\Row Count"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Row Count">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::InsertedRows</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Load from Different Sources\Temp Table to Staging\Row Count.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load from Different Sources\Temp Table to Staging\Row Count.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\Load from Different Sources\Temp Table to Staging\Row Count.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
               </components>
               <paths>
                 <path
                   refId="Package\Load from Different Sources\Temp Table to Staging.Paths[OLE DB Source Output]"
-                  endId="Package\Load from Different Sources\Temp Table to Staging\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  endId="Package\Load from Different Sources\Temp Table to Staging\Row Count.Inputs[Row Count Input 1]"
                   name="OLE DB Source Output"
                   startId="Package\Load from Different Sources\Temp Table to Staging\OLE DB Source.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\Load from Different Sources\Temp Table to Staging.Paths[Row Count Output 1]"
+                  endId="Package\Load from Different Sources\Temp Table to Staging\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Row Count Output 1"
+                  startId="Package\Load from Different Sources\Temp Table to Staging\Row Count.Outputs[Row Count Output 1]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -2426,6 +2426,17 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
           Id="Package\Load from Different Sources\Get Source Connection"
           TopLeft="9.50000000000001,5.5" />
         <NodeLayout
+          Size="183,42"
+          Id="Package\Load from Different Sources\Loop Different AccountType\Source to Temp Table"
+          TopLeft="5.5,5.5" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="194,103"
+          Size="194,146"
+          Id="Package\Load from Different Sources\Loop Different AccountType"
+          TopLeft="5.50000000000006,311.5" />
+        <NodeLayout
           Size="186,42"
           Id="Package\Load from Different Sources\Temp Table to Staging"
           TopLeft="9.50000000000009,517.5" />
@@ -2474,8 +2485,8 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load from Different Sources.PrecedenceConstraints[Constraint 3]"
-          TopLeft="102.5,559.5">
+          Id="Package\Load from Different Sources.PrecedenceConstraints[Constraint 2]"
+          TopLeft="102.5,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2495,20 +2506,9 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="183,42"
-          Id="Package\Load from Different Sources\Loop Different AccountType\Source to Temp Table"
-          TopLeft="5.5,5.5" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="194,102"
-          Size="194,146"
-          Id="Package\Load from Different Sources\Loop Different AccountType"
-          TopLeft="5.50000000000006,311.5" />
         <EdgeLayout
-          Id="Package\Load from Different Sources.PrecedenceConstraints[Constraint 2]"
-          TopLeft="102.5,251.5">
+          Id="Package\Load from Different Sources.PrecedenceConstraints[Constraint 3]"
+          TopLeft="102.5,559.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2553,7 +2553,7 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="205,716"
+          PanelSize="205,717"
           Size="205,760"
           Id="Package\Load from Different Sources"
           TopLeft="5.50000000000013,413.5" />
@@ -2712,57 +2712,9 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
           Id="Package\Load from Different Sources\Loop Different AccountType\Source to Temp Table\Derived Column"
           TopLeft="14,107.5" />
         <NodeLayout
-          Size="130,42"
-          Id="Package\Load from Different Sources\Loop Different AccountType\Source to Temp Table\Row Count"
-          TopLeft="26,209.5" />
-        <NodeLayout
           Size="171,42"
           Id="Package\Load from Different Sources\Loop Different AccountType\Source to Temp Table\OLE DB Destination"
           TopLeft="5.50000000000003,311.5" />
-        <EdgeLayout
-          Id="Package\Load from Different Sources\Loop Different AccountType\Source to Temp Table.Paths[Derived Column Output]"
-          TopLeft="91,149.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load from Different Sources\Loop Different AccountType\Source to Temp Table.Paths[Row Count Output 1]"
-          TopLeft="91,251.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Load from Different Sources\Loop Different AccountType\Source to Temp Table.Paths[OLE DB Source Output]"
           TopLeft="91,47.5">
@@ -2777,6 +2729,28 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load from Different Sources\Loop Different AccountType\Source to Temp Table.Paths[Derived Column Output]"
+          TopLeft="91,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,162"
+              Start="0,0"
+              End="0,154.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,154.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2813,7 +2787,7 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
     design-time-name="Package\Load from Different Sources\Temp Table to Staging">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="150,42"
           Id="Package\Load from Different Sources\Temp Table to Staging\OLE DB Source"
@@ -2822,20 +2796,46 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
           Size="171,42"
           Id="Package\Load from Different Sources\Temp Table to Staging\OLE DB Destination"
           TopLeft="5.50000000000003,209.5" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Load from Different Sources\Temp Table to Staging\Row Count"
+          TopLeft="26,107.5" />
         <EdgeLayout
           Id="Package\Load from Different Sources\Temp Table to Staging.Paths[OLE DB Source Output]"
           TopLeft="91,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,162"
+              EndConnector="0,60"
               Start="0,0"
-              End="0,154.5">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,154.5" />
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load from Different Sources\Temp Table to Staging.Paths[Row Count Output 1]"
+          TopLeft="91,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

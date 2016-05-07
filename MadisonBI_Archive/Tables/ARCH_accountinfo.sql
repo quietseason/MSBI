@@ -14,8 +14,8 @@
     [Created] DATETIME NOT NULL, 
     [Modified] DATETIME NOT NULL, 
     [Source] NVARCHAR(100) NOT NULL, 
-    [StagingInsertTime] DATETIME NULL, 
-	[ArchiveInsertTime] DATETIME NULL, 
+    [StagingInsertTime] DATETIME NOT NULL, 
+	[ArchiveInsertTime] DATETIME NOT NULL, 
     CONSTRAINT [PK_ARCH_accountinfo] PRIMARY KEY(ArchiveID,[Modified])
 ) ON [sch_Partition]([Modified])
 /*

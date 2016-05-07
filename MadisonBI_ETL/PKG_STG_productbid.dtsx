@@ -11,8 +11,8 @@
   DTS:LocaleID="2052"
   DTS:ObjectName="PKG_STG_productbid"
   DTS:PackageType="5"
-  DTS:VersionBuild="96"
-  DTS:VersionGUID="{EA944D8C-F52F-4E0F-9B5B-C99860158D41}">
+  DTS:VersionBuild="97"
+  DTS:VersionGUID="{45B0F9E3-AA00-40AC-AA5F-AB9D2F24570E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -574,7 +574,7 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
                     <property
                       dataType="System.String"
                       description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                      name="FastLoadOptions">TABLOCK</property>
+                      name="FastLoadOptions">TABLOCK,ROWS_PER_BATCH = 20000</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -3192,39 +3192,17 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
           Id="Package\Load from Different Sources\Source to Temp Table\OLE DB Source"
           TopLeft="16,5.5" />
         <NodeLayout
-          Size="154,42"
-          Id="Package\Load from Different Sources\Source to Temp Table\Derived Column"
-          TopLeft="14,107.5" />
-        <NodeLayout
           Size="130,42"
           Id="Package\Load from Different Sources\Source to Temp Table\Row Count"
           TopLeft="26,209.5" />
         <NodeLayout
+          Size="154,42"
+          Id="Package\Load from Different Sources\Source to Temp Table\Derived Column"
+          TopLeft="14,107.5" />
+        <NodeLayout
           Size="171,42"
           Id="Package\Load from Different Sources\Source to Temp Table\OLE DB Destination"
           TopLeft="5.50000000000003,311.5" />
-        <EdgeLayout
-          Id="Package\Load from Different Sources\Source to Temp Table.Paths[Derived Column Output]"
-          TopLeft="91,149.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Load from Different Sources\Source to Temp Table.Paths[Row Count Output 1]"
           TopLeft="91,251.5">
@@ -3250,6 +3228,28 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
         <EdgeLayout
           Id="Package\Load from Different Sources\Source to Temp Table.Paths[OLE DB Source Output]"
           TopLeft="91,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load from Different Sources\Source to Temp Table.Paths[Derived Column Output]"
+          TopLeft="91,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3297,15 +3297,15 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
     design-time-name="Package\Load from Different Sources\Temp Table to Staging">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Load from Different Sources\Temp Table to Staging\OLE DB Source"
-          TopLeft="16,5.5" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171,42"
           Id="Package\Load from Different Sources\Temp Table to Staging\OLE DB Destination"
           TopLeft="5.50000000000003,209.5" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Load from Different Sources\Temp Table to Staging\OLE DB Source"
+          TopLeft="16,5.5" />
         <EdgeLayout
           Id="Package\Load from Different Sources\Temp Table to Staging.Paths[OLE DB Source Output]"
           TopLeft="91,47.5">
@@ -3325,7 +3325,9 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

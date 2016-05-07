@@ -24,6 +24,6 @@
     [Modified] DATETIME NULL, 
     [Source] NVARCHAR(100) NOT NULL, 
     [StagingInsertTime] DATETIME NOT NULL, 
-	[RecordInsertTime] DATETIME NULL, 
+	[RecordInsertTime] DATETIME NOT NULL, 
     CONSTRAINT [PK_BAD_productbid] PRIMARY KEY([BadRecordID])
 )

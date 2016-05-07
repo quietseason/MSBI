@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[BAD_accountinfo]
+﻿CREATE TABLE [dbo].[BAD_accountdetail]
 (
 	[BadRecordID] BIGINT NOT NULL IDENTITY(1,1),
 	[StagingID] BIGINT NOT NULL,
@@ -14,7 +14,7 @@
     [Created] DATETIME NOT NULL, 
     [Modified] DATETIME NOT NULL, 
     [Source] NVARCHAR(100) NOT NULL, 
-    [StagingInsertTime] DATETIME NOT NULL, 
+    [StagingInsertTime] DATETIME NOT NULL,
 	[RecordInsertTime] DATETIME NOT NULL, 
-    CONSTRAINT [PK_BAD_accountinfo] PRIMARY KEY([BadRecordID])
+    CONSTRAINT [PK_BAD_accountdetail] PRIMARY KEY([BadRecordID])
 )

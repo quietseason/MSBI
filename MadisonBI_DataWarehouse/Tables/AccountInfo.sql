@@ -21,4 +21,4 @@
 
 GO
 
-CREATE INDEX [UX_AccountInfo] ON [dbo].[AccountInfo] ([AccountID],[IsCurrent])
+CREATE UNIQUE INDEX [UX_AccountInfo] ON [dbo].[AccountInfo] ([AccountID],[IsCurrent])

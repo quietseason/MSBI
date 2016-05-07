@@ -78,5 +78,7 @@
     <Build Include="Programmability\Stored Procedures\usp_Insert_Bad_accountinfo.sql" />
     <Build Include="Tables\ARCH_productbid.sql" />
     <Build Include="Tables\BAD_productbid.sql" />
+    <Build Include="Tables\ARCH_accountdetail.sql" />
+    <Build Include="Tables\BAD_accountdetail.sql" />
   </ItemGroup>
 </Project>
