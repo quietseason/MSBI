@@ -80,5 +80,6 @@
     <Build Include="Tables\BAD_productbid.sql" />
     <Build Include="Tables\ARCH_accountdetail.sql" />
     <Build Include="Tables\BAD_accountdetail.sql" />
+    <Build Include="Programmability\Stored Procedures\usp_Insert_Bad_productbid.sql" />
   </ItemGroup>
 </Project>

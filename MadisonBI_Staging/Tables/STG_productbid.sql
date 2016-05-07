@@ -20,7 +20,7 @@
 	[StartDate] DATE NULL,--起息日
 	[EndDate] DATE NULL,--计息结束日期
     [Created] DATETIME NOT NULL, 
-    [Modified] DATETIME NULL, 
+    [Modified] DATETIME NOT NULL, 
     [Source] NVARCHAR(100) NOT NULL, 
     [StagingInsertTime] DATETIME NOT NULL, 
     CONSTRAINT [PK_STG_productbid] PRIMARY KEY(StagingID)

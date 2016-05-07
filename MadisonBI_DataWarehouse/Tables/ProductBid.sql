@@ -19,6 +19,7 @@
 	[NextRepayDay] DATE NOT NULL,--下次还款日
 	[StartDate] DATE NOT NULL,--起息日
 	[EndDate] DATE NOT NULL,--计息结束日期
+	[BidTime] DATETIME NOT NULL,--投资日期
 	[NumberOfBid] INT NOT NULL,--该账户第几次投资
 	[IsCurrent] BIT NOT NULL, --0：历史记录，1：当前记录
     [EffectiveDate] DATETIME NOT NULL, --记录生效时间

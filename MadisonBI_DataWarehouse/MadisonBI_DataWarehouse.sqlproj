@@ -70,5 +70,7 @@
     <Build Include="Programmability\Stored Procedures\usp_RemoveDuplicate_AccountInfo.sql" />
     <Build Include="Programmability\Stored Procedures\usp_Merge_AccountInfo.sql" />
     <Build Include="Tables\ProductBid.sql" />
+    <Build Include="Programmability\Stored Procedures\usp_RemoveDuplicate_ProductBid.sql" />
+    <Build Include="Programmability\Stored Procedures\usp_Merge_ProductBid.sql" />
   </ItemGroup>
 </Project>
