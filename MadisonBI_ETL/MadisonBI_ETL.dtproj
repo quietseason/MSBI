@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">BISTUDIO</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbALeZdBMYESXSf/tUcBsJQAAAAACAAAAAAAQZgAAAAEAACAAAADYVJ2HXxZhsmJ/oKHq+1BYdEzWxXldCRVZppzwOh+OMAAAAAAOgAAAAAIAACAAAAD255Ec1gBYOdA8cn+9raf1wEnzIJ4XfprdEZ/Y5s6RapAAAACdJBR/AuT/L0Kz5Kubu8TvNU11fRYtmhPXrJElNsHFXcnlaAGwwTMZop5wSPnPcooJU6ka9INcLyB78H0Rk6s/1pDQL233sjWF6nId77mpqJyxYnacY6jRfh2/eKRWJWRYPNzi99pcjot79/jDM+J47DVcI9X7L3EmvVCuinCYMLNHwMsSsnebHFOLXbdJntxAAAAANiqhcsdMSdCnEGjkMA6BerHXz46bWWErSV0aMlFtXmnEmzM/lnpn5AsPWuy9JhCfor9cticBHPeCOQzJ4KOCLQ==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbALeZdBMYESXSf/tUcBsJQAAAAACAAAAAAAQZgAAAAEAACAAAAAiJwThOqstjOHCU7RU9z4TQnJr00z62sKJevZMRAY41gAAAAAOgAAAAAIAACAAAAB33TFXzqRbGnUF8t7CishLPg4jP9WSo3GdDKfiA9AvOZAAAADXYgJmAVJU7mJjBKhnLS5TDnmpto5/mtD+cuSoxQwNlVzU4us3uVf7PYMX26PqWCJmvxfdQGW5q0mFGO1GCPiTWLTCs4GIA8Qn/LmYkREGDZgQJOYCx6HQ/ZwXuTKqvK21XtTvyzX6wK2ityRHDBh2Py7ZZtk5HUzxcRtrk86h+aDQYAWTOXehd2xv91dhpE5AAAAAbDVhZT8tm0L0p2JwhObDPexshyJPzAcx+7Sg0JXhrrCwErE41FTCCORi0CxSuy8KsYpk5UWZ6jTnmwsQDiZ/8Q==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -41,6 +41,7 @@
           <SSIS:Package SSIS:Name="PKG_ARCH_accountdetail.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="PKG_STG_Workflow.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="PKG_ARCH_Workflow.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="PKG_STG_FULL_accountinfo.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="MadisonBI_Logging.conmgr" />
@@ -552,10 +553,10 @@
                 <SSIS:Property SSIS:Name="Name">PKG_STG_productbid</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">97</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">98</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{45B0F9E3-AA00-40AC-AA5F-AB9D2F24570E}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{A8419659-7DDE-4375-B9AB-C8F770FB5D1D}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -643,10 +644,10 @@
                 <SSIS:Property SSIS:Name="Name">PKG_DW_ProductBid</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">76</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">98</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{B10EEBEE-DB85-43DA-BC07-4A586900E35A}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{38BA9F1B-3E69-4D62-BD97-D574AC172C03}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -677,10 +678,10 @@
                 <SSIS:Property SSIS:Name="Name">PKG_STG_accountdetail</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">97</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">98</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{7E229794-2BA5-4BC5-94D2-5FFEA08D61EE}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{E5F4B288-B226-4133-80EC-2DCE9835E708}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -768,10 +769,10 @@
                 <SSIS:Property SSIS:Name="Name">PKG_ARCH_accountdetail</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">34</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">35</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{1E8DDE8D-4DE3-49D8-AE6E-AECC85FC2648}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{24B84FE7-4399-4725-B645-C32D6413A98A}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -812,6 +813,97 @@
                 <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
               </SSIS:Properties>
               <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="PKG_STG_FULL_accountinfo.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{B23D1413-37FF-428F-AFFE-80E7DAC601BB}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">PKG_STG_FULL_accountinfo</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">101</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{2CBF31E5-C59C-479C-AD29-002D06CD2E79}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters>
+                <SSIS:Parameter SSIS:Name="CM.Source_Database.ConnectionString">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Data Source=120.27.144.251;Initial Catalog=BI_Staging;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.Source_Database.InitialCatalog">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">BI_Staging</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.Source_Database.Password">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">1</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.Source_Database.RetainSameConnection">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.Source_Database.UserName">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+              </SSIS:Parameters>
             </SSIS:PackageMetaData>
           </SSIS:PackageInfo>
         </SSIS:DeploymentInfo>

@@ -11,8 +11,8 @@
   DTS:LocaleID="2052"
   DTS:ObjectName="PKG_STG_accountdetail"
   DTS:PackageType="5"
-  DTS:VersionBuild="97"
-  DTS:VersionGUID="{7E229794-2BA5-4BC5-94D2-5FFEA08D61EE}">
+  DTS:VersionBuild="98"
+  DTS:VersionGUID="{E5F4B288-B226-4133-80EC-2DCE9835E708}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -55,7 +55,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="DeletedRows">
       <DTS:VariableValue
-        DTS:DataType="20">0</DTS:VariableValue>
+        DTS:DataType="20">-1</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -231,7 +231,7 @@ WHERE AccountType = 0 AND Created &gt;= ''2001-01-01 00:00:00'' AND Created &lt;
       DTS:Namespace="User"
       DTS:ObjectName="UpdatedRows">
       <DTS:VariableValue
-        DTS:DataType="20">0</DTS:VariableValue>
+        DTS:DataType="20">-1</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -2863,7 +2863,7 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
     design-time-name="Package\Load from Different Sources\Temp Table to Staging.EventHandlers[OnPostExecute]">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="251,42"
           Id="Package\Load from Different Sources\Temp Table to Staging.EventHandlers[OnPostExecute]\End Logging Audit Info with Success"
@@ -2891,9 +2891,7 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2912,7 +2910,7 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
     </LayoutInfo>
   </DtsEventHandler>
   <PipelineComponentMetadata
-    design-time-name="Package\Load from Different Sources\Temp Table to Staging\OLE DB Destination">
+    design-time-name="Package\Load from Different Sources\Temp Table to Staging\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2925,7 +2923,7 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load from Different Sources\Temp Table to Staging\OLE DB Source">
+    design-time-name="Package\Load from Different Sources\Temp Table to Staging\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

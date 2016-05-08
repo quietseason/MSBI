@@ -11,8 +11,8 @@
   DTS:LocaleID="2052"
   DTS:ObjectName="PKG_STG_productbid"
   DTS:PackageType="5"
-  DTS:VersionBuild="97"
-  DTS:VersionGUID="{45B0F9E3-AA00-40AC-AA5F-AB9D2F24570E}">
+  DTS:VersionBuild="98"
+  DTS:VersionGUID="{A8419659-7DDE-4375-B9AB-C8F770FB5D1D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -46,7 +46,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="DeletedRows">
       <DTS:VariableValue
-        DTS:DataType="20">0</DTS:VariableValue>
+        DTS:DataType="20">-1</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -213,7 +213,7 @@ WHERE Modified &gt;= ''2001-01-01 00:00:00'' AND Modified &lt; CAST(NOW() AS DAT
       DTS:Namespace="User"
       DTS:ObjectName="UpdatedRows">
       <DTS:VariableValue
-        DTS:DataType="20">0</DTS:VariableValue>
+        DTS:DataType="20">-1</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>

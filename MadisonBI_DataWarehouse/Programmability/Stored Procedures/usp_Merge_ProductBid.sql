@@ -16,8 +16,8 @@ BEGIN
 	USING DBO.CLEAN_ProductBid AS S
 	ON (T.ProductBidID = S.ProductBidID)
 	WHEN NOT MATCHED THEN INSERT--Insert brand new rows
-	([ProductID],[ProductType],[AnnualizedReturn],[HoldingPeriod],[ProductTitle],[AccountID],[Status],[BidAmount],[RemainingCapital],[CouponID],[CouponAmount],[Interest],[RemainingInterest],[Penalty],[NextRepayDay],[StartDate],[EndDate],[BidTime],[NumberOfBid],[IsCurrent],[EffectiveDate],[ExpiredDate])
-	VALUES([ProductID],[ProductType],[AnnualizedReturn],[HoldingPeriod],[ProductTitle],[AccountID],[Status],[BidAmount],[RemainingCapital],[CouponID],[CouponAmount],[Interest],[RemainingInterest],[Penalty],[NextRepayDay],[StartDate],[EndDate],[BidTime],0,1,'1900-01-01','9999-12-31')
+	(ProductBidID,[ProductID],[ProductType],[AnnualizedReturn],[HoldingPeriod],[ProductTitle],[AccountID],[Status],[BidAmount],[RemainingCapital],[CouponID],[CouponAmount],[Interest],[RemainingInterest],[Penalty],[NextRepayDay],[StartDate],[EndDate],[BidTime],[NumberOfBid],[IsCurrent],[EffectiveDate],[ExpiredDate])
+	VALUES(ProductBidID,[ProductID],[ProductType],[AnnualizedReturn],[HoldingPeriod],[ProductTitle],[AccountID],[Status],[BidAmount],[RemainingCapital],[CouponID],[CouponAmount],[Interest],[RemainingInterest],[Penalty],[NextRepayDay],[StartDate],[EndDate],[BidTime],0,1,'1900-01-01','9999-12-31')
 	WHEN MATCHED AND T.[IsCurrent] = 1 
 	AND (
 	  T.[ProductID] <> S.[ProductID]
@@ -45,6 +45,7 @@ BEGIN
 	T.[ExpiredDate] = @ETLProcessTime
 	OUTPUT 
 	$Action AS ActionOut,
+	S.ProductBidID,
 	S.[ProductID],
 	S.[ProductType],
 	S.[AnnualizedReturn],
@@ -67,11 +68,11 @@ BEGIN
 	1 AS [IsCurrent],
 	DATEADD(SECOND,1,@ETLProcessTime) AS [EffectiveDate],
 	'9999-12-31' AS [ExpiredDate]
-	INTO #MergeOut_ProductBid(ActionOut,[ProductID],[ProductType],[AnnualizedReturn],[HoldingPeriod],[ProductTitle],[AccountID],[Status],[BidAmount],[RemainingCapital],[CouponID],[CouponAmount],[Interest],[RemainingInterest],[Penalty],[NextRepayDay],[StartDate],[EndDate],[BidTime],[NumberOfBid],[IsCurrent],[EffectiveDate],[ExpiredDate]);
+	INTO #MergeOut_ProductBid(ActionOut,ProductBidID,[ProductID],[ProductType],[AnnualizedReturn],[HoldingPeriod],[ProductTitle],[AccountID],[Status],[BidAmount],[RemainingCapital],[CouponID],[CouponAmount],[Interest],[RemainingInterest],[Penalty],[NextRepayDay],[StartDate],[EndDate],[BidTime],[NumberOfBid],[IsCurrent],[EffectiveDate],[ExpiredDate]);
 	--Insert changed rows
-	INSERT INTO DBO.ProductBid([ProductID],[ProductType],[AnnualizedReturn],[HoldingPeriod],[ProductTitle],[AccountID],[Status],[BidAmount],[RemainingCapital],[CouponID],[CouponAmount],[Interest],[RemainingInterest],[Penalty],[NextRepayDay],[StartDate],[EndDate],[BidTime],[NumberOfBid],[IsCurrent],[EffectiveDate],[ExpiredDate])
+	INSERT INTO DBO.ProductBid(ProductBidID,[ProductID],[ProductType],[AnnualizedReturn],[HoldingPeriod],[ProductTitle],[AccountID],[Status],[BidAmount],[RemainingCapital],[CouponID],[CouponAmount],[Interest],[RemainingInterest],[Penalty],[NextRepayDay],[StartDate],[EndDate],[BidTime],[NumberOfBid],[IsCurrent],[EffectiveDate],[ExpiredDate])
 	SELECT
-	  [ProductID],[ProductType],[AnnualizedReturn],[HoldingPeriod],[ProductTitle],[AccountID],[Status],[BidAmount],[RemainingCapital],[CouponID],[CouponAmount],[Interest],[RemainingInterest],[Penalty],[NextRepayDay],[StartDate],[EndDate],[BidTime],[NumberOfBid],[IsCurrent],[EffectiveDate],[ExpiredDate]
+	  ProductBidID,[ProductID],[ProductType],[AnnualizedReturn],[HoldingPeriod],[ProductTitle],[AccountID],[Status],[BidAmount],[RemainingCapital],[CouponID],[CouponAmount],[Interest],[RemainingInterest],[Penalty],[NextRepayDay],[StartDate],[EndDate],[BidTime],[NumberOfBid],[IsCurrent],[EffectiveDate],[ExpiredDate]
 	FROM #MergeOut_ProductBid
 	WHERE ActionOut = 'UPDATE';
 	--Calculate the processed row count

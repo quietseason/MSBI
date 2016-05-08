@@ -29,4 +29,5 @@
 
 GO
 
-CREATE UNIQUE INDEX [UX_ProductBid] ON [dbo].[ProductBid] ([ProductBidID],[IsCurrent])
+CREATE UNIQUE INDEX [FX_ProductBid] ON DBO.ProductBid([ProductBidID])
+WHERE [IsCurrent] = 1

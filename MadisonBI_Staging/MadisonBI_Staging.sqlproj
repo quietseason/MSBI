@@ -67,6 +67,7 @@
     <Build Include="Tables\STG_accountinfo.sql" />
     <Build Include="Tables\STG_productbid.sql" />
     <Build Include="Tables\STG_accountdetail.sql" />
+    <Build Include="Tables\STG_FULL_accountinfo.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="MadisonBI_Staging.refactorlog" />
