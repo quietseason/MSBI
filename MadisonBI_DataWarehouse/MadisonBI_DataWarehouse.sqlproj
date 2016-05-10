@@ -73,5 +73,10 @@
     <Build Include="Programmability\Stored Procedures\usp_RemoveDuplicate_ProductBid.sql" />
     <Build Include="Programmability\Stored Procedures\usp_Merge_ProductBid.sql" />
     <Build Include="Programmability\Stored Procedures\usp_GetNumberOfBid.sql" />
+    <Build Include="Tables\DeletedAccount.sql" />
+    <Build Include="Programmability\Stored Procedures\usp_Merge_DeletedAccount.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="MadisonBI_DataWarehouse.refactorlog" />
   </ItemGroup>
 </Project>

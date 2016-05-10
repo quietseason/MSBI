@@ -11,8 +11,8 @@
   DTS:LocaleID="2052"
   DTS:ObjectName="PKG_STG_productbid"
   DTS:PackageType="5"
-  DTS:VersionBuild="98"
-  DTS:VersionGUID="{A8419659-7DDE-4375-B9AB-C8F770FB5D1D}">
+  DTS:VersionBuild="99"
+  DTS:VersionGUID="{F9636E90-CBFD-475C-810B-71537832F061}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1575,11 +1575,11 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
                   DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
                   <DTS:Variables />
                   <DTS:PropertyExpression
-                    DTS:Name="SqlStatementSource">"SELECT ISNULL(MAX("+ @[User::Incremental_Col] +"),'"+ @[User::IncrementalStart] +"') AS [0] FROM DBO."+ @[User::TargetTable]</DTS:PropertyExpression>
+                    DTS:Name="SqlStatementSource">"SELECT ISNULL(MAX("+ @[User::Incremental_Col] +"),'"+ @[User::IncrementalStart] +"') AS [0] FROM DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
                   <DTS:ObjectData>
                     <SQLTask:SqlTaskData
                       SQLTask:Connection="{1EC4F465-990B-4A18-890F-7CD91DDDA7B8}"
-                      SQLTask:SqlStatementSource="SELECT ISNULL(MAX(Modified),'2001-01-01 00:00:00') AS [0] FROM DBO.STG_productbid"
+                      SQLTask:SqlStatementSource="SELECT ISNULL(MAX(Modified),'2001-01-01 00:00:00') AS [0] FROM DBO.DELTA_STG_productbid"
                       SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
                       <SQLTask:ResultBinding
                         SQLTask:ResultName="0"
@@ -3349,7 +3349,7 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
     design-time-name="Package\Load from Different Sources\Temp Table to Staging.EventHandlers[OnPostExecute]">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="251,42"
           Id="Package\Load from Different Sources\Temp Table to Staging.EventHandlers[OnPostExecute]\End Logging Audit Info with Success"
@@ -3377,9 +3377,7 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

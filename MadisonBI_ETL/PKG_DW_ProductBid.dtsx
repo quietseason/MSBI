@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="PKG_DW_ProductBid"
   DTS:PackageType="5"
-  DTS:VersionBuild="98"
-  DTS:VersionGUID="{38BA9F1B-3E69-4D62-BD97-D574AC172C03}">
+  DTS:VersionBuild="102"
+  DTS:VersionGUID="{3BD536F9-2281-4833-BED6-5186E1133D60}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -136,7 +136,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Create Temp Table in Archive"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:PropertyExpression
             DTS:Name="SqlStatementSource">"IF OBJECT_ID('DBO.DELTA_BAD_"+ REPLACE( @[User::SourceTable],"STG_","" ) +"','U') IS NOT NULL
@@ -157,7 +157,7 @@ SELECT TOP 0 * INTO DBO.DELTA_BAD_"+ REPLACE( @[User::SourceTable],"STG_","" ) +
           DTS:LocaleID="-1"
           DTS:ObjectName="Create Temp Table in Data Warehouse"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:PropertyExpression
             DTS:Name="SqlStatementSource">"IF OBJECT_ID('DBO.CLEAN_"+ @[User::TargetTable] +"','U') IS NOT NULL
@@ -258,6 +258,33 @@ DROP TABLE DBO.CLEAN_"+ @[User::TargetTable]</DTS:PropertyExpression>
       DTS:ObjectName="Load from Temp">
       <DTS:Variables />
       <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Load from Temp\Expire Deleted Account"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{abf8538b-1cf8-4a7b-91ba-d567da96fd73}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Expire Deleted Account"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="SqlStatementSource">"UPDATE T
+SET 
+T.IsCurrent = 0,
+T.[ExpiredDate] = GETDATE()
+FROM DBO."+ @[User::TargetTable] +" T
+WHERE EXISTS(
+  SELECT 1 FROM DBO.DeletedAccount D WITH(NOLOCK)
+  WHERE D.DeletedAccountID = T.AccountID
+)"</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{45984EDA-ABBE-47AE-9B7E-D5D79304C9C9}"
+              SQLTask:SqlStatementSource="UPDATE T&#xA;SET &#xA;T.IsCurrent = 0,&#xA;T.[ExpiredDate] = GETDATE()&#xA;FROM DBO.ProductBid T&#xA;WHERE EXISTS(&#xA;  SELECT 1 FROM DBO.DeletedAccount D WITH(NOLOCK)&#xA;  WHERE D.DeletedAccountID = T.AccountID&#xA;)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
         <DTS:Executable
           DTS:refId="Package\Load from Temp\Remove Duplicates"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
@@ -515,8 +542,33 @@ DROP TABLE DBO.CLEAN_"+ @[User::TargetTable]</DTS:PropertyExpression>
             </SQLTask:SqlTaskData>
           </DTS:ObjectData>
         </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load from Temp\Update Number of Bid"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{5283A5F2-25D5-41CA-AA6F-E3D16C3CD3DC}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Update Number of Bid"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{45984EDA-ABBE-47AE-9B7E-D5D79304C9C9}"
+              SQLTask:SqlStatementSource="EXEC usp_GetNumberOfBid" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
       </DTS:Executables>
       <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Load from Temp.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{10FD70EF-2170-4B6B-9602-8FC50161F365}"
+          DTS:From="Package\Load from Temp\Temp to Data Warehouse"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Load from Temp\Update Number of Bid" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load from Temp.PrecedenceConstraints[Constraint 3]"
           DTS:CreationName=""
@@ -525,6 +577,14 @@ DROP TABLE DBO.CLEAN_"+ @[User::TargetTable]</DTS:PropertyExpression>
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3"
           DTS:To="Package\Load from Temp\Temp to Data Warehouse" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Load from Temp.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{C5C677CD-5324-434E-9EB4-CFB22F8BF52F}"
+          DTS:From="Package\Load from Temp\Update Number of Bid"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\Load from Temp\Expire Deleted Account" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
@@ -869,7 +929,7 @@ DROP TABLE DBO.CLEAN_"+ @[User::TargetTable]</DTS:PropertyExpression>
                       lineageId="Package\Staging to Temp for Demand Products\OLE DB Source.Outputs[OLE DB Source Output].Columns[Penalty]" />
                     <inputColumn
                       refId="Package\Staging to Temp for Demand Products\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NextRepayDay]"
-                      cachedCodepage="936"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="10"
                       cachedName="NextRepayDay"
@@ -883,7 +943,7 @@ DROP TABLE DBO.CLEAN_"+ @[User::TargetTable]</DTS:PropertyExpression>
                       lineageId="Package\Staging to Temp for Demand Products\OLE DB Source.Outputs[OLE DB Source Output].Columns[StartDate]" />
                     <inputColumn
                       refId="Package\Staging to Temp for Demand Products\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EndDate]"
-                      cachedCodepage="936"
+                      cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="10"
                       cachedName="EndDate"
@@ -1415,7 +1475,7 @@ WHERE [AccountType] = 3 AND Direction = 1</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Staging to Temp for Demand Products\OLE DB Source.Outputs[OLE DB Source Output].Columns[NextRepayDay]"
-                      codePage="936"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -1435,7 +1495,7 @@ WHERE [AccountType] = 3 AND Direction = 1</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Staging to Temp for Demand Products\OLE DB Source.Outputs[OLE DB Source Output].Columns[EndDate]"
-                      codePage="936"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -1585,7 +1645,7 @@ WHERE [AccountType] = 3 AND Direction = 1</property>
                       name="Penalty" />
                     <externalMetadataColumn
                       refId="Package\Staging to Temp for Demand Products\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NextRepayDay]"
-                      codePage="936"
+                      codePage="1252"
                       dataType="str"
                       length="10"
                       name="NextRepayDay" />
@@ -1595,7 +1655,7 @@ WHERE [AccountType] = 3 AND Direction = 1</property>
                       name="StartDate" />
                     <externalMetadataColumn
                       refId="Package\Staging to Temp for Demand Products\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EndDate]"
-                      codePage="936"
+                      codePage="1252"
                       dataType="str"
                       length="10"
                       name="EndDate" />
@@ -1768,7 +1828,7 @@ WHERE [AccountType] = 3 AND Direction = 1</property>
                       name="Penalty" />
                     <outputColumn
                       refId="Package\Staging to Temp for Demand Products\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NextRepayDay]"
-                      codePage="936"
+                      codePage="1252"
                       dataType="str"
                       length="10"
                       lineageId="Package\Staging to Temp for Demand Products\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NextRepayDay]"
@@ -1780,7 +1840,7 @@ WHERE [AccountType] = 3 AND Direction = 1</property>
                       name="StartDate" />
                     <outputColumn
                       refId="Package\Staging to Temp for Demand Products\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EndDate]"
-                      codePage="936"
+                      codePage="1252"
                       dataType="str"
                       length="10"
                       lineageId="Package\Staging to Temp for Demand Products\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EndDate]"
@@ -3643,23 +3703,6 @@ WHERE ProductType &gt; 1</property>
         </SQLTask:SqlTaskData>
       </DTS:ObjectData>
     </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Update Number of Bid"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{5283A5F2-25D5-41CA-AA6F-E3D16C3CD3DC}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Update Number of Bid"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{45984EDA-ABBE-47AE-9B7E-D5D79304C9C9}"
-          SQLTask:SqlStatementSource="EXEC usp_GetNumberOfBid" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
@@ -3689,19 +3732,11 @@ WHERE ProductType &gt; 1</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{54BE6948-14C4-4230-9E22-160BE34BDF7E}"
+      DTS:DTSID="{DE302AC1-3D4C-4410-B488-037AA303952E}"
       DTS:From="Package\Load from Temp"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
-      DTS:To="Package\Update Number of Bid" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
-      DTS:CreationName=""
-      DTS:DTSID="{EC6CE2EF-1B3E-4B4E-95BD-C6A11E3BC8BA}"
-      DTS:From="Package\Drop Temp Table"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 4"
-      DTS:To="Package\End Logging with Success" />
+      DTS:To="Package\Drop Temp Table" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
       DTS:CreationName=""
@@ -3719,13 +3754,13 @@ WHERE ProductType &gt; 1</property>
       DTS:ObjectName="Constraint 6"
       DTS:To="Package\Load from Temp" />
     <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
       DTS:CreationName=""
-      DTS:DTSID="{C1EC1EFC-7978-458E-9C0D-584004C25D7C}"
-      DTS:From="Package\Update Number of Bid"
+      DTS:DTSID="{F6ED02CF-4548-4324-BCFC-1E2098CBFC08}"
+      DTS:From="Package\Drop Temp Table"
       DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 7"
-      DTS:To="Package\Drop Temp Table" />
+      DTS:ObjectName="Constraint 8"
+      DTS:To="Package\End Logging with Success" />
   </DTS:PrecedenceConstraints>
   <DTS:EventHandlers>
     <DTS:EventHandler
@@ -3832,7 +3867,7 @@ WHERE ProductType &gt; 1</property>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="552,103"
+          PanelSize="552,102"
           Size="552,146"
           Id="Package\Create Temp Table"
           TopLeft="5.50000000000006,209.5" />
@@ -3847,14 +3882,14 @@ WHERE ProductType &gt; 1</property>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="536,103"
+          PanelSize="536,102"
           Size="536,146"
           Id="Package\Drop Temp Table"
-          TopLeft="13.5000000000002,1029.5" />
+          TopLeft="13.5000000000002,1131.5" />
         <NodeLayout
           Size="201,42"
           Id="Package\End Logging with Success"
-          TopLeft="181,1235.5" />
+          TopLeft="181,1337.5" />
         <NodeLayout
           Size="169,42"
           Id="Package\Load from Temp\Remove Duplicates"
@@ -3862,11 +3897,11 @@ WHERE ProductType &gt; 1</property>
         <NodeLayout
           Size="195,42"
           Id="Package\Load from Temp\Temp to Bad_productbid"
-          TopLeft="266,107.5" />
+          TopLeft="260,311.5" />
         <NodeLayout
           Size="200,42"
           Id="Package\Load from Temp\Temp to Data Warehouse"
-          TopLeft="5.5,107.5" />
+          TopLeft="5.50000000000003,107.5" />
         <EdgeLayout
           Id="Package\Load from Temp.PrecedenceConstraints[Constraint 3]"
           TopLeft="105.5,47.5">
@@ -3889,13 +3924,65 @@ WHERE ProductType &gt; 1</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Load from Temp\Expire Deleted Account"
+          TopLeft="11.5000000000001,311.5" />
+        <EdgeLayout
+          Id="Package\Load from Temp.PrecedenceConstraints[Constraint 4]"
+          TopLeft="105.5,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="184,42"
+          Id="Package\Load from Temp\Update Number of Bid"
+          TopLeft="13.5,209.5" />
+        <EdgeLayout
+          Id="Package\Load from Temp.PrecedenceConstraints[Constraint]"
+          TopLeft="105.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="466,205"
-          Size="466,248"
+          PanelSize="461,408"
+          Size="461,452"
           Id="Package\Load from Temp"
-          TopLeft="48.5000000000001,619.5" />
+          TopLeft="51.0000000000001,619.5" />
         <NodeLayout
           Size="182,42"
           Id="Package\Register This Package"
@@ -3912,10 +3999,6 @@ WHERE ProductType &gt; 1</property>
           Size="142,42"
           Id="Package\Start Logging"
           TopLeft="210.5,107.5" />
-        <NodeLayout
-          Size="184,42"
-          Id="Package\Update Number of Bid"
-          TopLeft="189.5,927.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="281.5,47.5">
@@ -3983,50 +4066,6 @@ WHERE ProductType &gt; 1</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="281.5,867.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="281.5,1175.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
           TopLeft="281.5,355.5">
           <EdgeLayout.Curve>
@@ -4071,8 +4110,30 @@ WHERE ProductType &gt; 1</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="281.5,969.5">
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="281.5,1277.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="281.5,1071.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"

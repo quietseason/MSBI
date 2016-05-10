@@ -82,4 +82,7 @@
     <Build Include="Tables\BAD_accountdetail.sql" />
     <Build Include="Programmability\Stored Procedures\usp_Insert_Bad_productbid.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="MadisonBI_Archive.publish.xml" />
+  </ItemGroup>
 </Project>
