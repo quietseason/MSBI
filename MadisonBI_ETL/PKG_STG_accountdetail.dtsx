@@ -11,8 +11,8 @@
   DTS:LocaleID="2052"
   DTS:ObjectName="PKG_STG_accountdetail"
   DTS:PackageType="5"
-  DTS:VersionBuild="104"
-  DTS:VersionGUID="{0B9D5035-E757-4D71-8338-05282F6BC7ED}">
+  DTS:VersionBuild="105"
+  DTS:VersionGUID="{BCA27756-D1B1-44A2-AC3F-0EAABA21E618}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -329,7 +329,7 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
           DTS:refId="Package\Load from Different Sources\Get Incremental Start"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{DF465869-C28D-4ABA-A5DD-25CF48E80519}"
+          DTS:DTSID="{d6ee8a75-32a3-4cc7-a565-0bc6ca563435}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get Incremental Start"
@@ -339,7 +339,7 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{1D8829DA-9517-4AC2-A907-98A462BBB1EB}"
-              SQLTask:SqlStatementSource="EXEC [dbo].[usp_GetIncrementalStart]&#xA;&#x9;@SOURCE_DB = ?,&#xA;&#x9;@SOURCE_NAME = ?,&#xA;&#x9;@TARGET_DB = ?,&#xA;&#x9;@TARGET_NAME = ?,&#xA;&#x9;@INCREMENTAL_FLAG = ? OUTPUT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource="EXEC [dbo].[usp_GetIncrementalStart]&#xA; @SOURCE_DB = ?,&#xA; @SOURCE_NAME = ?,&#xA; @TARGET_DB = ?,&#xA; @TARGET_NAME = ?,&#xA; @PKG_INCREMENTAL_FLAG = ?,&#xA; @INCREMENTAL_FLAG = ? OUTPUT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
                 SQLTask:DtsVariableName="User::SourceDatabase"
@@ -366,6 +366,12 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
                 SQLTask:ParameterSize="-1" />
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="User::IncrementalStart"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
                 SQLTask:DtsVariableName="User::IncrementalStart"
                 SQLTask:ParameterDirection="Output"
                 SQLTask:DataType="130"
@@ -2088,7 +2094,7 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load from Different Sources.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{E8DF12EE-1611-4892-A92C-D3B8B94DAC49}"
+          DTS:DTSID="{FB151E34-9CE6-4DA3-A78F-4A76BB6EE8D6}"
           DTS:From="Package\Load from Different Sources\Get Source Connection"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -2096,7 +2102,7 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load from Different Sources.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{5C1728DC-9A45-4CC9-8A84-42188D04EA9D}"
+          DTS:DTSID="{A0C06D61-7AF2-4E9C-8017-63800897395D}"
           DTS:From="Package\Load from Different Sources\Get Incremental Start"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
@@ -2370,93 +2376,45 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
         <NodeLayout
           Size="201,42"
           Id="Package\End Logging with Success"
-          TopLeft="48.5000000000002,1233.5" />
+          TopLeft="5.50000000000013,1129.5" />
         <NodeLayout
           Size="167,42"
           Id="Package\Get Max Sequence"
-          TopLeft="65.5000000000001,311.5" />
+          TopLeft="22.5,311.5" />
         <NodeLayout
           Size="169,42"
           Id="Package\Load from Different Sources\Create Temp Table"
-          TopLeft="18,209.5" />
+          TopLeft="14,209.5" />
         <NodeLayout
           Size="161,42"
           Id="Package\Load from Different Sources\Drop Temp Table"
-          TopLeft="22.0000000000001,619.5" />
-        <NodeLayout
-          Size="181,42"
-          Id="Package\Load from Different Sources\Get Incremental Start"
-          TopLeft="12,107.5" />
+          TopLeft="18.0000000000001,515.5" />
         <NodeLayout
           Size="186,42"
           Id="Package\Load from Different Sources\Get Source Connection"
-          TopLeft="9.50000000000001,5.5" />
+          TopLeft="5.5,5.5" />
         <NodeLayout
           Size="183,42"
           Id="Package\Load from Different Sources\Source to Temp Table"
-          TopLeft="6.5,352.5" />
+          TopLeft="7.00000000000004,311.5" />
         <NodeLayout
           Size="186,42"
           Id="Package\Load from Different Sources\Temp Table to Staging"
-          TopLeft="9.50000000000009,517.5" />
-        <EdgeLayout
-          Id="Package\Load from Different Sources.PrecedenceConstraints[Constraint]"
-          TopLeft="102.5,47.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load from Different Sources.PrecedenceConstraints[Constraint 1]"
-          TopLeft="102.5,149.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="5.50000000000006,413.5" />
         <EdgeLayout
           Id="Package\Load from Different Sources.PrecedenceConstraints[Constraint 2]"
-          TopLeft="100.25,251.5">
+          TopLeft="98.5,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,101"
+              EndConnector="0,60"
               Start="0,0"
-              End="0,93.5">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,93.5" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2467,7 +2425,7 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load from Different Sources.PrecedenceConstraints[Constraint 3]"
-          TopLeft="102.5,559.5">
+          TopLeft="98.5000000000001,455.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2489,18 +2447,66 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load from Different Sources.PrecedenceConstraints[Constraint 4]"
-          TopLeft="100.25,394.5">
+          TopLeft="98.5000000000001,353.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,123"
+              EndConnector="0,60"
               Start="0,0"
-              End="0,115.5">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,115.5" />
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="181,42"
+          Id="Package\Load from Different Sources\Get Incremental Start"
+          TopLeft="8.00000000000001,107.5" />
+        <EdgeLayout
+          Id="Package\Load from Different Sources.PrecedenceConstraints[Constraint]"
+          TopLeft="98.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load from Different Sources.PrecedenceConstraints[Constraint 1]"
+          TopLeft="98.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2512,25 +2518,25 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="205,717"
-          Size="205,760"
+          PanelSize="197,612"
+          Size="197,656"
           Id="Package\Load from Different Sources"
-          TopLeft="46.5000000000001,413.5" />
+          TopLeft="7.50000000000009,413.5" />
         <NodeLayout
           Size="182,42"
           Id="Package\Register This Package"
-          TopLeft="58,5.5" />
+          TopLeft="15,5.5" />
         <NodeLayout
           Size="142,42"
           Id="Package\Start Logging"
-          TopLeft="78.0000000000001,107.5" />
+          TopLeft="35,107.5" />
         <NodeLayout
           Size="188,42"
           Id="Package\Truncate Staging Table"
-          TopLeft="55.0000000000001,209.5" />
+          TopLeft="12,209.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="149,47.5">
+          TopLeft="106,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2552,7 +2558,7 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="149,149.5">
+          TopLeft="106,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2574,7 +2580,7 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="149,353.5">
+          TopLeft="106,353.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2596,7 +2602,7 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="149,1173.5">
+          TopLeft="106,1069.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2618,7 +2624,7 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="149,251.5">
+          TopLeft="106,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2822,7 +2828,7 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
     design-time-name="Package\Load from Different Sources\Temp Table to Staging.EventHandlers[OnPostExecute]">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="251,42"
           Id="Package\Load from Different Sources\Temp Table to Staging.EventHandlers[OnPostExecute]\End Logging Audit Info with Success"
@@ -2850,7 +2856,9 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2869,7 +2877,7 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
     </LayoutInfo>
   </DtsEventHandler>
   <PipelineComponentMetadata
-    design-time-name="Package\Load from Different Sources\Temp Table to Staging\OLE DB Source">
+    design-time-name="Package\Load from Different Sources\Temp Table to Staging\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2882,7 +2890,7 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load from Different Sources\Temp Table to Staging\OLE DB Destination">
+    design-time-name="Package\Load from Different Sources\Temp Table to Staging\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

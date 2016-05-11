@@ -12,8 +12,8 @@
   DTS:LocaleID="2052"
   DTS:ObjectName="PKG_ARCH_accountdetail"
   DTS:PackageType="5"
-  DTS:VersionBuild="35"
-  DTS:VersionGUID="{24B84FE7-4399-4725-B645-C32D6413A98A}">
+  DTS:VersionBuild="36"
+  DTS:VersionGUID="{6E2D69C1-2870-4491-8D4F-6F93BC275AC5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Configurations>
@@ -587,7 +587,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK</property>
+                  name="FastLoadOptions">TABLOCK,ROWS_PER_BATCH = 1000000</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
