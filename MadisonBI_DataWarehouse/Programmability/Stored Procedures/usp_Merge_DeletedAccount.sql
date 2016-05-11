@@ -1,6 +1,6 @@
 ﻿CREATE PROCEDURE [dbo].[usp_Merge_DeletedAccount]
-	@InsertedRows BIGINT,
-	@UpdatedRows BIGINT
+	@InsertedRows BIGINT OUTPUT,
+	@UpdatedRows BIGINT OUTPUT
 AS
 BEGIN
 	SET @UpdatedRows = -1

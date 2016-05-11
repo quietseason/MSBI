@@ -329,3 +329,5 @@ VALUES(
 	SYSTEM_USER
 )
 GO
+
+INSERT INTO [dbo].[SSIS Configurations] VALUES('MadisonBI_Archive','False','\Package.Variables[User::ConfigRemovePartition].Properties[Value]','Boolean')
