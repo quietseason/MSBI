@@ -81,6 +81,7 @@
     <Build Include="Tables\ARCH_accountdetail.sql" />
     <Build Include="Tables\BAD_accountdetail.sql" />
     <Build Include="Programmability\Stored Procedures\usp_Insert_Bad_productbid.sql" />
+    <Build Include="Programmability\Stored Procedures\usp_Insert_Bad_accountdetail.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="MadisonBI_Archive.publish.xml" />

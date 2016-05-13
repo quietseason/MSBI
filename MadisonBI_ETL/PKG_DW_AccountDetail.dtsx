@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="PKG_DW_AccountDetail"
   DTS:PackageType="5"
-  DTS:VersionBuild="85"
-  DTS:VersionGUID="{9AB1AB7A-6BA0-4CC9-AD50-65072DAD6D0D}">
+  DTS:VersionBuild="88"
+  DTS:VersionGUID="{B5D82F9D-4366-45F7-AA85-93D5AFA60948}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -136,7 +136,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Create Temp Table in Archive"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:PropertyExpression
             DTS:Name="SqlStatementSource">"IF OBJECT_ID('DBO.DELTA_BAD_"+ REPLACE( @[User::SourceTable],"STG_","" ) +"','U') IS NOT NULL
@@ -157,7 +157,7 @@ SELECT TOP 0 * INTO DBO.DELTA_BAD_"+ REPLACE( @[User::SourceTable],"STG_","" ) +
           DTS:LocaleID="-1"
           DTS:ObjectName="Create Temp Table in Data Warehouse"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:PropertyExpression
             DTS:Name="SqlStatementSource">"IF OBJECT_ID('DBO.CLEAN_"+ @[User::TargetTable] +"','U') IS NOT NULL
@@ -191,7 +191,7 @@ FROM DBO."+ @[User::TargetTable]</DTS:PropertyExpression>
           DTS:LocaleID="-1"
           DTS:ObjectName="Drop Temp Table in Archive"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:PropertyExpression
             DTS:Name="SqlStatementSource">"IF OBJECT_ID('DBO.DELTA_BAD_"+ REPLACE( @[User::SourceTable],"STG_","" ) +"','U') IS NOT NULL
@@ -211,7 +211,7 @@ DROP TABLE DBO.DELTA_BAD_"+ REPLACE( @[User::SourceTable],"STG_","" )</DTS:Prope
           DTS:LocaleID="-1"
           DTS:ObjectName="Drop Temp Table in Data Warehouse"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:PropertyExpression
             DTS:Name="SqlStatementSource">"IF OBJECT_ID('DBO.CLEAN_"+ @[User::TargetTable] +"','U') IS NOT NULL
@@ -704,71 +704,11 @@ WHERE EXISTS(
                       externalMetadataColumnId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[AccountID]"
                       lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountID]" />
                     <inputColumn
-                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].Columns[Name]"
-                      cachedDataType="wstr"
-                      cachedLength="200"
-                      cachedName="Name"
-                      externalMetadataColumnId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
-                      lineageId="Package\Staging to Temp\166:invalid" />
-                    <inputColumn
-                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].Columns[Mobile]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Mobile"
-                      externalMetadataColumnId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[Mobile]"
-                      lineageId="Package\Staging to Temp\167:invalid" />
-                    <inputColumn
-                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].Columns[IDType]"
-                      cachedDataType="ui1"
-                      cachedName="IDType"
-                      externalMetadataColumnId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[IDType]"
-                      lineageId="Package\Staging to Temp\168:invalid" />
-                    <inputColumn
-                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].Columns[IDNumber]"
-                      cachedDataType="wstr"
-                      cachedLength="100"
-                      cachedName="IDNumber"
-                      externalMetadataColumnId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[IDNumber]"
-                      lineageId="Package\Staging to Temp\169:invalid" />
-                    <inputColumn
-                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].Columns[ReferralCode]"
-                      cachedDataType="wstr"
-                      cachedLength="20"
-                      cachedName="ReferralCode"
-                      externalMetadataColumnId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[ReferralCode]"
-                      lineageId="Package\Staging to Temp\170:invalid" />
-                    <inputColumn
-                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].Columns[InvitedBy]"
-                      cachedDataType="wstr"
-                      cachedLength="20"
-                      cachedName="InvitedBy"
-                      externalMetadataColumnId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[InvitedBy]"
-                      lineageId="Package\Staging to Temp\171:invalid" />
-                    <inputColumn
-                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].Columns[Status]"
-                      cachedDataType="wstr"
-                      cachedLength="100"
-                      cachedName="Status"
-                      externalMetadataColumnId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
-                      lineageId="Package\Staging to Temp\172:invalid" />
-                    <inputColumn
-                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].Columns[CustomStatus]"
-                      cachedDataType="ui1"
-                      cachedName="CustomStatus"
-                      externalMetadataColumnId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[CustomStatus]"
-                      lineageId="Package\Staging to Temp\173:invalid" />
-                    <inputColumn
                       refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].Columns[Created]"
                       cachedDataType="dbTimeStamp"
                       cachedName="Created"
                       externalMetadataColumnId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[Created]"
                       lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[Created]" />
-                    <inputColumn
-                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].Columns[Modified]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="Modified"
-                      externalMetadataColumnId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[Modified]"
-                      lineageId="Package\Staging to Temp\175:invalid" />
                     <inputColumn
                       refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].Columns[Source]"
                       cachedDataType="wstr"
@@ -782,6 +722,71 @@ WHERE EXISTS(
                       cachedName="StagingInsertTime"
                       externalMetadataColumnId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[StagingInsertTime]"
                       lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[StagingInsertTime]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].Columns[AccountDetailID]"
+                      cachedDataType="i8"
+                      cachedName="AccountDetailID"
+                      externalMetadataColumnId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[AccountDetailID]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountDetailID]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].Columns[AccountType]"
+                      cachedDataType="ui1"
+                      cachedName="AccountType"
+                      externalMetadataColumnId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[AccountType]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountType]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].Columns[TransactionLogID]"
+                      cachedDataType="i8"
+                      cachedName="TransactionLogID"
+                      externalMetadataColumnId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[TransactionLogID]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[TransactionLogID]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].Columns[Type]"
+                      cachedDataType="ui1"
+                      cachedName="Type"
+                      externalMetadataColumnId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[Type]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].Columns[CustomType]"
+                      cachedDataType="i4"
+                      cachedName="CustomType"
+                      externalMetadataColumnId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[CustomType]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomType]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].Columns[Direction]"
+                      cachedDataType="bool"
+                      cachedName="Direction"
+                      externalMetadataColumnId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[Direction]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[Direction]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].Columns[Amount]"
+                      cachedDataType="numeric"
+                      cachedName="Amount"
+                      cachedPrecision="18"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[Amount]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[Amount]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].Columns[AfterBalance]"
+                      cachedDataType="numeric"
+                      cachedName="AfterBalance"
+                      cachedPrecision="18"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[AfterBalance]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[AfterBalance]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].Columns[RelatedFreezeID]"
+                      cachedDataType="i8"
+                      cachedName="RelatedFreezeID"
+                      externalMetadataColumnId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[RelatedFreezeID]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[RelatedFreezeID]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].Columns[Memo]"
+                      cachedDataType="wstr"
+                      cachedLength="2000"
+                      cachedName="Memo"
+                      externalMetadataColumnId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[Memo]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[Memo]" />
                     <inputColumn
                       refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].Columns[RecordInsertTime]"
                       cachedDataType="dbTimeStamp"
@@ -800,55 +805,58 @@ WHERE EXISTS(
                       dataType="i8"
                       name="StagingID" />
                     <externalMetadataColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[AccountDetailID]"
+                      dataType="i8"
+                      name="AccountDetailID" />
+                    <externalMetadataColumn
                       refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[AccountID]"
                       dataType="i8"
                       name="AccountID" />
                     <externalMetadataColumn
-                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
-                      dataType="wstr"
-                      length="200"
-                      name="Name" />
-                    <externalMetadataColumn
-                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[Mobile]"
-                      dataType="wstr"
-                      length="50"
-                      name="Mobile" />
-                    <externalMetadataColumn
-                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[IDType]"
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[AccountType]"
                       dataType="ui1"
-                      name="IDType" />
+                      name="AccountType" />
                     <externalMetadataColumn
-                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[IDNumber]"
-                      dataType="wstr"
-                      length="100"
-                      name="IDNumber" />
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[TransactionLogID]"
+                      dataType="i8"
+                      name="TransactionLogID" />
                     <externalMetadataColumn
-                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[ReferralCode]"
-                      dataType="wstr"
-                      length="20"
-                      name="ReferralCode" />
-                    <externalMetadataColumn
-                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[InvitedBy]"
-                      dataType="wstr"
-                      length="20"
-                      name="InvitedBy" />
-                    <externalMetadataColumn
-                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
-                      dataType="wstr"
-                      length="100"
-                      name="Status" />
-                    <externalMetadataColumn
-                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[CustomStatus]"
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
                       dataType="ui1"
-                      name="CustomStatus" />
+                      name="Type" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[CustomType]"
+                      dataType="i4"
+                      name="CustomType" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[Direction]"
+                      dataType="bool"
+                      name="Direction" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[Amount]"
+                      dataType="numeric"
+                      name="Amount"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[AfterBalance]"
+                      dataType="numeric"
+                      name="AfterBalance"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[RelatedFreezeID]"
+                      dataType="i8"
+                      name="RelatedFreezeID" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[Memo]"
+                      dataType="wstr"
+                      length="2000"
+                      name="Memo" />
                     <externalMetadataColumn
                       refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[Created]"
                       dataType="dbTimeStamp"
                       name="Created" />
-                    <externalMetadataColumn
-                      refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[Modified]"
-                      dataType="dbTimeStamp"
-                      name="Modified" />
                     <externalMetadataColumn
                       refId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input].ExternalColumns[Source]"
                       dataType="wstr"
@@ -991,24 +999,6 @@ WHERE EXISTS(
                   refId="Package\Staging to Temp\Derived Column.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Staging to Temp\Derived Column.Inputs[Derived Column Input].Columns[RealNameRegistration]"
-                      cachedDataType="i4"
-                      cachedName="RealNameRegistration"
-                      lineageId="Package\Staging to Temp\183:invalid" />
-                    <inputColumn
-                      refId="Package\Staging to Temp\Derived Column.Inputs[Derived Column Input].Columns[IDNumber_Formal]"
-                      cachedDataType="wstr"
-                      cachedLength="100"
-                      cachedName="IDNumber_Formal"
-                      lineageId="Package\Staging to Temp\185:invalid" />
-                    <inputColumn
-                      refId="Package\Staging to Temp\Derived Column.Inputs[Derived Column Input].Columns[IDType]"
-                      cachedDataType="ui1"
-                      cachedName="IDType"
-                      lineageId="Package\Staging to Temp\168:invalid" />
-                  </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
@@ -1084,94 +1074,6 @@ WHERE EXISTS(
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
                           name="FriendlyExpression">(DT_DBTIMESTAMP)"9999-12-31"</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Output].Columns[Gender]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Output].Columns[Gender]"
-                      name="Gender"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">(#{Package\Staging to Temp\168:invalid} == 0 &amp;&amp; #{Package\Staging to Temp\183:invalid} == 1) ? (DT_I4)([LEN](#{Package\Staging to Temp\185:invalid}) == 18 ? [SUBSTRING](#{Package\Staging to Temp\185:invalid},17,1) : [SUBSTRING](#{Package\Staging to Temp\185:invalid},15,1)) % 2 : -1</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">(IDType == 0 &amp;&amp; RealNameRegistration == 1) ? (DT_I4)(LEN(IDNumber_Formal) == 18 ? SUBSTRING(IDNumber_Formal,17,1) : SUBSTRING(IDNumber_Formal,15,1)) % 2 : -1</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Output].Columns[BirthDate]"
-                      dataType="dbDate"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Output].Columns[BirthDate]"
-                      name="BirthDate"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">(#{Package\Staging to Temp\168:invalid} == 0 &amp;&amp; #{Package\Staging to Temp\183:invalid} == 1) ? (DT_DBDATE)([LEN](#{Package\Staging to Temp\185:invalid}) == 18 ? [SUBSTRING](#{Package\Staging to Temp\185:invalid},7,4) + "-" + [SUBSTRING](#{Package\Staging to Temp\185:invalid},11,2) + "-" + [SUBSTRING](#{Package\Staging to Temp\185:invalid},13,2) : "19" + [SUBSTRING](#{Package\Staging to Temp\185:invalid},7,2) + "-" + [SUBSTRING](#{Package\Staging to Temp\185:invalid},9,2) + "-" + [SUBSTRING](#{Package\Staging to Temp\185:invalid},11,2)) : (DT_DBDATE)"9999-12-31"</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">(IDType == 0 &amp;&amp; RealNameRegistration == 1) ? (DT_DBDATE)(LEN(IDNumber_Formal) == 18 ? SUBSTRING(IDNumber_Formal,7,4) + "-" + SUBSTRING(IDNumber_Formal,11,2) + "-" + SUBSTRING(IDNumber_Formal,13,2) : "19" + SUBSTRING(IDNumber_Formal,7,2) + "-" + SUBSTRING(IDNumber_Formal,9,2) + "-" + SUBSTRING(IDNumber_Formal,11,2)) : (DT_DBDATE)"9999-12-31"</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Output].Columns[ProvinceID]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Output].Columns[ProvinceID]"
-                      name="ProvinceID"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">(#{Package\Staging to Temp\168:invalid} == 0 &amp;&amp; #{Package\Staging to Temp\183:invalid} == 1) ? (DT_I4)([SUBSTRING](#{Package\Staging to Temp\185:invalid},1,2)) : -1</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">(IDType == 0 &amp;&amp; RealNameRegistration == 1) ? (DT_I4)(SUBSTRING(IDNumber_Formal,1,2)) : -1</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Output].Columns[CityID]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Output].Columns[CityID]"
-                      name="CityID"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">(#{Package\Staging to Temp\168:invalid} == 0 &amp;&amp; #{Package\Staging to Temp\183:invalid} == 1) ? (DT_I4)([SUBSTRING](#{Package\Staging to Temp\185:invalid},3,2)) : -1</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">(IDType == 0 &amp;&amp; RealNameRegistration == 1) ? (DT_I4)(SUBSTRING(IDNumber_Formal,3,2)) : -1</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -1291,7 +1193,7 @@ WHERE EXISTS(
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[CLEAN_AccountInfo]</property>
+                  name="OpenRowset">[dbo].[CLEAN_AccountDetail]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -1354,24 +1256,6 @@ WHERE EXISTS(
                       externalMetadataColumnId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AccountID]"
                       lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountID]" />
                     <inputColumn
-                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PasswordSet]"
-                      cachedDataType="i4"
-                      cachedName="PasswordSet"
-                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PasswordSet]"
-                      lineageId="Package\Staging to Temp\182:invalid" />
-                    <inputColumn
-                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RealNameRegistration]"
-                      cachedDataType="i4"
-                      cachedName="RealNameRegistration"
-                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RealNameRegistration]"
-                      lineageId="Package\Staging to Temp\183:invalid" />
-                    <inputColumn
-                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CardBinding]"
-                      cachedDataType="i4"
-                      cachedName="CardBinding"
-                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CardBinding]"
-                      lineageId="Package\Staging to Temp\184:invalid" />
-                    <inputColumn
                       refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EffectiveDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="EffectiveDate"
@@ -1390,99 +1274,83 @@ WHERE EXISTS(
                       externalMetadataColumnId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ExpiredDate]"
                       lineageId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Output].Columns[ExpiredDate]" />
                     <inputColumn
-                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ReferralCode_Formal]"
-                      cachedDataType="wstr"
-                      cachedLength="20"
-                      cachedName="ReferralCode_Formal"
-                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ReferralCode]"
-                      lineageId="Package\Staging to Temp\180:invalid" />
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AccountDetailID]"
+                      cachedDataType="i8"
+                      cachedName="AccountDetailID"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AccountDetailID]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountDetailID]" />
                     <inputColumn
-                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Name_Formal]"
-                      cachedDataType="wstr"
-                      cachedLength="200"
-                      cachedName="Name_Formal"
-                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
-                      lineageId="Package\Staging to Temp\178:invalid" />
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AccountType]"
+                      cachedDataType="ui1"
+                      cachedName="AccountType"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AccountType]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountType]" />
                     <inputColumn
-                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Mobile_Formal]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Mobile_Formal"
-                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Mobile]"
-                      lineageId="Package\Staging to Temp\179:invalid" />
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Direction]"
+                      cachedDataType="bool"
+                      cachedName="Direction"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Direction]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[Direction]" />
                     <inputColumn
-                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[InvitedBy_Formal]"
-                      cachedDataType="wstr"
-                      cachedLength="20"
-                      cachedName="InvitedBy_Formal"
-                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[InvitedBy]"
-                      lineageId="Package\Staging to Temp\181:invalid" />
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TransactionLogID_Formal]"
+                      cachedDataType="i8"
+                      cachedName="TransactionLogID_Formal"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TransactionLogID]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[TransactionLogID_Formal]" />
                     <inputColumn
-                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BirthDate]"
-                      cachedDataType="dbDate"
-                      cachedName="BirthDate"
-                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BirthDate]"
-                      lineageId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Output].Columns[BirthDate]" />
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Created]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Created"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TransactionTime]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[Created]" />
                     <inputColumn
-                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ProvinceID]"
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Type]"
+                      cachedDataType="ui1"
+                      cachedName="Type"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TransactionType]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[Type]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CustomType]"
                       cachedDataType="i4"
-                      cachedName="ProvinceID"
-                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProvinceID]"
-                      lineageId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Output].Columns[ProvinceID]" />
+                      cachedName="CustomType"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomTransactionType]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomType]" />
                     <inputColumn
-                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CityID]"
-                      cachedDataType="i4"
-                      cachedName="CityID"
-                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CityID]"
-                      lineageId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Output].Columns[CityID]" />
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Amount_Formal]"
+                      cachedDataType="numeric"
+                      cachedName="Amount_Formal"
+                      cachedPrecision="18"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Amount]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[Amount_Formal]" />
                     <inputColumn
-                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Gender]"
-                      cachedDataType="i4"
-                      cachedName="Gender"
-                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
-                      lineageId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Output].Columns[Gender]" />
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AfterBalance_Formal]"
+                      cachedDataType="numeric"
+                      cachedName="AfterBalance_Formal"
+                      cachedPrecision="18"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AfterBalance]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[AfterBalance_Formal]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RelatedFreezeID_Formal]"
+                      cachedDataType="i8"
+                      cachedName="RelatedFreezeID_Formal"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RelatedFreezeID]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[RelatedFreezeID_Formal]" />
+                    <inputColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Memo_Formal]"
+                      cachedDataType="wstr"
+                      cachedLength="2000"
+                      cachedName="Memo_Formal"
+                      externalMetadataColumnId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Memo]"
+                      lineageId="Package\Staging to Temp\OLE DB Source.Outputs[OLE DB Source Output].Columns[Memo_Formal]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AccountDerivedID]"
-                      dataType="i8"
-                      name="AccountDerivedID" />
-                    <externalMetadataColumn
                       refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AccountID]"
                       dataType="i8"
                       name="AccountID" />
-                    <externalMetadataColumn
-                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
-                      dataType="wstr"
-                      length="200"
-                      name="Name" />
-                    <externalMetadataColumn
-                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Mobile]"
-                      dataType="wstr"
-                      length="50"
-                      name="Mobile" />
-                    <externalMetadataColumn
-                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
-                      dataType="i2"
-                      name="Gender" />
-                    <externalMetadataColumn
-                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ReferralCode]"
-                      dataType="wstr"
-                      length="20"
-                      name="ReferralCode" />
-                    <externalMetadataColumn
-                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PasswordSet]"
-                      dataType="bool"
-                      name="PasswordSet" />
-                    <externalMetadataColumn
-                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RealNameRegistration]"
-                      dataType="bool"
-                      name="RealNameRegistration" />
-                    <externalMetadataColumn
-                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CardBinding]"
-                      dataType="bool"
-                      name="CardBinding" />
                     <externalMetadataColumn
                       refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IsCurrent]"
                       dataType="bool"
@@ -1496,22 +1364,58 @@ WHERE EXISTS(
                       dataType="dbTimeStamp"
                       name="ExpiredDate" />
                     <externalMetadataColumn
-                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[InvitedBy]"
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AccountDetailDerivedID]"
+                      dataType="i8"
+                      name="AccountDetailDerivedID" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AccountDetailID]"
+                      dataType="i8"
+                      name="AccountDetailID" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AccountType]"
+                      dataType="ui1"
+                      name="AccountType" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TransactionLogID]"
+                      dataType="i8"
+                      name="TransactionLogID" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TransactionType]"
+                      dataType="ui1"
+                      name="TransactionType" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomTransactionType]"
+                      dataType="i4"
+                      name="CustomTransactionType" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Direction]"
+                      dataType="bool"
+                      name="Direction" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Amount]"
+                      dataType="numeric"
+                      name="Amount"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AfterBalance]"
+                      dataType="numeric"
+                      name="AfterBalance"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RelatedFreezeID]"
+                      dataType="i8"
+                      name="RelatedFreezeID" />
+                    <externalMetadataColumn
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Memo]"
                       dataType="wstr"
-                      length="20"
-                      name="InvitedBy" />
+                      length="2000"
+                      name="Memo" />
                     <externalMetadataColumn
-                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BirthDate]"
-                      dataType="dbDate"
-                      name="BirthDate" />
-                    <externalMetadataColumn
-                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProvinceID]"
-                      dataType="i4"
-                      name="ProvinceID" />
-                    <externalMetadataColumn
-                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CityID]"
-                      dataType="i4"
-                      name="CityID" />
+                      refId="Package\Staging to Temp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TransactionTime]"
+                      dataType="dbTimeStamp"
+                      name="TransactionTime" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2041,6 +1945,16 @@ FROM DBO.STG_accountdetail WITH(NOLOCK)</property>
               name="Derived Column Output"
               startId="Package\Staging to Temp\Derived Column.Outputs[Derived Column Output]" />
             <path
+              refId="Package\Staging to Temp.Paths[Derived Column Output1]"
+              endId="Package\Staging to Temp\Bad Records.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Staging to Temp\Derived Column for Bad Records.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Staging to Temp.Paths[Normal Output]"
+              endId="Package\Staging to Temp\Derived Column.Inputs[Derived Column Input]"
+              name="Normal Output"
+              startId="Package\Staging to Temp\Conditional Split.Outputs[Normal Output]" />
+            <path
               refId="Package\Staging to Temp.Paths[OLE DB Source Output]"
               endId="Package\Staging to Temp\Conditional Split.Inputs[Conditional Split Input]"
               name="OLE DB Source Output"
@@ -2546,25 +2460,21 @@ FROM DBO.STG_accountdetail WITH(NOLOCK)</property>
           Id="Package\Staging to Temp\Conditional Split"
           TopLeft="204,107.5" />
         <NodeLayout
-          Size="154,42"
-          Id="Package\Staging to Temp\Derived Column"
-          TopLeft="204.5,209.5" />
-        <NodeLayout
-          Size="138,42"
-          Id="Package\Staging to Temp\Bad Records"
-          TopLeft="9.50000000000003,260.5" />
-        <NodeLayout
-          Size="232,42"
-          Id="Package\Staging to Temp\Derived Column for Bad Records"
-          TopLeft="11,143" />
-        <NodeLayout
           Size="150,42"
           Id="Package\Staging to Temp\OLE DB Source"
           TopLeft="206.5,5.5" />
         <NodeLayout
+          Size="154,42"
+          Id="Package\Staging to Temp\Derived Column"
+          TopLeft="204.5,209.5" />
+        <NodeLayout
           Size="171,42"
           Id="Package\Staging to Temp\OLE DB Destination"
           TopLeft="196,311.5" />
+        <NodeLayout
+          Size="232,42"
+          Id="Package\Staging to Temp\Derived Column for Bad Records"
+          TopLeft="11,143" />
         <EdgeLayout
           Id="Package\Staging to Temp.Paths[OLE DB Source Output]"
           TopLeft="281.5,47.5">
@@ -2606,9 +2516,7 @@ FROM DBO.STG_accountdetail WITH(NOLOCK)</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-8,18.25,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2641,11 +2549,81 @@ FROM DBO.STG_accountdetail WITH(NOLOCK)</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="138,42"
+          Id="Package\Staging to Temp\Bad Records"
+          TopLeft="21,252" />
+        <EdgeLayout
+          Id="Package\Staging to Temp.Paths[Derived Column Output1]"
+          TopLeft="127,185">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-37,67"
+              Start="0,0"
+              End="-37,59.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.5"
+                    Point2="0,33.5"
+                    Point3="-4,33.5" />
+                  <mssgle:LineSegment
+                    End="-33,33.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-33,33.5"
+                    Point2="-37,33.5"
+                    Point3="-37,37.5" />
+                  <mssgle:LineSegment
+                    End="-37,59.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Staging to Temp.Paths[Normal Output]"
+          TopLeft="281.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-33.23638671875,20.4453125,66.4727734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Staging to Temp\Bad Records">
+    design-time-name="Package\Staging to Temp\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Staging to Temp\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2658,10 +2636,15 @@ FROM DBO.STG_accountdetail WITH(NOLOCK)</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Staging to Temp\OLE DB Source">
+    design-time-name="Package\Staging to Temp\Bad Records">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
