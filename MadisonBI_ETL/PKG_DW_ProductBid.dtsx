@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="PKG_DW_ProductBid"
   DTS:PackageType="5"
-  DTS:VersionBuild="103"
-  DTS:VersionGUID="{1774B938-D21C-4FA4-92DA-AC07F36F3C95}">
+  DTS:VersionBuild="105"
+  DTS:VersionGUID="{852988BF-B2ED-476F-8557-5BE8A6039159}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -191,7 +191,7 @@ FROM DBO."+ @[User::TargetTable]</DTS:PropertyExpression>
           DTS:LocaleID="-1"
           DTS:ObjectName="Drop Temp Table in Archive"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:PropertyExpression
             DTS:Name="SqlStatementSource">"IF OBJECT_ID('DBO.DELTA_BAD_"+ REPLACE( @[User::SourceTable],"STG_","" ) +"','U') IS NOT NULL
@@ -211,7 +211,7 @@ DROP TABLE DBO.DELTA_BAD_"+ REPLACE( @[User::SourceTable],"STG_","" )</DTS:Prope
           DTS:LocaleID="-1"
           DTS:ObjectName="Drop Temp Table in Data Warehouse"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:PropertyExpression
             DTS:Name="SqlStatementSource">"IF OBJECT_ID('DBO.CLEAN_"+ @[User::TargetTable] +"','U') IS NOT NULL

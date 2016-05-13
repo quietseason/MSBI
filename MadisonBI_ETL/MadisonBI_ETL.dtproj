@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">BISTUDIO</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA3aJOMvAO90mHWfRhAUEUBwAAAAACAAAAAAAQZgAAAAEAACAAAABSaGfzF7A/0+CuO8kDVHLewAvgDyAG3BWaVClPEhQ+WQAAAAAOgAAAAAIAACAAAABs/JDO2QL/S39vOqEjTwnBeV2uIFkVCtlv88Qw5urk85AAAAA6LH9mFUOQyhTOOBqraW5kON95omlECqpnKUFJ7HA6lMc6wjeTpblbZH7XBOLj3P8vMQxyrx0oouy/XxXfrN+KBmCrOgUO6VSj6DxCN7A2DShaVKRSJRE8mCLIL0JKftrPMomkzPE7nLYZt1hQb5U6RnQlCphaYS5JZiOOs6A0tHDhZs3dHXEkFciy1bEZYTBAAAAAytTOuU8nHRbjfVu1txgDiifm5SgEQQB9qgq1Mto3BNJ4x/Kpnrm/9yvcMDpnDgtJhfSFQfPuzJjE7bxhiB+0eQ==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA3aJOMvAO90mHWfRhAUEUBwAAAAACAAAAAAAQZgAAAAEAACAAAACCa1FyVzmf9skNtr1C9PWvalw+OMHJ8WG3HaVeRbM52gAAAAAOgAAAAAIAACAAAACidvvhn5bEHIcWdUlfQVFgRfCfirokc10bY+oT8+3bEZAAAAA9jLfca+yRr9PBpaj1tvM76pvlc69Ar4r78US9ozn4W+LIb2FFXvWMmLJTm7k/N/E/k2ZDoBVfBFrFpqJARsBJholvhZGqb/Ls3dFPXPlR6nBKyVdCEc7Afkg3FIE5RgzpYEF7LwwkMn5VB14FQDC6eRePxYdUPttm6Yw73bfCTuYDxUqtp5FWJCt1LrrqZ4NAAAAAtUPOnJ7d6ZrROGk+Xb4QyOGxDvecudk86BusfZNRjVUJJzUiKsQuRTj+M4t5cnpUt2K7RDUcLjK9NZ26DWEGhg==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -44,6 +44,7 @@
           <SSIS:Package SSIS:Name="PKG_STG_FULL_accountinfo.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="PKG_DW_DeletedAccount.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="PKG_DW_Workflow.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="PKG_DW_AccountDetail.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="MadisonBI_Logging.conmgr" />
@@ -646,10 +647,10 @@
                 <SSIS:Property SSIS:Name="Name">PKG_DW_ProductBid</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">102</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">105</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{3BD536F9-2281-4833-BED6-5186E1133D60}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{852988BF-B2ED-476F-8557-5BE8A6039159}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -934,6 +935,23 @@
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionGUID">{C888D2B2-E53E-4D77-BACA-A9212B1D15EB}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="PKG_DW_AccountDetail.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{B938ED90-E791-4519-ADB4-42C5BED9D95D}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">PKG_DW_AccountDetail</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">83</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{E20208AD-46BF-48F2-93FA-208100B69560}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

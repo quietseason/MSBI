@@ -66,7 +66,7 @@
     <Folder Include="Programmability\Stored Procedures" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Tables\AccountInfo.sql" />
+    <Build Include="Tables\AccountDetail.sql" />
     <Build Include="Programmability\Stored Procedures\usp_RemoveDuplicate_AccountInfo.sql" />
     <Build Include="Programmability\Stored Procedures\usp_Merge_AccountInfo.sql" />
     <Build Include="Tables\ProductBid.sql" />
@@ -75,6 +75,7 @@
     <Build Include="Programmability\Stored Procedures\usp_GetNumberOfBid.sql" />
     <Build Include="Tables\DeletedAccount.sql" />
     <Build Include="Programmability\Stored Procedures\usp_Merge_DeletedAccount.sql" />
+    <Build Include="Tables\AccountInfo.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="MadisonBI_DataWarehouse.refactorlog" />
