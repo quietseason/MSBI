@@ -1,6 +1,7 @@
-﻿CREATE TABLE [dbo].[STG_transferlog]
+﻿CREATE TABLE [dbo].[BAD_transferlog]
 (
-	[StagingID] BIGINT NOT NULL IDENTITY(1,1),
+	[BadRecordID] BIGINT NOT NULL IDENTITY(1,1),
+	[StagingID] BIGINT NOT NULL,
 	[TransferLogID] BIGINT NOT NULL,--新浪流水订单号
 	[TransactionLogID] BIGINT NULL,--内部交易号，与accountdetail.TransactionLogID关联
 	[AccountID] BIGINT NOT NULL,
@@ -20,5 +21,6 @@
 	[Modified] DATETIME NOT NULL,
 	[Source] NVARCHAR(100) NOT NULL, 
     [StagingInsertTime] DATETIME NOT NULL, 
-    CONSTRAINT [PK_STG_transferlog] PRIMARY KEY(StagingID)
+	[RecordInsertTime] DATETIME NOT NULL, 
+    CONSTRAINT [PK_BAD_transferlog] PRIMARY KEY([BadRecordID])
 )

@@ -4,29 +4,25 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>MadisonBI_Logging</Name>
+    <Name>MadisonBI_Audit</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{ef7a1836-e203-4d3c-a55f-e6d802799df9}</ProjectGuid>
+    <ProjectGuid>{661ea7c3-0e01-4c4c-8f54-3bfd9bdd550a}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>MadisonBI_Logging</RootNamespace>
-    <AssemblyName>MadisonBI_Logging</AssemblyName>
+    <RootNamespace>MadisonBI_Audit</RootNamespace>
+    <AssemblyName>MadisonBI_Audit</AssemblyName>
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetLanguage>CS</TargetLanguage>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <SqlServerVerification>True</SqlServerVerification>
+    <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
-    <SccProjectName>SAK</SccProjectName>
-    <SccProvider>SAK</SccProvider>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccLocalPath>SAK</SccLocalPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -62,34 +58,5 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Tables" />
-    <Folder Include="SQL Scripts" />
-    <Folder Include="Programmability" />
-    <Folder Include="Programmability\Stored Procedures" />
-    <Folder Include="Programmability\Functions" />
-    <Folder Include="Views" />
-  </ItemGroup>
-  <ItemGroup>
-    <Build Include="Tables\ETL_STATUS.sql" />
-    <None Include="SQL Scripts\Initialization.sql" />
-    <Build Include="Tables\ETL_TYPE.sql" />
-    <Build Include="Tables\ETL_PACKAGE.sql" />
-    <Build Include="Tables\ETL_PROCESS_LOG.sql" />
-    <Build Include="Tables\ETL_ERROR_LOG.sql" />
-    <Build Include="Tables\ETL_PROCESS_AUDIT.sql" />
-    <Build Include="Programmability\Stored Procedures\usp_InsertLogStart.sql" />
-    <Build Include="Programmability\Stored Procedures\usp_UpdateLogEnd.sql" />
-    <Build Include="Programmability\Stored Procedures\usp_InsertErrorLog.sql" />
-    <Build Include="Programmability\Stored Procedures\usp_InsertProcessAudit.sql" />
-    <Build Include="Tables\CONNECTION_CONFIG.sql" />
-    <Build Include="Programmability\Stored Procedures\usp_RegisterPackage.sql" />
-    <Build Include="Programmability\Functions\fn_EncryptString.sql" />
-    <Build Include="Programmability\Functions\fn_DecryptString.sql" />
-    <Build Include="Programmability\Stored Procedures\usp_UpdateProcessAudit.sql" />
-    <Build Include="Programmability\Stored Procedures\usp_GetIncrementalStart.sql" />
-    <Build Include="Tables\SSIS Configurations.sql" />
-    <Build Include="Views\vETLProcessDetail.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <RefactorLog Include="MadisonBI_Logging.refactorlog" />
   </ItemGroup>
 </Project>

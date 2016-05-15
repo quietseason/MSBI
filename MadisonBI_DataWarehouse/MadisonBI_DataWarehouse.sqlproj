@@ -78,6 +78,7 @@
     <Build Include="Tables\AccountDetail.sql" />
     <Build Include="Programmability\Stored Procedures\usp_RemoveDuplicate_AccountDetail.sql" />
     <Build Include="Programmability\Stored Procedures\usp_Merge_AccountDetail.sql" />
+    <Build Include="Tables\TransferLog.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="MadisonBI_DataWarehouse.refactorlog" />

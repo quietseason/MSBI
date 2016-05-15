@@ -21,5 +21,9 @@
 
 GO
 
-CREATE UNIQUE INDEX [FX_AccountDetail] ON DBO.[AccountDetail]([AccountDetailDerivedID])
+CREATE UNIQUE INDEX [FX_AccountDetail] ON DBO.[AccountDetail]([AccountDetailID])
 WHERE [IsCurrent] = 1
+GO
+
+CREATE NONCLUSTERED INDEX [IX_AccountDetail] ON DBO.[AccountDetail]([AccountID],[AccountType],[Direction])
+GO

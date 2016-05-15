@@ -17,6 +17,8 @@ Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "MadisonBI_Cube", "MadisonBI
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MadisonBI_DataMart", "MadisonBI_DataMart\MadisonBI_DataMart.sqlproj", "{93523E80-2FF2-4EC9-99B1-981FDBA76AC3}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MadisonBI_Audit", "MadisonBI_Audit\MadisonBI_Audit.sqlproj", "{661EA7C3-0E01-4C4C-8F54-3BFD9BDD550A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -84,6 +86,15 @@ Global
 		{93523E80-2FF2-4EC9-99B1-981FDBA76AC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93523E80-2FF2-4EC9-99B1-981FDBA76AC3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{93523E80-2FF2-4EC9-99B1-981FDBA76AC3}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{661EA7C3-0E01-4C4C-8F54-3BFD9BDD550A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{661EA7C3-0E01-4C4C-8F54-3BFD9BDD550A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{661EA7C3-0E01-4C4C-8F54-3BFD9BDD550A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{661EA7C3-0E01-4C4C-8F54-3BFD9BDD550A}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{661EA7C3-0E01-4C4C-8F54-3BFD9BDD550A}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{661EA7C3-0E01-4C4C-8F54-3BFD9BDD550A}.Development|Any CPU.Deploy.0 = Debug|Any CPU
+		{661EA7C3-0E01-4C4C-8F54-3BFD9BDD550A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{661EA7C3-0E01-4C4C-8F54-3BFD9BDD550A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{661EA7C3-0E01-4C4C-8F54-3BFD9BDD550A}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

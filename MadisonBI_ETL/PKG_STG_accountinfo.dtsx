@@ -11,8 +11,8 @@
   DTS:LocaleID="2052"
   DTS:ObjectName="PKG_STG_accountinfo"
   DTS:PackageType="5"
-  DTS:VersionBuild="95"
-  DTS:VersionGUID="{06FF37BA-0C07-4149-B853-643A41DD2100}">
+  DTS:VersionBuild="97"
+  DTS:VersionGUID="{990BA786-1809-49D3-8FD4-3072B5C83BFB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -64,7 +64,8 @@
       DTS:Namespace="User"
       DTS:ObjectName="IncrementalStart">
       <DTS:VariableValue
-        DTS:DataType="8">2001-01-01 00:00:00</DTS:VariableValue>
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -74,6 +75,15 @@
       DTS:ObjectName="Incremental_Col">
       <DTS:VariableValue
         DTS:DataType="8">Modified</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7EE6C1E9-1FAB-452C-AE96-2005DA7247F1}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="InitialLoadStart">
+      <DTS:VariableValue
+        DTS:DataType="8">2001-01-01 00:00:00</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -168,7 +178,7 @@
         DTS:DataType="8">SELECT * FROM OPENQUERY(rdsc309f26u4v49pyi30,
 'SELECT * 
 FROM madison_konto_000.accountinfo
-WHERE Modified &gt;= ''2001-01-01 00:00:00'' AND Modified &lt; CAST(NOW() AS DATE)')</DTS:VariableValue>
+WHERE Modified &gt;= '''' AND Modified &lt; CAST(NOW() AS DATE)')</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -366,7 +376,7 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
                 SQLTask:ParameterSize="-1" />
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="4"
-                SQLTask:DtsVariableName="User::IncrementalStart"
+                SQLTask:DtsVariableName="User::InitialLoadStart"
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="130"
                 SQLTask:ParameterSize="-1" />
@@ -1361,7 +1371,7 @@ DROP TABLE DBO.DELTA_"+ @[User::TargetTable]</DTS:PropertyExpression>
                   <DTS:ObjectData>
                     <SQLTask:SqlTaskData
                       SQLTask:Connection="{1EC4F465-990B-4A18-890F-7CD91DDDA7B8}"
-                      SQLTask:SqlStatementSource="SELECT ISNULL(MAX(Modified),'2001-01-01 00:00:00') AS [0] FROM DBO.DELTA_STG_accountinfo"
+                      SQLTask:SqlStatementSource="SELECT ISNULL(MAX(Modified),'') AS [0] FROM DBO.DELTA_STG_accountinfo"
                       SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
                       <SQLTask:ResultBinding
                         SQLTask:ResultName="0"

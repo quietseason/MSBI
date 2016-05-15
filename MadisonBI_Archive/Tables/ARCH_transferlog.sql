@@ -1,6 +1,7 @@
-﻿CREATE TABLE [dbo].[STG_transferlog]
+﻿CREATE TABLE [dbo].[ARCH_transferlog]
 (
-	[StagingID] BIGINT NOT NULL IDENTITY(1,1),
+	[ArchiveID] BIGINT NOT NULL IDENTITY(1,1),
+	[StagingID] BIGINT NOT NULL,
 	[TransferLogID] BIGINT NOT NULL,--新浪流水订单号
 	[TransactionLogID] BIGINT NULL,--内部交易号，与accountdetail.TransactionLogID关联
 	[AccountID] BIGINT NOT NULL,
@@ -20,5 +21,5 @@
 	[Modified] DATETIME NOT NULL,
 	[Source] NVARCHAR(100) NOT NULL, 
     [StagingInsertTime] DATETIME NOT NULL, 
-    CONSTRAINT [PK_STG_transferlog] PRIMARY KEY(StagingID)
-)
+    CONSTRAINT [PK_ARCH_transferlog] PRIMARY KEY(ArchiveID,[Modified])
+) ON [sch_Partition]([Modified])

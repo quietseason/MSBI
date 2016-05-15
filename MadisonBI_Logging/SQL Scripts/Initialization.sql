@@ -328,6 +328,35 @@ VALUES(
 	GETDATE(),
 	SYSTEM_USER
 )
+
+INSERT INTO DBO.CONNECTION_CONFIG(
+	[DB_CATAGORY], 
+    [SEQUENCE], 
+    [SERVER], 
+	[LINKED_SERVER],
+    [DATABASE], 
+    [USER], 
+    [ENCRYPTED_PASSWORD], 
+    [ENVIROMENT_ID], 
+    [ENVIROMENT_DESCRIPTION], 
+    [CONNECTION_STRING], 
+    [CREATED], 
+    [CREATED_BY]
+)
+VALUES(
+	'madison_konto_000',
+	1,
+	'120.27.144.251',
+	'rdsc309f26u4v49pyi30',
+	'madison_konto_000',
+	NULL,--Windows Authentication
+	NULL,--Windows Authentication
+	1,--PROD
+	'Production',
+	NULL,--No Connection String Specified
+	GETDATE(),
+	SYSTEM_USER
+)
 GO
 
 INSERT INTO [dbo].[SSIS Configurations] VALUES('MadisonBI_Archive','False','\Package.Variables[User::ConfigRemovePartition].Properties[Value]','Boolean')
